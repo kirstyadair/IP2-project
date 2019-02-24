@@ -25,7 +25,7 @@ public class TrapScript : MonoBehaviour
             {
                 if (zombie.tag == "Zombie")
                 {
-                    Destroy(zombie.gameObject);
+                    zombie.gameObject.GetComponent<ZombieScript>().TryKill();
                 }
             }
             gameObject.SetActive(false);
