@@ -20,6 +20,9 @@ public class GameData : MonoBehaviour
     // Current state
     public GameState state = GameState.PREP;
 
+    // Current wave
+    public int wave = 0;
+
     // Start is called before the first frame update
     void Start()
     {

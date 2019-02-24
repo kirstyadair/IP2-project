@@ -8,6 +8,11 @@ public class HordeScript : MonoBehaviour
     public GameObject zombiePrefab;
     public GameObject crosshair;
     public Vector2 centerPoint;
+    public Animator crosshairAnimator;
+
+    // Where to locate the crosshair when we are respawning the horde
+    public Transform crosshairDefault;
+
     //public Vector2 offset;
 
     public float wiggleMultiplier;
@@ -29,11 +34,52 @@ public class HordeScript : MonoBehaviour
     public float reticleSlowness; // How slow the reticle moves
     GameData gameData;
 
+    // If this is true, we are currently spawning the horde and bringing it to the cursor (so disable controls)
+    bool resettingHorde = false;
+
      // 0 = all zombies move towards reticule, 1 = all zombies move independently
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        gameData.OnStateChange += OnStateChange;
+    }
+
+    public void OnStateChange(GameState oldState, GameState newState)
+    {
+
+        if (newState == GameState.PREP)
+        {
+            ResetHordeCursor();
+            resettingHorde = true;
+            // Kill off all old zombies
+            foreach (Transform child in transform) child.gameObject.GetComponent<ZombieScript>().Kill();
+
+            // Find out how many zombies for this wave for this map
+            int count = gameData.currentMap.waves[gameData.wave].sushiCount;
+
+            for (int x = 0; x < count; x++)
+            {
+                Vector2 spawnPos = crosshairDefault.position + new Vector3(Random.Range(10, 20), Random.Range(-10, 10));
+                GameObject zombie = Instantiate(zombiePrefab, transform);
+                zombie.transform.position = spawnPos;
+            }
+
+            StartCoroutine(ResumeCrosshairControl());
+        }
+    }
+
+    void ResetHordeCursor()
+    {
+        crosshair.transform.position = crosshairDefault.position;
+        crosshairAnimator.SetBool("enabled", false);
+    }
+
+    IEnumerator ResumeCrosshairControl()
+    {
+        yield return new WaitForSeconds(3f);
+        crosshairAnimator.SetBool("enabled", true);
+        resettingHorde = false;
     }
 
     public void MoveZombieTowardsTarget(GameObject zombie, Vector2 point)
@@ -75,69 +121,18 @@ public class HordeScript : MonoBehaviour
                 target = gameData.currentEntryPoint.windowCollider.transform.position;
                 targettedToEntryPoint = true;
             }
-            // TODO: force zombie through hole if it gets stuck (use an empty gameobject near the spawn point to denate where to spawn zombie)
 
             MoveZombieTowardsTarget(zombie, target);
 
-            // Only restrict zombies within boundary if they are in the bui
-            if (!targettedToEntryPoint) zombie.transform.position = new Vector3(Mathf.Clamp(zombie.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(zombie.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), zombie.transform.position.z);
-  
+            // Only restrict zombies within boundary if they are in the building
+            if (!targettedToEntryPoint && !resettingHorde) zombie.transform.position = new Vector3(Mathf.Clamp(zombie.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(zombie.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), zombie.transform.position.z);
         }
 
-        //centerPoint = new Vector2(xSum / zombies.Count, ySum / zombies.Count);
         centerPoint = crosshair.transform.position;
 
-        // Slow down crosshair movement depending on how far from center
-        //float distanceFromCenter = (crosshair.transform.position - gameData.currentMap.centerPoint.position).magnitude;
-        crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), Input.GetAxis("VerticalHorde"), 0)) / 10;// distanceFromCenter / reticleSlowness;
+        // Move crosshair if not resetting horde
+        if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), Input.GetAxis("VerticalHorde"), 0)) / 10;// distanceFromCenter / reticleSlowness;
         crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(crosshair.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), crosshair.transform.position.z);
-        /*
-        Vector2 position = crosshair.transform.position;
-        if (position.x < -Screen.width/2) position.x = -Screen.width/2;
-        if (position.y < -Screen.height/2) position.y = -Screen.height/2;
-        if (position.x > Screen.width) position.x = Screen.width;
-        if (position.y > Screen.height) position.y = Screen.height;
-        crosshair.transform.position = position;*/
-        //crosshair.transform.position = centerPoint;
-
-        /*
-        else if (hordeType == 1)
-        {
-            crosshair.SetActive(false);
-            cozynessSetting.SetActive(true);
-
-            // Direction from 
-            Vector2 direction = new Vector2(Input.GetAxis("HorizontalHorde"), Input.GetAxis("VerticalHorde"));
-            direction *= forceMultiplier;
-
-            foreach (Transform child in transform)
-            {
-                Vector2 attraction = new Vector2(0, 0);
-                // Calculate attraction to other zombies
-
-                GameObject nearestZomb = FindClosestZombieTo(child);
-
-                Vector2 wiggle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-                wiggle *= wiggleMultiplier;
-
-                if (nearestZomb != null) attraction = (nearestZomb.transform.position - child.position) * cozynessMultiplier;
-
-                Vector2 force = direction + attraction + wiggle;
-
-                Vector2 line = force;
-                line.Normalize();
-                line /= 2;
-
-                Debug.DrawLine(child.transform.position, (Vector2)child.transform.position + line, new Color(1, 1, 1, 0.5f));
-
-                child.gameObject.GetComponent<Rigidbody2D>().AddForce(force);
-
-                Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-                Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-
-                child.position = new Vector3(Mathf.Clamp(child.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(child.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), child.position.z);
-            }
-        }*/
 
         wiggleText.text = "Wiggle (" + wiggleMultiplier + ")";
         forceText.text = "Force (" + forceMultiplier + ")";
