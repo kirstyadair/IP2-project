@@ -5,27 +5,31 @@ using UnityEngine;
 public class TrapScript : MonoBehaviour
 {
     bool trapDeactivated = false;
-    bool exploding = true;
     float timeToExplode;
-    float scale;
-    public float largeScaleLimit = 50;
-    public float smallScaleLimit = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeToExplode = 5.0f;
-        scale = transform.localScale.x;
-        scale = 1;
+        timeToExplode = 3.0f;
+        transform.localScale = new Vector3(1, 1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (exploding == true)
+        if (timeToExplode <= 0)
         {
-            timeToExplode -= Time.deltaTime;
-            Pulse();
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 5);
+            Debug.Log("Number of hit enemies: " + hitEnemies.Length);
+            foreach (Collider2D zombie in hitEnemies)
+            {
+                if (zombie.tag == "Zombie")
+                {
+                    Destroy(zombie.gameObject);
+                }
+            }
+            gameObject.SetActive(false);
+            trapDeactivated = true;
         }
     }
 
@@ -33,27 +37,48 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Collided, press E to detonate");
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("E pressed");
                 if (!trapDeactivated)
                 {
-                    timeToExplode = 5.0f;
-                    Pulse();
+                    timeToExplode = 3.0f;
+                    StartCoroutine(Grow());
                 }
             }
         }
     }
 
-    void Pulse()
+    IEnumerator Grow()
     {
-        for (int i = 0; i < largeScaleLimit; i++)
+        do
         {
-            scale += i;
+            transform.localScale += new Vector3(0.05f, 0.05f, 0);
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeToExplode -= Time.deltaTime;
         }
+        while (transform.localScale.x <= 1.5f);
 
-        for (int i = 0; i < smallScaleLimit; i++)
+        if (timeToExplode > 0)
         {
-            scale -= i;
+            StartCoroutine(Shrink());
+        }
+    }
+
+    IEnumerator Shrink()
+    {
+        do
+        {
+            transform.localScale -= new Vector3(0.05f, 0.05f, 0);
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeToExplode -= Time.deltaTime;
+        }
+        while (transform.localScale.x >= 1f);
+
+        if (timeToExplode > 0)
+        {
+            StartCoroutine(Grow());
         }
     }
 }
