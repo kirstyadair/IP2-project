@@ -763,7 +763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76655578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5319734, y: -4.007154, z: -0.32647413}
+  m_LocalPosition: {x: 7.5319734, y: -4.007154, z: -0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1038264516}
@@ -1443,12 +1443,12 @@ GameObject:
   - component: {fileID: 214938060}
   - component: {fileID: 214938068}
   - component: {fileID: 214938067}
-  - component: {fileID: 214938066}
-  - component: {fileID: 214938065}
   - component: {fileID: 214938064}
   - component: {fileID: 214938063}
   - component: {fileID: 214938062}
   - component: {fileID: 214938061}
+  - component: {fileID: 214938066}
+  - component: {fileID: 214938065}
   m_Layer: 0
   m_Name: TempAI2
   m_TagString: TempAI
@@ -1487,8 +1487,10 @@ MonoBehaviour:
   - {fileID: 815180304}
   - {fileID: 427029379}
   - {fileID: 1837620344}
-  rb: {fileID: 214938066}
+  rb: {fileID: 214938065}
   point: -1
+  direction: {x: 0, y: 0, z: 0}
+  speed: 0.05
   playerScript: {fileID: 214938067}
 --- !u!120 &214938062
 LineRenderer:
@@ -6309,43 +6311,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!58 &214938065
-CircleCollider2D:
+--- !u!54 &214938065
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214938059}
-  m_Enabled: 1
-  m_Density: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!136 &214938066
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214938059}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
+  m_Enabled: 1
   m_Radius: 0.25
---- !u!50 &214938066
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214938059}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 10
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &214938067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13325,11 +13320,11 @@ GameObject:
   - component: {fileID: 1104255922}
   - component: {fileID: 1104255921}
   - component: {fileID: 1104255920}
-  - component: {fileID: 1104255924}
-  - component: {fileID: 1104255923}
   - component: {fileID: 1104255926}
   - component: {fileID: 1104255925}
   - component: {fileID: 1104255927}
+  - component: {fileID: 1104255924}
+  - component: {fileID: 1104255923}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13414,50 +13409,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104255919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.6, y: -0.79, z: 0}
+  m_LocalPosition: {x: -17.6, y: -0.79, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1044454428}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1104255923
-CircleCollider2D:
+--- !u!54 &1104255923
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104255919}
-  m_Enabled: 1
-  m_Density: 1
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 10
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!136 &1104255924
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104255919}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
+  m_Enabled: 1
   m_Radius: 0.25
---- !u!50 &1104255924
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104255919}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 10
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &1104255925
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -24469,12 +24457,12 @@ GameObject:
   - component: {fileID: 1945361961}
   - component: {fileID: 1945361969}
   - component: {fileID: 1945361968}
-  - component: {fileID: 1945361967}
-  - component: {fileID: 1945361966}
   - component: {fileID: 1945361965}
   - component: {fileID: 1945361964}
   - component: {fileID: 1945361963}
   - component: {fileID: 1945361962}
+  - component: {fileID: 1945361967}
+  - component: {fileID: 1945361966}
   m_Layer: 0
   m_Name: TempAI1
   m_TagString: TempAI
@@ -24516,6 +24504,8 @@ MonoBehaviour:
   - {fileID: 1244035857}
   rb: {fileID: 1945361967}
   point: -1
+  direction: {x: 0, y: 0, z: 0}
+  speed: 0.05
   playerScript: {fileID: 1945361968}
 --- !u!120 &1945361963
 LineRenderer:
@@ -29336,43 +29326,36 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!58 &1945361966
-CircleCollider2D:
+--- !u!136 &1945361966
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945361960}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
+  m_Enabled: 1
   m_Radius: 0.25
---- !u!50 &1945361967
-Rigidbody2D:
-  serializedVersion: 4
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1945361967
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945361960}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 10
+  m_Drag: 10
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 120
   m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &1945361968
 MonoBehaviour:
   m_ObjectHideFlags: 0
