@@ -7,9 +7,9 @@ public class TempAIScript : MonoBehaviour
     public Transform[] enemyPoints;
     public Rigidbody rb;
     public int point = -1;
-    Vector3 direction;
+    public Vector3 direction;
     float distance;
-    float speed = 0.01f;
+    public float speed = 0.01f;
     float AIfireCooldown = 0f;
 
     public PlayerScript playerScript;
@@ -30,19 +30,27 @@ public class TempAIScript : MonoBehaviour
         //rb.AddForce(new Vector2(direction.x, direction.y), ForceMode2D.Impulse);  THIS LINE ISN'T WORKING
         transform.Translate(direction * speed);
 
+        Vector3 planarPosition = enemyPoints[point].position;
+        planarPosition.z = transform.position.z;
         // find distance between enemy and point
-        distance = Vector3.Distance(enemyPoints[point].position, transform.position);
+        distance = Vector3.Distance(planarPosition, transform.position);
 
         //Debug.Log("Distance = " + distance);
 
-        if (distance < 0.1) NextPoint();
+        if (distance < 0.5) NextPoint();
 
         if (AIfireCooldown <= 0)
         {
             playerScript.Shoot(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
             AIfireCooldown++;
         }
-        
+
+
+        // find the direction of the next point
+        direction = (enemyPoints[point].position - transform.position);
+        direction.Normalize();  
+        direction.z = 0;
+
     }
 
     void NextPoint()
@@ -56,9 +64,6 @@ public class TempAIScript : MonoBehaviour
             point = 0;
         }
 
-
-        // find the direction of the next point
-        direction = (enemyPoints[point].position - transform.position);
 
     }
 }
