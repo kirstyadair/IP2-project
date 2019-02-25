@@ -830,6 +830,7 @@ MonoBehaviour:
   - {fileID: 815180304}
   - {fileID: 427029379}
   - {fileID: 1837620344}
+  rb: {fileID: 214938066}
   point: -1
   playerScript: {fileID: 214938067}
 --- !u!120 &214938062
@@ -17362,6 +17363,7 @@ MonoBehaviour:
   - {fileID: 525465293}
   - {fileID: 600640103}
   - {fileID: 1244035857}
+  rb: {fileID: 1945361967}
   point: -1
   playerScript: {fileID: 1945361968}
 --- !u!120 &1945361963

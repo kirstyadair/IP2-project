@@ -20,6 +20,8 @@ public class PlayerScript : MonoBehaviour
     LineRenderer lineRenderer;
     bool isAbleToFire = false;
     bool tempAI;
+    int numOfHits = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +119,13 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(normal * 5, ForceMode2D.Impulse);
             blood.Emit(20);
             movementCooldown = 0.5f;
+
+            numOfHits--;
+
+            if (numOfHits <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

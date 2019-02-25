@@ -5,6 +5,7 @@ using UnityEngine;
 public class TempAIScript : MonoBehaviour
 {
     public Transform[] enemyPoints;
+    public Rigidbody2D rb;
     public int point = -1;
     Vector2 direction;
     float distance;
@@ -17,6 +18,7 @@ public class TempAIScript : MonoBehaviour
     void Start()
     {
         NextPoint();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class TempAIScript : MonoBehaviour
         AIfireCooldown -= Time.deltaTime;
 
         // move in direction of point
+        //rb.AddForce(new Vector2(direction.x, direction.y), ForceMode2D.Impulse);  THIS LINE ISN'T WORKING
         transform.Translate(direction * speed);
 
         // find distance between enemy and point
@@ -56,8 +59,6 @@ public class TempAIScript : MonoBehaviour
 
         // find the direction of the next point
         direction = (enemyPoints[point].position - transform.position);
-
-        // cycle through array of points
 
     }
 }
