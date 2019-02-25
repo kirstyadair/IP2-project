@@ -7,7 +7,7 @@ public class HordeScript : MonoBehaviour
 {
     public GameObject zombiePrefab;
     public GameObject crosshair;
-    public Vector2 centerPoint;
+    public Vector3 centerPoint;
     public Animator crosshairAnimator;
 
     // Where to locate the crosshair when we are respawning the horde
@@ -60,7 +60,7 @@ public class HordeScript : MonoBehaviour
 
             for (int x = 0; x < count; x++)
             {
-                Vector2 spawnPos = crosshairDefault.position + new Vector3(Random.Range(10, 20), Random.Range(-10, 10));
+                Vector2 spawnPos = crosshairDefault.position + new Vector3(Random.Range(10, 20), 0, Random.Range(-10, 10));
                 GameObject zombie = Instantiate(zombiePrefab, transform);
                 zombie.transform.position = spawnPos;
             }
@@ -82,32 +82,33 @@ public class HordeScript : MonoBehaviour
         resettingHorde = false;
     }
 
-    public void MoveZombieTowardsTarget(GameObject zombie, Vector2 point)
+    public void MoveZombieTowardsTarget(GameObject zombie, Vector3 point)
     {
         //xSum += zombie.transform.position.x;
        // ySum += zombie.transform.position.y;
 
-        Vector2 force = new Vector2(0, 0);
-        force = point - (Vector2)zombie.transform.position;
+        Vector3 force = new Vector3(0, 0, 0);
+        force = point - zombie.transform.position;
         force.Normalize();
+        force.y = 0;
         force *= forceMultiplier;
 
-        Vector2 wiggle = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        Vector3 wiggle = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         wiggle *= wiggleMultiplier;
         force += wiggle;
         //force /= 10f;
         zombie.GetComponent<Rigidbody>().AddForce(force);
 
   
-        if (force.x < -30f) zombie.GetComponent<SpriteRenderer>().flipX = true;
-        if (force.x > 30f) zombie.GetComponent<SpriteRenderer>().flipX = false;
+        //if (force.x < -30f) zombie.GetComponent<SpriteRenderer>().flipX = true;
+        //if (force.x > 30f) zombie.GetComponent<SpriteRenderer>().flipX = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        //minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        //maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 
         foreach (Transform child in transform)
         {
@@ -131,7 +132,7 @@ public class HordeScript : MonoBehaviour
         centerPoint = crosshair.transform.position;
 
         // Move crosshair if not resetting horde
-        if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), Input.GetAxis("VerticalHorde"), 0)) / 10;// distanceFromCenter / reticleSlowness;
+        if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
        // crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(crosshair.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), crosshair.transform.position.z);
 
         wiggleText.text = "Wiggle (" + wiggleMultiplier + ")";
@@ -166,7 +167,7 @@ public class HordeScript : MonoBehaviour
         GameObject zomb = Instantiate<GameObject>(zombiePrefab);
         zomb.transform.localPosition = new Vector2(0, 0);
         zomb.transform.parent = this.transform;
-        zomb.transform.GetComponent<Rigidbody>().AddForce(new Vector2(0.1f, 0.1f));
+        zomb.transform.GetComponent<Rigidbody>().AddForce(new Vector3(0.1f, 0, 0.1f));
     }
 
     public void DespawnZombie()

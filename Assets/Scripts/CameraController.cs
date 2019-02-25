@@ -21,14 +21,16 @@ public class CameraController : MonoBehaviour
         cameraInitialPosition = this.transform.position;
         centerScreen = gameData.currentMap.centerPoint.position;//cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, 10));
     }
-
+    
     public void OnStateChange(GameState oldState, GameState newState)
     {
+        /*
         float prepCameraZoom = gameData.currentMap.cameraZoomPrepMode;
         float playCameraZoom = gameData.currentMap.cameraZoomPlayMode;
 
         if (newState == GameState.PREP) StartCoroutine(LerpCameraSize(prepCameraZoom));
         if (newState == GameState.PLAY) StartCoroutine(LerpCameraSize(playCameraZoom));
+        */
     }
 
     IEnumerator LerpCameraSize(float to)
@@ -59,6 +61,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         Vector3 distanceFromCenterOfScreen = horde.crosshair.transform.position - centerScreen;
+        distanceFromCenterOfScreen.z = 0;
         this.transform.position = cameraInitialPosition + distanceFromCenterOfScreen/cameraStillness;
     }
 }
