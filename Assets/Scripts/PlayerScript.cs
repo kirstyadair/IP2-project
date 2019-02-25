@@ -53,8 +53,13 @@ public class PlayerScript : MonoBehaviour
         // human player reticle
         if (!tempAI)
         {
-            reticlePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            reticlePos.z = 0;
+            // raycast to place reticle
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
+            reticlePos = hit.point;
+
+            reticlePos.y = transform.position.y;
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, reticlePos);
@@ -80,14 +85,14 @@ public class PlayerScript : MonoBehaviour
 
         if (!tempAI)
         {
-            Vector2 direction = new Vector2(Input.GetAxis("HorizontalPlayer"), Input.GetAxis("VerticalPlayer"));
+            Vector3 direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
             rb.AddForce(direction, ForceMode.Impulse);
         }
 
         //rb.velocity = direction * moveSpeed;
 
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
 
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), transform.position.z);
 
@@ -95,9 +100,9 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetMouseButton(0) == true && fireTimeout <= 0)
             {
-                reticle.GetComponent<Animator>().SetTrigger("pulse");
+               // reticle.GetComponent<Animator>().SetTrigger("pulse");
 
-                Vector2 bulletDirection = reticlePos - transform.position;
+                Vector3 bulletDirection = reticlePos - transform.position;
                 bulletDirection.Normalize();
 
                 Shoot(bulletDirection);
@@ -115,7 +120,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.collider.tag == "Zombie")
         {
-            Vector2 normal = collision.GetContact(0).normal;
+            Vector3 normal = collision.GetContact(0).normal;
             rb.AddForce(normal * 5, ForceMode.Impulse);
             blood.Emit(20);
             movementCooldown = 0.5f;
@@ -129,7 +134,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void Shoot(Vector2 direction)
+    public void Shoot(Vector3 direction)
     {
         if (fireTimeout > 0) return;
         if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing

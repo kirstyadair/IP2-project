@@ -108,7 +108,19 @@ public class HordeScript : MonoBehaviour
     void Update()
     {
         //minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        //maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        //maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(-Screen.width, -Screen.height, Camera.main.transform.position.z));
+
+        Ray ray1 = Camera.main.ScreenPointToRay(new Vector3(0, 0));
+        Ray ray2 = Camera.main.ScreenPointToRay(new Vector3(Screen.width, Screen.height));
+
+        RaycastHit hit1;
+        RaycastHit hit2;
+
+        Physics.Raycast(ray1, out hit1, LayerMask.GetMask("Ground"));
+        Physics.Raycast(ray2, out hit2, LayerMask.GetMask("Ground"));
+
+        minScreenBounds = hit1.point;
+        maxScreenBounds = hit2.point;
 
         foreach (Transform child in transform)
         {
@@ -133,7 +145,7 @@ public class HordeScript : MonoBehaviour
 
         // Move crosshair if not resetting horde
         if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
-       // crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(crosshair.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), crosshair.transform.position.z);
+        crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
 
         wiggleText.text = "Wiggle (" + wiggleMultiplier + ")";
         forceText.text = "Force (" + forceMultiplier + ")";
