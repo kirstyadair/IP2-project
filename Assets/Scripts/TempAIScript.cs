@@ -5,9 +5,9 @@ using UnityEngine;
 public class TempAIScript : MonoBehaviour
 {
     public Transform[] enemyPoints;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
     public int point = -1;
-    Vector2 direction;
+    Vector3 direction;
     float distance;
     float speed = 0.01f;
     float AIfireCooldown = 0f;
@@ -18,7 +18,7 @@ public class TempAIScript : MonoBehaviour
     void Start()
     {
         NextPoint();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class TempAIScript : MonoBehaviour
         if (AIfireCooldown <= 0)
         {
             playerScript.Shoot(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
-            AIfireCooldown += 1;
+            AIfireCooldown++;
         }
         
     }

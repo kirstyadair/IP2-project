@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
     public Text dragText;
     public Text moveSpeedText;
     ParticleSystem blood;
-    Rigidbody2D rb;
+    Rigidbody rb;
     GameData gameData;
     LineRenderer lineRenderer;
     bool isAbleToFire = false;
@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour
     {
         blood = GetComponent<ParticleSystem>();
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
         gameData.OnReadyForZombies += ZombiesHaveStarted;
 
@@ -58,7 +58,7 @@ public class PlayerScript : MonoBehaviour
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, reticlePos);
-            rb.simulated = true;
+            //rb.simulated = true;
         }
         else // ai reticle
         {
@@ -68,7 +68,7 @@ public class PlayerScript : MonoBehaviour
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, transform.position);
             lineRenderer.enabled = false;
-            rb.simulated = false;
+            //rb.simulated = false;
         }
 
 
@@ -81,7 +81,7 @@ public class PlayerScript : MonoBehaviour
         if (!tempAI)
         {
             Vector2 direction = new Vector2(Input.GetAxis("HorizontalPlayer"), Input.GetAxis("VerticalPlayer"));
-            rb.AddForce(direction, ForceMode2D.Impulse);
+            rb.AddForce(direction, ForceMode.Impulse);
         }
 
         //rb.velocity = direction * moveSpeed;
@@ -89,7 +89,7 @@ public class PlayerScript : MonoBehaviour
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), transform.position.z);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), transform.position.z);
 
         if (!tempAI)
         {
@@ -111,12 +111,12 @@ public class PlayerScript : MonoBehaviour
         moveSpeedText.text = "Move speed (" + moveSpeed + ")"; 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Zombie")
         {
             Vector2 normal = collision.GetContact(0).normal;
-            rb.AddForce(normal * 5, ForceMode2D.Impulse);
+            rb.AddForce(normal * 5, ForceMode.Impulse);
             blood.Emit(20);
             movementCooldown = 0.5f;
 
