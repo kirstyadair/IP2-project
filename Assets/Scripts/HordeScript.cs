@@ -96,7 +96,7 @@ public class HordeScript : MonoBehaviour
         wiggle *= wiggleMultiplier;
         force += wiggle;
         //force /= 10f;
-        zombie.GetComponent<Rigidbody2D>().AddForce(force);
+        zombie.GetComponent<Rigidbody>().AddForce(force);
 
   
         if (force.x < -30f) zombie.GetComponent<SpriteRenderer>().flipX = true;
@@ -166,7 +166,7 @@ public class HordeScript : MonoBehaviour
         GameObject zomb = Instantiate<GameObject>(zombiePrefab);
         zomb.transform.localPosition = new Vector2(0, 0);
         zomb.transform.parent = this.transform;
-        zomb.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0.1f, 0.1f));
+        zomb.transform.GetComponent<Rigidbody>().AddForce(new Vector2(0.1f, 0.1f));
     }
 
     public void DespawnZombie()
