@@ -125,14 +125,14 @@ public class HordeScript : MonoBehaviour
             MoveZombieTowardsTarget(zombie, target);
 
             // Only restrict zombies within boundary if they are in the building
-            if (!targettedToEntryPoint && !resettingHorde) zombie.transform.position = new Vector3(Mathf.Clamp(zombie.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(zombie.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), zombie.transform.position.z);
+           // if (!targettedToEntryPoint && !resettingHorde) zombie.transform.position = new Vector3(Mathf.Clamp(zombie.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(zombie.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), zombie.transform.position.z);
         }
 
         centerPoint = crosshair.transform.position;
 
         // Move crosshair if not resetting horde
         if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), Input.GetAxis("VerticalHorde"), 0)) / 10;// distanceFromCenter / reticleSlowness;
-        crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(crosshair.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), crosshair.transform.position.z);
+       // crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(crosshair.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), crosshair.transform.position.z);
 
         wiggleText.text = "Wiggle (" + wiggleMultiplier + ")";
         forceText.text = "Force (" + forceMultiplier + ")";
