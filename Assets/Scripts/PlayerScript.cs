@@ -77,7 +77,7 @@ public class PlayerScript : MonoBehaviour
         }
 
 
-        reticle.transform.position = reticlePos;
+        if (!tempAI) reticle.transform.position = reticlePos;
 
         movementCooldown -= Time.deltaTime;
 
@@ -122,7 +122,7 @@ public class PlayerScript : MonoBehaviour
         {
             Vector3 normal = collision.GetContact(0).normal;
             rb.AddForce(normal * 5, ForceMode.Impulse);
-            blood.Emit(20);
+            //blood.Emit(20);
             movementCooldown = 0.5f;
 
             numOfHits--;

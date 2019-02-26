@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ZombieScript : MonoBehaviour
 {
-    public bool hasEnteredBuilding = false;
+    public bool hasEnteredBuilding = true;
     public bool isBeingYeeted = false;
 
 

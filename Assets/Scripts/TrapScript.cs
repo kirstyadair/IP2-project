@@ -19,9 +19,9 @@ public class TrapScript : MonoBehaviour
     {
         if (timeToExplode <= 0)
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 5);
+            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, 5);
             Debug.Log("Number of hit enemies: " + hitEnemies.Length);
-            foreach (Collider2D zombie in hitEnemies)
+            foreach (Collider zombie in hitEnemies)
             {
                 if (zombie.tag == "Zombie")
                 {
@@ -33,7 +33,7 @@ public class TrapScript : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Player")
         {

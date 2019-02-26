@@ -31,7 +31,7 @@ public class TempAIScript : MonoBehaviour
         transform.Translate(direction * speed);
 
         Vector3 planarPosition = enemyPoints[point].position;
-        planarPosition.z = transform.position.z;
+        planarPosition.y = transform.position.y;
         // find distance between enemy and point
         distance = Vector3.Distance(planarPosition, transform.position);
 
@@ -41,7 +41,7 @@ public class TempAIScript : MonoBehaviour
 
         if (AIfireCooldown <= 0)
         {
-            playerScript.Shoot(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
+            playerScript.Shoot(new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)));
             AIfireCooldown++;
         }
 
@@ -49,7 +49,7 @@ public class TempAIScript : MonoBehaviour
         // find the direction of the next point
         direction = (enemyPoints[point].position - transform.position);
         direction.Normalize();  
-        direction.z = 0;
+        direction.y = 0;
 
     }
 
