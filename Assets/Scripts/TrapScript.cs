@@ -17,10 +17,11 @@ public class TrapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Time to explode: " + timeToExplode);
         if (timeToExplode <= 0)
         {
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, 5);
-            Debug.Log("Number of hit enemies: " + hitEnemies.Length);
+            //Debug.Log("Number of hit enemies: " + hitEnemies.Length);
             foreach (Collider zombie in hitEnemies)
             {
                 if (zombie.tag == "Zombie")
@@ -30,6 +31,7 @@ public class TrapScript : MonoBehaviour
             }
             gameObject.SetActive(false);
             trapDeactivated = true;
+            timeToExplode = 3;
         }
     }
 
@@ -43,7 +45,6 @@ public class TrapScript : MonoBehaviour
                 Debug.Log("E pressed");
                 if (!trapDeactivated)
                 {
-                    timeToExplode = 3.0f;
                     StartCoroutine(Grow());
                 }
             }
@@ -54,7 +55,7 @@ public class TrapScript : MonoBehaviour
     {
         do
         {
-            transform.localScale += new Vector3(0.05f, 0.05f, 0);
+            transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
@@ -62,6 +63,7 @@ public class TrapScript : MonoBehaviour
 
         if (timeToExplode > 0)
         {
+            Debug.Log("Shrinking");
             StartCoroutine(Shrink());
         }
     }
@@ -70,7 +72,7 @@ public class TrapScript : MonoBehaviour
     {
         do
         {
-            transform.localScale -= new Vector3(0.05f, 0.05f, 0);
+            transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
@@ -78,6 +80,7 @@ public class TrapScript : MonoBehaviour
 
         if (timeToExplode > 0)
         {
+            Debug.Log("Growing");
             StartCoroutine(Grow());
         }
     }
