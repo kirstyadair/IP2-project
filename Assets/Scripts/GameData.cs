@@ -14,14 +14,23 @@ public class GameData : MonoBehaviour
     public delegate void StateChanged(GameState oldState, GameState newState);
     public event StateChanged OnStateChange;
 
-    public delegate void ZombiePopEvent();
-    public event ZombiePopEvent OnReadyForZombies;
-
     // Current state
     public GameState state = GameState.PREP;
 
     // Current wave
     public int wave = 0;
+
+    // Current chosen spawn point
+    SpawnPointScript currentSpawnPoint;
+
+    // Our countdown timer
+    TimerScript timer;
+
+    private void Awake()
+    {
+        timer = GameObject.Find("Timer").GetComponent<TimerScript>();
+        Debug.Log(timer);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +41,12 @@ public class GameData : MonoBehaviour
     // Change the state
     public void ChangeState(GameState newState)
     {
-        if (newState == GameState.PLAY)
+        if (newState == GameState.PREP)
         {
-            StartCoroutine(DelayZombiesReadyToPop());
+            int seconds = currentMap.waves[0].secondsBeforeSpawning;
+
+            // Initiate the countdown to start spawning
+            timer.StartCountdown(seconds, StartSpawning);
         }
 
         OnStateChange(state, newState);
@@ -47,10 +59,10 @@ public class GameData : MonoBehaviour
         
     }
 
-    IEnumerator DelayZombiesReadyToPop()
+    public void StartSpawning()
     {
-        yield return new WaitForSeconds(3f);
-        OnReadyForZombies();
+        // Start spawning from current spawn point
+        Debug.Log("Starting spawning");
     }
 
     public void SetEntryPoint(EntryPointScript entryPointScript)

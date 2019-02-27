@@ -12,8 +12,8 @@ public class UIUpdater : MonoBehaviour
     public string hordeIncomingText = "HORDE INC[OMI]NG";
     public float hordeIncomingAppearFor = 2;
 
-    public string pickEntryPointText = "HORDE: PICK ENTRY POINT";
-    public float pickEntryPointAppearFor = 3;
+    public string getReadyText = "GET READY";
+    public float getReadyAppearFor = 3;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,7 +26,7 @@ public class UIUpdater : MonoBehaviour
     {
         if (newState == GameState.PREP)
         {
-            ShowBigStatusBar(pickEntryPointText, pickEntryPointAppearFor);
+            ShowBigStatusBar(getReadyText, getReadyAppearFor);
         }
         if (newState == GameState.PLAY)
         {

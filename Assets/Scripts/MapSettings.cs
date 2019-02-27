@@ -12,6 +12,7 @@ public struct Wave
 {
     public SushiType sushiType;
     public int sushiCount;
+    public int secondsBeforeSpawning;
 
 }
 

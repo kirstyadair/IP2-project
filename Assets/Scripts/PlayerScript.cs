@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        gameData.OnReadyForZombies += ZombiesHaveStarted;
+        //gameData.OnReadyForZombies += ZombiesHaveStarted;
 
         if (gameObject.tag == "TempAI")
         {
