@@ -7,6 +7,7 @@ public class UIUpdater : MonoBehaviour
 {
     // Status bar at bottom that shows "Pick entry point"
     public Animator bigStatusBarAnimator;
+    public GameObject slider;
     public GameData gameData;
 
     public string hordeIncomingText = "HORDE INC[OMI]NG";
@@ -47,6 +48,10 @@ public class UIUpdater : MonoBehaviour
         bigStatusBarAnimator.SetBool("showing", false);
     }
 
+    public void Start()
+    {
+        slider.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {

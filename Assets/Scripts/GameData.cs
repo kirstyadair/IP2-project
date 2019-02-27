@@ -8,7 +8,6 @@ public enum GameState { PREP, PLAY }
 public class GameData : MonoBehaviour
 {
     public MapSettings currentMap;
-    public EntryPointScript currentEntryPoint;
 
     // Triggered when the state is changed suprisingly
     public delegate void StateChanged(GameState oldState, GameState newState);
@@ -21,15 +20,29 @@ public class GameData : MonoBehaviour
     public int wave = 0;
 
     // Current chosen spawn point
-    SpawnPointScript currentSpawnPoint;
+    // TODO: Randomly pick one
+    public SpawnPointScript currentSpawnPoint;
+
+    public HordeScript horde;
 
     // Our countdown timer
     TimerScript timer;
 
+    public WaveIndicatorScript waveIndicator;
+
+    [Header("Wave indicator colours")]
+    public Color preparingIndicatorFGColor;
+    public Color preparingIndicatorBGColor;
+
+    public Color spawningIndicatorFGColor;
+    public Color spawningIndicatorBGColor;
+
+    public Color playingIndicatorFGColor;
+    public Color playingIndicatorBGColor;
+
     private void Awake()
     {
         timer = GameObject.Find("Timer").GetComponent<TimerScript>();
-        Debug.Log(timer);
     }
 
     // Start is called before the first frame update
@@ -47,6 +60,16 @@ public class GameData : MonoBehaviour
 
             // Initiate the countdown to start spawning
             timer.StartCountdown(seconds, StartSpawning);
+
+            if (wave > 0)
+            {
+                waveIndicator.SwapText("PREPARING...", preparingIndicatorBGColor, preparingIndicatorFGColor);
+            }
+        }
+
+        if (newState == GameState.PLAY)
+        {
+            waveIndicator.SwapText("SPAWNING...", spawningIndicatorBGColor, spawningIndicatorFGColor);
         }
 
         OnStateChange(state, newState);
@@ -56,17 +79,33 @@ public class GameData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (state == GameState.PLAY)
+        {
+            if (horde.isSpawning) waveIndicator.ChangeText("SPAWNING " + horde.zombiesAlive + "/" + horde.zombiesTotal);
+            else waveIndicator.ChangeText("LEFT: " + horde.zombiesAlive + "/" + horde.zombiesTotal);
+
+            if (horde.zombiesAlive == 0 && !horde.isSpawning)
+            {
+
+                // zombies are dead!
+                // next wave
+                wave++;
+                ChangeState(GameState.PREP);
+            }
+        }
     }
 
     public void StartSpawning()
     {
         // Start spawning from current spawn point
         Debug.Log("Starting spawning");
+
+        horde.OnSpawnComplete += FinishedSpawning;
+        ChangeState(GameState.PLAY);
     }
 
-    public void SetEntryPoint(EntryPointScript entryPointScript)
+    public void FinishedSpawning()
     {
-        currentEntryPoint = entryPointScript;
+        waveIndicator.SwapText("PLAYING...", playingIndicatorBGColor, playingIndicatorFGColor);
     }
 }

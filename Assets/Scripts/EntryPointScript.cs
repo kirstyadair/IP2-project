@@ -52,7 +52,7 @@ public class EntryPointScript : MonoBehaviour
         BreakGlass();
         isCurrentEntryPoint = true;
         gameData.ChangeState(GameState.PLAY);
-        gameData.SetEntryPoint(this);
+        //gameData.SetEntryPoint(this);
 
         //gameData.OnReadyForZombies += StartYeetingZombies;
     }
