@@ -17,7 +17,6 @@ public class TrapScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Time to explode: " + timeToExplode);
         if (timeToExplode <= 0)
         {
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, 5);
@@ -55,7 +54,7 @@ public class TrapScript : MonoBehaviour
     {
         do
         {
-            transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
+            transform.localScale += new Vector3(0.05f, 0.05f, 0);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
@@ -72,7 +71,7 @@ public class TrapScript : MonoBehaviour
     {
         do
         {
-            transform.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
+            transform.localScale -= new Vector3(0.05f, 0.05f, 0);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
