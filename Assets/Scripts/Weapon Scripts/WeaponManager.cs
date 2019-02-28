@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -9,12 +10,13 @@ public class WeaponManager : MonoBehaviour
     bool knivesActive = false;
     public KetchupBeamScript ketchupBeamScript;
     public KnivesScript knivesScript;
-    // public SpatulaScript spatulaScript;
+    public SpatulaScript spatulaScript;
+    public Text weaponText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        weaponText.text = "Press 1 for Ketchup Beam, 2 for Spatula, or 3 for Knives";
     }
 
     // Update is called once per frame
@@ -24,9 +26,9 @@ public class WeaponManager : MonoBehaviour
         {
             if (!ketchupActive)
             {
-                Debug.Log("KetchupActive");
+                weaponText.text = "Ketchup beam active - press space to shoot";
                 ketchupBeamScript.isActive = true;
-                // spatulaScript.isActive = false;
+                spatulaScript.isActive = false;
                 knivesScript.isActive = false;
 
                 ketchupActive = true;
@@ -36,7 +38,7 @@ public class WeaponManager : MonoBehaviour
             else
             {
                 ketchupBeamScript.isActive = false;
-                // spatulaScript.isActive = false;
+                spatulaScript.isActive = false;
                 knivesScript.isActive = false;
 
                 ketchupActive = false;
@@ -49,9 +51,9 @@ public class WeaponManager : MonoBehaviour
         {
             if (!spatulaActive)
             {
-                Debug.Log("SpatulaActive");
+                weaponText.text = "Spatula active - press space to hit";
                 ketchupBeamScript.isActive = false;
-                // spatulaScript.isActive = true;
+                spatulaScript.isActive = true;
                 knivesScript.isActive = false;
 
                 ketchupActive = false;
@@ -61,7 +63,7 @@ public class WeaponManager : MonoBehaviour
             else
             {
                 ketchupBeamScript.isActive = false;
-                // spatulaScript.isActive = false;
+                spatulaScript.isActive = false;
                 knivesScript.isActive = false;
 
                 ketchupActive = false;
@@ -74,9 +76,9 @@ public class WeaponManager : MonoBehaviour
         {
             if (!knivesActive)
             {
-                Debug.Log("KnivesActive");
+                weaponText.text = "Knives active - press space to throw";
                 ketchupBeamScript.isActive = false;
-                // spatulaScript.isActive = false;
+                spatulaScript.isActive = false;
                 knivesScript.isActive = true;
 
                 ketchupActive = false;
@@ -86,7 +88,7 @@ public class WeaponManager : MonoBehaviour
             else
             {
                 ketchupBeamScript.isActive = false;
-                // spatulaScript.isActive = false;
+                spatulaScript.isActive = false;
                 knivesScript.isActive = false;
 
                 ketchupActive = false;

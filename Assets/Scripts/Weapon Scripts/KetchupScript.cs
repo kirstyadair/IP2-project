@@ -42,7 +42,7 @@ public class KetchupScript : MonoBehaviour
         if (other.name == "Ground")
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            transform.localScale = new Vector3(15, 0.1f, 10);
+            transform.localScale = new Vector3(10, 0.1f, 5);
         }
     }
 }
