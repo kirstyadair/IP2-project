@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum SushiType
 {
-    EYES
+    EYES, TENTACLES
 }
 
 [System.Serializable]
@@ -12,7 +12,8 @@ public struct Wave
 {
     public SushiType sushiType;
     public int sushiCount;
-
+    public int secondsBeforeSpawning;
+    public float timeBetweenSpawns;
 }
 
 public class MapSettings : MonoBehaviour
