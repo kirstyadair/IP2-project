@@ -5,28 +5,14 @@ using UnityEngine.UI;
 
 public class HordeScript : MonoBehaviour
 {
+    public delegate void SpawningEvent();
+    public event SpawningEvent OnSpawnComplete;
+
     public GameObject zombiePrefab;
     public GameObject crosshair;
     public Vector3 centerPoint;
     public Animator crosshairAnimator;
-
-    // Where to locate the crosshair when we are respawning the horde
-    public Transform crosshairDefault;
-
-    //public Vector2 offset;
-
-    public float wiggleMultiplier;
-    public float forceMultiplier;
-    public float cozynessMultiplier; // Only used for horde type B
-    public float closenessBetweenZombies;
-    public int hordeType = 0;
-
-    public Text wiggleText;
-    public Text forceText;
-    public Text cozynessText;
-    public Slider hordeTypeSlider;
-    public GameObject cozynessSetting; // Hide when we're on type A cause it doesn't apply then
-
+    public AudioClip spawnSound;
     // Used for keeping stuff inside the screen
     Vector3 minScreenBounds;
     Vector3 maxScreenBounds;
@@ -34,10 +20,21 @@ public class HordeScript : MonoBehaviour
     public float reticleSlowness; // How slow the reticle moves
     GameData gameData;
 
-    // If this is true, we are currently spawning the horde and bringing it to the cursor (so disable controls)
-    bool resettingHorde = false;
+    // Where to locate the crosshair when we are respawning the horde
+    public Transform crosshairDefault;
 
-     // 0 = all zombies move towards reticule, 1 = all zombies move independently
+    [Header("Horde settings")]
+    public float wiggleMultiplier;
+    public float forceMultiplier;
+
+    [Header("Sushi sprites")]
+    public Sprite eyesSushi;
+    public Sprite tentacleSushi;
+
+    public int zombiesAlive;
+    public int zombiesTotal;
+    public bool isSpawning = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -50,36 +47,60 @@ public class HordeScript : MonoBehaviour
 
         if (newState == GameState.PREP)
         {
-            ResetHordeCursor();
-            resettingHorde = true;
             // Kill off all old zombies
             foreach (Transform child in transform) child.gameObject.GetComponent<ZombieScript>().Kill();
+        }
+
+        if (newState == GameState.PLAY)
+        {
+            // Start spawning
+            SpawnPointScript spawnPoint = gameData.currentSpawnPoint;
 
             // Find out how many zombies for this wave for this map
+            SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
             int count = gameData.currentMap.waves[gameData.wave].sushiCount;
+            float timeBetweenSpawns = gameData.currentMap.waves[gameData.wave].timeBetweenSpawns;
+            zombiesTotal = count;
 
-            for (int x = 0; x < count; x++)
-            {
-                Vector2 spawnPos = crosshairDefault.position + new Vector3(Random.Range(10, 20), 0, Random.Range(-10, 10));
-                GameObject zombie = Instantiate(zombiePrefab, transform);
-                zombie.transform.position = spawnPos;
-            }
-
-            StartCoroutine(ResumeCrosshairControl());
+            StartCoroutine(Spawn(sushiType, count, timeBetweenSpawns, spawnPoint));
         }
     }
 
-    void ResetHordeCursor()
+    IEnumerator Spawn(SushiType sushiType, int count, float timeBetweenSpawns, SpawnPointScript spawnPoint)
     {
-        crosshair.transform.position = crosshairDefault.position;
-        crosshairAnimator.SetBool("enabled", false);
-    }
+        isSpawning = true;
 
-    IEnumerator ResumeCrosshairControl()
-    {
-        yield return new WaitForSeconds(3f);
-        crosshairAnimator.SetBool("enabled", true);
-        resettingHorde = false;
+        for (int x = 0; x < count; x++)
+        {
+            Vector3 spawnPos = spawnPoint.gameObject.transform.position;
+            spawnPos.y = this.transform.position.y;
+            GameObject zombie = Instantiate(zombiePrefab, transform);
+            zombie.transform.position = spawnPos;
+           
+
+            Sprite sushiSprite = eyesSushi;
+
+            switch (sushiType)
+            {
+                case SushiType.EYES:
+                    sushiSprite = eyesSushi;
+                    break;
+                case SushiType.TENTACLES:
+                    sushiSprite = tentacleSushi;
+                    break;
+                default: break;
+            }
+
+            zombie.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sushiSprite;
+
+            Vector3 force = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100));
+            zombie.GetComponent<Rigidbody>().AddForce(force);
+            zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
+            yield return new WaitForSeconds(timeBetweenSpawns);
+        }
+
+        isSpawning = false;
+        OnSpawnComplete();
     }
 
     public void MoveZombieTowardsTarget(GameObject zombie, Vector3 point)
@@ -122,101 +143,24 @@ public class HordeScript : MonoBehaviour
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
 
+        int alive = 0;
         foreach (Transform child in transform)
         {
+            alive++;
             GameObject zombie = child.gameObject;
             Vector3 target = centerPoint;
-            bool targettedToEntryPoint = false;
-
-            // if this zombie has not entered the building yet, move towards entry point
-            if (gameData.state == GameState.PLAY && !zombie.GetComponent<ZombieScript>().hasEnteredBuilding)
-            {
-                target = gameData.currentEntryPoint.windowCollider.transform.position;
-                targettedToEntryPoint = true;
-            }
-
             MoveZombieTowardsTarget(zombie, target);
-
-            // Only restrict zombies within boundary if they are in the building
-           // if (!targettedToEntryPoint && !resettingHorde) zombie.transform.position = new Vector3(Mathf.Clamp(zombie.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), Mathf.Clamp(zombie.transform.position.y, minScreenBounds.y + 1, maxScreenBounds.y - 1), zombie.transform.position.z);
         }
+
+        zombiesAlive = alive;
 
         centerPoint = crosshair.transform.position;
 
-        // Move crosshair if not resetting horde
-        if (!resettingHorde) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
+        // Move crosshair and constrain within world
+        crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
         crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
-
-        wiggleText.text = "Wiggle (" + wiggleMultiplier + ")";
-        forceText.text = "Force (" + forceMultiplier + ")";
-        cozynessText.text = "Cozyness (" + cozynessMultiplier + ")";
-    }
-    public GameObject FindClosestZombieTo(Transform position)
-    {
-        GameObject closest = null;
-        float closestDistance = Mathf.Infinity;
-        foreach (Transform child in transform)
-        {
-            if (child.position == position.position) continue; // I will be mad if the closest zombie is itself
-
-            float distance = Vector2.Distance(child.position, position.position);
-
-            if (distance < closenessBetweenZombies) continue;
-            if (distance < closestDistance)
-            {
-                closest = child.gameObject;
-                closestDistance = distance;
-            }
-        }
-
-        if (closestDistance < closenessBetweenZombies) closest = null; // Don't return a closest zombie if it's already super close to one
-
-        return closest;
     }
 
-    public void SpawnZombie()
-    {
-        GameObject zomb = Instantiate<GameObject>(zombiePrefab);
-        zomb.transform.localPosition = new Vector2(0, 0);
-        zomb.transform.parent = this.transform;
-        zomb.transform.GetComponent<Rigidbody>().AddForce(new Vector3(0.1f, 0, 0.1f));
-    }
-
-    public void DespawnZombie()
-    {
-        if (transform.GetChild(0) != null) Destroy(transform.GetChild(0).gameObject);
-    }
-
-    public void IncreaseWiggle()
-    {
-        wiggleMultiplier++;
-    }
-
-    public void DecreaseWiggle()
-    {
-        wiggleMultiplier--;
-    }
-
-    public void IncreaseForce()
-    {
-
-        forceMultiplier++;
-    }
-
-    public void DecreaseForce()
-    {
-        forceMultiplier--;
-    }
-
-    public void IncreaseCozyness()
-    {
-        cozynessMultiplier += 0.5f;
-    }
-
-    public void DecreaseCozyness()
-    {
-        cozynessMultiplier -= 0.5f;
-    }
 
     /*
     public void OnDrawGizmos()
