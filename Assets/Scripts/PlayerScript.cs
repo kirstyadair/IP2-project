@@ -11,6 +11,9 @@ public class PlayerScript : MonoBehaviour
     public float fireCooldown;
     public float fireTimeout = 0;
     float movementCooldown = 0;
+    public Text firingCooldownText;
+    public Text dragText;
+    public Text moveSpeedText;
     ParticleSystem blood;
     Rigidbody rb;
     GameData gameData;
@@ -26,7 +29,7 @@ public class PlayerScript : MonoBehaviour
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        gameData.OnStateChange += OnStateChange;
+        gameData.OnReadyForZombies += ZombiesHaveStarted;
 
         if (gameObject.tag == "TempAI")
         {
@@ -107,6 +110,10 @@ public class PlayerScript : MonoBehaviour
                 fireTimeout = fireCooldown;
             }
         }
+        
+        firingCooldownText.text = "Firing cooldown (" + fireCooldown + ")";
+        dragText.text = "Drag (" + rb.drag + ")";
+        moveSpeedText.text = "Move speed (" + moveSpeed + ")"; 
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -139,9 +146,9 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    public void OnStateChange(GameState oldState, GameState newState)
+    public void ZombiesHaveStarted()
     {
-        if (newState == GameState.PLAY) isAbleToFire = true;
+        isAbleToFire = true;
     }
 
     public void IncreaseMoveSpeed()

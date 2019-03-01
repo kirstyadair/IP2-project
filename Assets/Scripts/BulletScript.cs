@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
         transform.position += direction * speed;
     }
 
-    public void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") return;
 

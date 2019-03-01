@@ -7,14 +7,13 @@ public class UIUpdater : MonoBehaviour
 {
     // Status bar at bottom that shows "Pick entry point"
     public Animator bigStatusBarAnimator;
-    public GameObject slider;
     public GameData gameData;
 
     public string hordeIncomingText = "HORDE INC[OMI]NG";
     public float hordeIncomingAppearFor = 2;
 
-    public string getReadyText = "GET READY";
-    public float getReadyAppearFor = 3;
+    public string pickEntryPointText = "HORDE: PICK ENTRY POINT";
+    public float pickEntryPointAppearFor = 3;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +26,7 @@ public class UIUpdater : MonoBehaviour
     {
         if (newState == GameState.PREP)
         {
-            ShowBigStatusBar(getReadyText, getReadyAppearFor);
+            ShowBigStatusBar(pickEntryPointText, pickEntryPointAppearFor);
         }
         if (newState == GameState.PLAY)
         {
@@ -48,10 +47,6 @@ public class UIUpdater : MonoBehaviour
         bigStatusBarAnimator.SetBool("showing", false);
     }
 
-    public void Start()
-    {
-        slider.SetActive(true);
-    }
     // Update is called once per frame
     void Update()
     {

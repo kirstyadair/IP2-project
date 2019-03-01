@@ -7,7 +7,6 @@ TagManager:
   - Zombie
   - TempAI
   - Map
-  - Spawnpoint
   layers:
   - Default
   - TransparentFX
