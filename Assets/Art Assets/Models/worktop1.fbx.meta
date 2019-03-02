@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood Texture 4
+    second: {fileID: 2800000, guid: 30b47f1c1c3143a45b1462b6a3e6720a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood-texture
+    second: {fileID: 2800000, guid: afc02db7badbf2f48bd5c5a48d173190, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

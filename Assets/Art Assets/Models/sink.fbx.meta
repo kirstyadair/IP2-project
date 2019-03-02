@@ -45,7 +45,12 @@ ModelImporter:
     3300000: directionalLight2
     4300000: directionalLight2
     10800000: directionalLight1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood-texture
+    second: {fileID: 2800000, guid: 2d12cb769face694c9fe52569a169c09, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

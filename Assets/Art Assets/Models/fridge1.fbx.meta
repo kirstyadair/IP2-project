@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube5
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__phong1
+    second: {fileID: 2100000, guid: a47a58038742a5e42a1be9f30d4c20a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: fd007c71324bc574e9eed89d82bcc4da, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
