@@ -5,10 +5,14 @@ using UnityEngine;
 public class ThrowingKnifeScript : MonoBehaviour
 {
     float timeToDestroy = 3.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         transform.Rotate(90, 0, 0);
+        transform.localScale = new Vector3(0.1f, 0.5f, 0.1f);
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotationX & RigidbodyConstraints.FreezePositionY;
     }
 
     // Update is called once per frame
@@ -21,14 +25,19 @@ public class ThrowingKnifeScript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("collision");
-        if (collision.collider.tag == "Zombie")
         {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+            Debug.Log("collision");
+            if (collision.tag == "Zombie")
+            {
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
+
+
+
 
 }

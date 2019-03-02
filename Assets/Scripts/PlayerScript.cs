@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
     public GameObject reticle;
-    public GameObject bulletPrefab;
+    public GameObject knifePrefab;
     public float moveSpeed;
     public float fireCooldown;
     public float fireTimeout = 0;
@@ -132,10 +132,9 @@ public class PlayerScript : MonoBehaviour
         if (fireTimeout > 0) return;
         if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
         if (!isAbleToFire) return; // Don't fire if firing is disabled
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = transform.position;
-        bullet.transform.up = direction;
-        bullet.GetComponent<BulletScript>().direction = direction;
+        GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
+        knife.AddComponent<ThrowingKnifeScript>();
+        knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
     }
 
 

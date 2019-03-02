@@ -2030,8 +2030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
-  bulletPrefab: {fileID: 8500918215229192444, guid: 19f18f2ed25eea944b402ed674bdbfb3,
-    type: 3}
+  knifePrefab: {fileID: 1495042713}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0
@@ -4652,6 +4651,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 771096979}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &775157909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100960119685943176, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_Name
+      value: KnivePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468556333950783700, guid: 5f735c972cf71664da1f33e111eceece,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f735c972cf71664da1f33e111eceece, type: 3}
 --- !u!1001 &786314730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7304,8 +7372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 1044454426}
-  bulletPrefab: {fileID: 8500918215229192444, guid: 19f18f2ed25eea944b402ed674bdbfb3,
-    type: 3}
+  knifePrefab: {fileID: 1495042713}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0
@@ -13661,6 +13728,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.889, y: 0.8890003, z: 0.88900024}
   m_Center: {x: 0, y: -0.000000039598937, z: 0.44450012}
+--- !u!1001 &1350108427
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3409766765662946152, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_Name
+      value: KetchupBlob
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a839d6fb1847a744e8e94c12c9b62a3a, type: 3}
 --- !u!1 &1360443340
 GameObject:
   m_ObjectHideFlags: 0
@@ -14986,6 +15122,12 @@ MonoBehaviour:
   lineSegment: {fileID: 386683670}
   animationSpeed: 180
   offsetBeforeWrapping: 500
+--- !u!1 &1495042713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100960119685943176, guid: 5f735c972cf71664da1f33e111eceece,
+    type: 3}
+  m_PrefabInstance: {fileID: 775157909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1496322968 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc,
@@ -17649,8 +17791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
-  bulletPrefab: {fileID: 8500918215229192444, guid: 19f18f2ed25eea944b402ed674bdbfb3,
-    type: 3}
+  knifePrefab: {fileID: 1495042713}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0
@@ -17910,7 +18051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1993285893
 MonoBehaviour:
   m_ObjectHideFlags: 0

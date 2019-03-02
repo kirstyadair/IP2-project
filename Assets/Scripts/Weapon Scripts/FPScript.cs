@@ -34,7 +34,5 @@ public class FPScript : MonoBehaviour
         {
             transform.Translate(Vector3.right * 10 * Time.deltaTime);
         }
-
-        reticule.transform.position = Input.mousePosition;
     }
 }
