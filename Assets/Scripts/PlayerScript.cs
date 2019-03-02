@@ -23,12 +23,7 @@ public class PlayerScript : MonoBehaviour
 
     [Tooltip("Type of chef")]
     public ChefType chefType;
-
-    // These will be moved to separate script soon
-    public float fireCooldown;
-    public GameObject knifePrefab;
-    float fireTimeout = 0;
-    /////////////////////////////////
+    
 
     Rigidbody rb;
     GameData gameData;
@@ -51,7 +46,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        fireTimeout -= Time.deltaTime;
         
         // human player reticle
         if (!isAIControlled)
@@ -71,15 +65,7 @@ public class PlayerScript : MonoBehaviour
             Vector3 direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
             rb.AddForce(direction, ForceMode.Impulse);
 
-            if (Input.GetMouseButton(0) == true && fireTimeout <= 0)
-            {
-                Vector3 bulletDirection = reticlePos - transform.position;
-                bulletDirection.Normalize();
-
-                Shoot(bulletDirection);
-
-                fireTimeout = fireCooldown;
-            }
+            
         }
         else // if we are AI controlled
         {
@@ -109,19 +95,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-
-    //////// COME BACK TO THIS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    public void Shoot(Vector3 direction)
-    {
-        if (fireTimeout > 0) return;
-        if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
-        GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
-        
-        knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-        knife.transform.up = direction;
-    }
-
+    
 
     public void OnStateChange(GameState oldState, GameState newState)
     {
