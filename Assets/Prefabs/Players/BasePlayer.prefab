@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 5725655216475216453}
   - component: {fileID: 5725655216475216450}
   m_Layer: 0
-  m_Name: Player
+  m_Name: BasePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,12 +287,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 5725655215257853419}
+  moveSpeed: 7
+  isAIControlled: 0
+  chefType: 0
+  fireCooldown: 0.25
   knifePrefab: {fileID: 100960119685943176, guid: 5f735c972cf71664da1f33e111eceece,
     type: 3}
   reticlePos: {x: 0, y: 0, z: 0}
-  moveSpeed: 7
-  fireCooldown: 0.25
-  fireTimeout: 0
 --- !u!199 &5725655216475216455
 ParticleSystemRenderer:
   serializedVersion: 6
