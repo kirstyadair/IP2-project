@@ -41,7 +41,7 @@ public class TempAIScript : MonoBehaviour
 
         if (AIfireCooldown <= 0)
         {
-            playerScript.Shoot(new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)));
+            /////////////playerScript.Shoot(new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)));
             AIfireCooldown++;
         }
 

@@ -500,9 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ketchupPrefab: {fileID: 1721245688}
-  isActive: 0
   ketchupSpread: {x: 0.09, y: 0, z: 0.075}
-  ketchupPuddle: {x: 2, y: 0.00001, z: 2}
+  playerScript: {fileID: 1104255920}
 --- !u!1 &68404224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc,
@@ -2078,6 +2077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
   knifePrefab: {fileID: 1495042713}
+  reticlePos: {x: 0, y: 0, z: 0}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0
@@ -7420,6 +7420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticle: {fileID: 1044454426}
   knifePrefab: {fileID: 1495042713}
+  reticlePos: {x: 0, y: 0, z: 0}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0
@@ -17846,6 +17847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
   knifePrefab: {fileID: 1495042713}
+  reticlePos: {x: 0, y: 0, z: 0}
   moveSpeed: 7
   fireCooldown: 0.25
   fireTimeout: 0

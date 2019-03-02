@@ -21,12 +21,12 @@ public class KetchupScript : MonoBehaviour
     {
         timeToDestroy -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Fire1"))
         {
             transform.localScale += ketchupBeamScript.ketchupSpread;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Fire1"))
         {
             transform.localScale -= new Vector3(ketchupBeamScript.ketchupSpread.x*3, 0f, ketchupBeamScript.ketchupSpread.z*2);
         }
@@ -43,7 +43,12 @@ public class KetchupScript : MonoBehaviour
         if (other.name == "Ground")
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            transform.localScale = ketchupBeamScript.ketchupPuddle;
+            //transform.localScale = ketchupBeamScript.ketchupPuddle;
+        }
+
+        if (other.tag == "Zombie")
+        {
+            other.gameObject.GetComponent<ZombieScript>().TryKill();
         }
     }
 }

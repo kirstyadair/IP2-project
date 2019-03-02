@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
     public GameObject reticle;
     public GameObject knifePrefab;
+    public Vector3 reticlePos;
     public float moveSpeed;
     public float fireCooldown;
     public float fireTimeout = 0;
@@ -43,10 +44,7 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         fireTimeout -= Time.deltaTime;
-
-
-        Vector3 reticlePos;
-
+        
         // human player reticle
         if (!tempAI)
         {
@@ -102,7 +100,7 @@ public class PlayerScript : MonoBehaviour
                 Vector3 bulletDirection = reticlePos - transform.position;
                 bulletDirection.Normalize();
 
-                Shoot(bulletDirection);
+                ////////////////////////////////Shoot(bulletDirection);
 
                 fireTimeout = fireCooldown;
             }
@@ -127,7 +125,9 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void Shoot(Vector3 direction)
+    //////// COME BACK TO THIS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /*public void Shoot(Vector3 direction)
     {
         if (fireTimeout > 0) return;
         if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
@@ -136,7 +136,7 @@ public class PlayerScript : MonoBehaviour
         
         knife.AddComponent<ThrowingKnifeScript>();
         knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-    }
+    }*/
 
 
     public void OnStateChange(GameState oldState, GameState newState)
