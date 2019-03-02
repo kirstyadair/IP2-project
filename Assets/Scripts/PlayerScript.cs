@@ -100,7 +100,7 @@ public class PlayerScript : MonoBehaviour
                 Vector3 bulletDirection = reticlePos - transform.position;
                 bulletDirection.Normalize();
 
-                ////////////////////////////////Shoot(bulletDirection);
+                Shoot(bulletDirection);
 
                 fireTimeout = fireCooldown;
             }
@@ -127,16 +127,16 @@ public class PlayerScript : MonoBehaviour
 
     //////// COME BACK TO THIS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /*public void Shoot(Vector3 direction)
+    public void Shoot(Vector3 direction)
     {
         if (fireTimeout > 0) return;
         if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
         if (!isAbleToFire) return; // Don't fire if firing is disabled
         GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
         
-        knife.AddComponent<ThrowingKnifeScript>();
         knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-    }*/
+        knife.transform.up = direction;
+    }
 
 
     public void OnStateChange(GameState oldState, GameState newState)

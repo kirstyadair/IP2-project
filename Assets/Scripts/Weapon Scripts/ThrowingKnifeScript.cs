@@ -9,10 +9,12 @@ public class ThrowingKnifeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.Rotate(90, 0, 0);
+        /*
+        transform.Rotate(90, 0, 0); 
         transform.localScale = new Vector3(0.1f, 0.5f, 0.1f);
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX & RigidbodyConstraints.FreezePositionY;
+        */
     }
 
     // Update is called once per frame
@@ -27,13 +29,11 @@ public class ThrowingKnifeScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("collision");
+        if (collision.tag == "Zombie")
         {
-            Debug.Log("collision");
-            if (collision.tag == "Zombie")
-            {
-                Destroy(collision.gameObject);
-                Destroy(gameObject);
-            }
+            collision.gameObject.GetComponent<ZombieScript>().TryKill();
+            Destroy(gameObject);
         }
     }
 
