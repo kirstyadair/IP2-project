@@ -41,10 +41,10 @@ public class TimerScript : MonoBehaviour
     {
         while (secondsLeft > 0)
         {
+            secondsText.text = secondsLeft.ToString();
             yield return new WaitForSeconds(1);
             secondsLeft--;
             timerAnimator.SetTrigger("pulse");
-            secondsText.text = secondsLeft.ToString();
         }
 
         timerAnimator.SetBool("enabled", false);
