@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FPScript : MonoBehaviour
 {
+    public GameObject reticule;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +35,6 @@ public class FPScript : MonoBehaviour
             transform.Translate(Vector3.right * 10 * Time.deltaTime);
         }
 
+        reticule.transform.position = Input.mousePosition;
     }
 }
