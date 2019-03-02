@@ -7,12 +7,13 @@ public class KetchupScript : MonoBehaviour
     float timeToDestroy = 3.0f;
     Rigidbody rb;
     public GameObject audioObject;
+    KetchupBeamScript ketchupBeamScript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
+        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        ketchupBeamScript = GameObject.Find("KetchupSpawnPoint").GetComponent<KetchupBeamScript>();
     }
     
 
@@ -22,12 +23,12 @@ public class KetchupScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.localScale += new Vector3(0.15f, 0f, 0.1f);
+            transform.localScale += ketchupBeamScript.ketchupSpread;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            transform.localScale -= new Vector3(0.4f, 0f, 0.2f);
+            transform.localScale -= new Vector3(ketchupBeamScript.ketchupSpread.x*3, 0f, ketchupBeamScript.ketchupSpread.z*2);
         }
 
 
@@ -42,7 +43,7 @@ public class KetchupScript : MonoBehaviour
         if (other.name == "Ground")
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            transform.localScale = new Vector3(10, 0.1f, 5);
+            transform.localScale = ketchupBeamScript.ketchupPuddle;
         }
     }
 }

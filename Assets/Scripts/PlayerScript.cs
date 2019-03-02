@@ -133,6 +133,7 @@ public class PlayerScript : MonoBehaviour
         if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
         if (!isAbleToFire) return; // Don't fire if firing is disabled
         GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
+        
         knife.AddComponent<ThrowingKnifeScript>();
         knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
     }

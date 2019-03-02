@@ -456,6 +456,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 34414819}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &50740541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50740542}
+  - component: {fileID: 50740543}
+  m_Layer: 0
+  m_Name: KetchupSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &50740542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50740541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1104255922}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &50740543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50740541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfc51e64fd6d04479c0cb6200e7b48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ketchupPrefab: {fileID: 1721245688}
+  isActive: 0
+  ketchupSpread: {x: 0.09, y: 0, z: 0.075}
+  ketchupPuddle: {x: 2, y: 0.00001, z: 2}
 --- !u!1 &68404224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc,
@@ -7389,6 +7436,7 @@ Transform:
   m_Children:
   - {fileID: 1044454428}
   - {fileID: 2086762111}
+  - {fileID: 50740542}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13743,17 +13791,17 @@ PrefabInstance:
     - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2222
       objectReference: {fileID: 0}
     - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 2222
       objectReference: {fileID: 0}
     - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 2222
       objectReference: {fileID: 0}
     - target: {fileID: 3409766765662946067, guid: a839d6fb1847a744e8e94c12c9b62a3a,
         type: 3}
@@ -16208,6 +16256,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc,
     type: 3}
   m_PrefabInstance: {fileID: 1718842337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721245688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3409766765662946152, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1350108427}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1738563849
 PrefabInstance:
