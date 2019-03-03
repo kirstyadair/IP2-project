@@ -36,8 +36,4 @@ public class ThrowingKnifeScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-
-
 }

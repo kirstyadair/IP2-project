@@ -13704,6 +13704,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1595164095}
     - target: {fileID: 5725655215437888718, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: ketchupPrefab

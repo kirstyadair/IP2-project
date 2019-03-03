@@ -32,6 +32,9 @@ public class PlayerScript : MonoBehaviour
     [HideInInspector]
     public Vector3 reticlePos;
 
+    public Animator animator;
+
+    public bool up, down, left, right;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +66,7 @@ public class PlayerScript : MonoBehaviour
             reticle.transform.position = reticlePos;
 
             Vector3 direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
-            rb.AddForce(direction, ForceMode.Impulse);
+            rb.velocity = direction * moveSpeed;
 
             
         }
@@ -75,6 +78,36 @@ public class PlayerScript : MonoBehaviour
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, transform.position);
             lineRenderer.enabled = false;
+        }
+
+
+        up = false;
+        down = false;
+        left = false;
+        right = false;
+
+        if (rb.velocity.z > 0.1f) up = true; 
+        if (rb.velocity.z < -0.1f) down = true;  
+        if (rb.velocity.x > 0.1f) right = true; 
+        if (rb.velocity.x < -0.1f) left = true;
+
+
+        if (animator != null)
+        {
+            animator.enabled = true;
+            if (right || left)
+            {
+                if (right) animator.Play("walk right");
+                if (left) animator.Play("walk left");
+            }
+            else if (up || down)
+            {
+                if (up) animator.Play("walk up");
+                if (down) animator.Play("walk down");
+            } else
+            {
+                animator.enabled = false;
+            }
         }
     }
 
