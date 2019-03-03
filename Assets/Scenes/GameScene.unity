@@ -10139,6 +10139,31 @@ Transform:
   m_Father: {fileID: 1011659217}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1595164094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5725655216300160911, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    type: 3}
+  m_PrefabInstance: {fileID: 5725655215421489649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1595164095
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595164094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b50f9e429c62e84408e1d26146f25bc0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1596707816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc,
@@ -13673,6 +13698,12 @@ PrefabInstance:
       propertyPath: ketchupPrefab
       value: 
       objectReference: {fileID: 1721245688}
+    - target: {fileID: 5725655216300160881, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28125f6a61825da489fab7c419e10459,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd07273a72bbf754f85f3fb2bdec8353, type: 3}
 --- !u!1001 &5764935665085834229
