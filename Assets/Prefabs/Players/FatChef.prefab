@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &228271110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228271111}
+  - component: {fileID: 228271112}
+  m_Layer: 0
+  m_Name: KetchupSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228271111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228271110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2400729507838504377}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228271112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228271110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfc51e64fd6d04479c0cb6200e7b48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ketchupPrefab: {fileID: 0}
+  ketchupSpread: {x: 0.09, y: 0, z: 0.075}
+  playerScript: {fileID: 2400729507838504379}
 --- !u!1001 &7936617778958383098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,20 +53,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: reticle
+      value: 
+      objectReference: {fileID: 2400729509559249425}
     - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_Name
-      value: BasePlayer
+      value: FatChef
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.204
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -69,3 +120,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd07273a72bbf754f85f3fb2bdec8353, type: 3}
+--- !u!4 &2400729507838504377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    type: 3}
+  m_PrefabInstance: {fileID: 7936617778958383098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2400729507838504379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    type: 3}
+  m_PrefabInstance: {fileID: 7936617778958383098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667478b99de0ed745a24180498f63b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2400729509559249425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5725655215257853419, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    type: 3}
+  m_PrefabInstance: {fileID: 7936617778958383098}
+  m_PrefabAsset: {fileID: 0}

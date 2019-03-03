@@ -6,18 +6,16 @@ public class KnivesScript : MonoBehaviour
 {
     public GameObject knifePrefab;
     Vector3 direction = new Vector3(0, 0, 1);
-    public float fireCooldown;
+    public float fireCooldown = 0.5f;
     float fireTimeout = 0;
     public GameObject reticle;
-    Vector3 reticlePos;
     GameData gameData;
+    PlayerScript playerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        // this is just for the AI script, change this when actual players are added
-        reticlePos = new Vector3(0, 0, 0);
-
+        playerScript = GetComponent<PlayerScript>();
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
     }
 
@@ -26,17 +24,9 @@ public class KnivesScript : MonoBehaviour
     {
         fireTimeout -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space) && fireCooldown <= 0)
-        {
-            GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
-            //knife.AddComponent<ThrowingKnifeScript>();
-            knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-            fireCooldown = 0.5f;
-        }
-
         if (Input.GetMouseButton(0) == true && fireTimeout <= 0)
         {
-            Vector3 bulletDirection = reticlePos - transform.position;
+            Vector3 bulletDirection = playerScript.reticlePos - transform.position;
             bulletDirection.Normalize();
 
             Shoot(bulletDirection);
