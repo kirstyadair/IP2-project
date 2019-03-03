@@ -32,7 +32,7 @@ public class ThrowingKnifeScript : MonoBehaviour
         Debug.Log("collision");
         if (collision.tag == "Zombie")
         {
-            collision.gameObject.GetComponent<ZombieScript>().TryKill();
+            collision.gameObject.GetComponent<ZombieScript>().Hit();
             Destroy(gameObject);
         }
     }

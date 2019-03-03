@@ -48,7 +48,7 @@ public class KetchupScript : MonoBehaviour
 
         if (other.tag == "Zombie")
         {
-            other.gameObject.GetComponent<ZombieScript>().TryKill();
+            other.gameObject.GetComponent<ZombieScript>().Hit();
         }
     }
 }

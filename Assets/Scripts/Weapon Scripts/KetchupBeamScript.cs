@@ -31,7 +31,6 @@ public class KetchupBeamScript : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                Debug.Log("Spawning");
                 GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
                 ketchup.AddComponent<KetchupScript>();
                 ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);

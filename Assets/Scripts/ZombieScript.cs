@@ -21,7 +21,7 @@ public class ZombieScript : MonoBehaviour
         
     }
 
-    public void TryKill()
+    public void Hit()
     {
         if (hasEnteredBuilding && !isBeingYeeted) Kill();
     }

@@ -25,7 +25,7 @@ public class BulletScript : MonoBehaviour
 
         if (collision.tag == "Zombie")
         {
-            collision.gameObject.GetComponent<ZombieScript>().TryKill();
+            collision.gameObject.GetComponent<ZombieScript>().Hit();
 
          
         }

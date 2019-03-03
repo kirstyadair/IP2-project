@@ -29,7 +29,7 @@ public class KnivesScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && fireCooldown <= 0)
         {
             GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
-            knife.AddComponent<ThrowingKnifeScript>();
+            //knife.AddComponent<ThrowingKnifeScript>();
             knife.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
             fireCooldown = 0.5f;
         }
