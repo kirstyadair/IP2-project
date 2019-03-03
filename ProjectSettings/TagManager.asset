@@ -8,6 +8,7 @@ TagManager:
   - TempAI
   - Map
   - Spawnpoint
+  - Wall
   layers:
   - Default
   - TransparentFX

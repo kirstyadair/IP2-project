@@ -2092,7 +2092,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (23)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2101,6 +2101,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2185,7 +2189,7 @@ PrefabInstance:
     - target: {fileID: 2331695766217806697, guid: 74ee8a7ba629a1343b4733bddcfbeeaa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2331695766217806708, guid: 74ee8a7ba629a1343b4733bddcfbeeaa,
         type: 3}
@@ -3553,7 +3557,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (21)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3562,6 +3566,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3920,7 +3928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3929,6 +3937,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4114,7 +4126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (43)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4123,6 +4135,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5035,7 +5051,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (1)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5044,6 +5060,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5893,7 +5913,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (22)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5902,6 +5922,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5980,7 +6004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (42)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5989,6 +6013,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7670,7 +7698,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (2)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7679,6 +7707,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9940,7 +9972,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (4)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9949,6 +9981,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10542,7 +10578,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (29)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10551,6 +10587,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11854,7 +11894,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (3)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11863,6 +11903,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12030,7 +12074,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_Name
-      value: cuub (24)
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12039,6 +12083,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffb84506a4091ee4e8b61585773bd1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14633,6 +14681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CrazyChef
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230911776428660906, guid: 61da20717c876ef459bab374c0668d09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3230911776428660919, guid: 61da20717c876ef459bab374c0668d09,
         type: 3}
