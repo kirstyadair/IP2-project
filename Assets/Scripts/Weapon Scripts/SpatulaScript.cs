@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpatulaScript : MonoBehaviour
 {
-    float hitCountdown = 2.0f;
+    float hitCountdown = 0.2f;
+    public float spatulaRadiusHit;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,7 @@ public class SpatulaScript : MonoBehaviour
 
         if (Input.GetButton("Fire1") && hitCountdown <= 0)
         {
-            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, 0.5f);
-            Debug.Log("Number of hit enemies: " + hitEnemies.Length);
+            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, spatulaRadiusHit);
             foreach (Collider sushi in hitEnemies)
             {
                 if (sushi.tag == "Zombie")
@@ -28,7 +28,7 @@ public class SpatulaScript : MonoBehaviour
                     sushi.gameObject.GetComponent<ZombieScript>().Hit();
                 }
             }
-            hitCountdown = 2.0f;
+            hitCountdown = 0.2f;
         }
         
     }

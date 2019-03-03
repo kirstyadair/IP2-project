@@ -14694,5 +14694,10 @@ PrefabInstance:
       propertyPath: isAIControlled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8533484789762580388, guid: 61da20717c876ef459bab374c0668d09,
+        type: 3}
+      propertyPath: spatulaRadiusHit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61da20717c876ef459bab374c0668d09, type: 3}
