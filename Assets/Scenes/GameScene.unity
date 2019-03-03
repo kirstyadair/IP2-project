@@ -406,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_Name
-      value: AIPlayer (1)
+      value: ThinChefAI
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -468,6 +468,11 @@ PrefabInstance:
       propertyPath: isAIControlled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: chefType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd07273a72bbf754f85f3fb2bdec8353, type: 3}
 --- !u!4 &71165539 stripped
@@ -516,7 +521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1daedbf26159bfe42a1ef4306d214906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knifePrefab: {fileID: 0}
+  knifePrefab: {fileID: 100960119685943176, guid: 5f735c972cf71664da1f33e111eceece,
+    type: 3}
   fireCooldown: 0
   reticle: {fileID: 0}
 --- !u!1001 &75064319
@@ -12202,7 +12208,7 @@ PrefabInstance:
     - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_Name
-      value: AIPlayer
+      value: CrazyChefAI
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -12262,6 +12268,11 @@ PrefabInstance:
     - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: isAIControlled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: chefType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12639,7 +12650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1993285893
 MonoBehaviour:
   m_ObjectHideFlags: 0
