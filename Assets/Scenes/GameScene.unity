@@ -3050,7 +3050,7 @@ PrefabInstance:
     - target: {fileID: 2331695766217806697, guid: 74ee8a7ba629a1343b4733bddcfbeeaa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2331695766217806708, guid: 74ee8a7ba629a1343b4733bddcfbeeaa,
         type: 3}
@@ -9315,9 +9315,9 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 25
+    sushiCount: 200
     secondsBeforeSpawning: 5
-    timeBetweenSpawns: 0.2
+    timeBetweenSpawns: 0.1
   - sushiType: 1
     sushiCount: 25
     secondsBeforeSpawning: 5
@@ -18931,7 +18931,7 @@ PrefabInstance:
     - target: {fileID: 3230911776428660906, guid: 61da20717c876ef459bab374c0668d09,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3230911776428660919, guid: 61da20717c876ef459bab374c0668d09,
         type: 3}

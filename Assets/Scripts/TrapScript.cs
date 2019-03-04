@@ -6,6 +6,7 @@ public class TrapScript : MonoBehaviour
 {
     bool trapDeactivated = false;
     float timeToExplode;
+    public float trapRadius;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class TrapScript : MonoBehaviour
     {
         if (timeToExplode <= 0)
         {
-            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, 5);
+            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
             //Debug.Log("Number of hit enemies: " + hitEnemies.Length);
             foreach (Collider zombie in hitEnemies)
             {
