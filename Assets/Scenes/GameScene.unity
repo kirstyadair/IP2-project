@@ -9315,11 +9315,11 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 200
+    sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
   - sushiType: 1
-    sushiCount: 25
+    sushiCount: 100
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
 --- !u!1 &1018727638
