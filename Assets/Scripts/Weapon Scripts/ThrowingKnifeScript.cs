@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ThrowingKnifeScript : MonoBehaviour
 {
-    float timeToDestroy = 3.0f;
+    float timeToDestroy = 10.0f;
+    float knifeLength = 0.25f;
+    Vector3 origin;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        origin = transform.position;
     }
 
     // Update is called once per frame
@@ -34,14 +36,26 @@ public class ThrowingKnifeScript : MonoBehaviour
 
         if (collision.tag == "Wall")
         {
-            Debug.Log("collision");
-            rb.constraints = RigidbodyConstraints.FreezePosition;
-            Wiggle();
+            Destroy(gameObject);
+            //Rigidbody rb = GetComponent<Rigidbody>();
+            //rb.constraints = RigidbodyConstraints.FreezePosition;
+            //Wiggle();
         }
     }
 
-    void Wiggle()
+    /*void Wiggle()
     {
+        // find entry direction
+        Vector3 knifeDirection = transform.position - origin;
+        knifeDirection.y = 0.25f;
+        knifeDirection.Normalize();
+
+        
+
+        transform.Translate((-knifeDirection.x * (knifeLength/2)), 0, 0);
+        Vector3 newpos = transform.position;
+        newpos.y = 0.25f;
+
         // find how much time is left until the knife is destroyed
         float timeLeft = timeToDestroy;
 
@@ -49,19 +63,19 @@ public class ThrowingKnifeScript : MonoBehaviour
         {
             StartCoroutine(WiggleUp());
         }
-    }
+    }*/
 
-    IEnumerator WiggleUp()
+    /*IEnumerator WiggleUp()
     {
         transform.Rotate(0, 10, 0);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(WiggleDown());
     }
 
     IEnumerator WiggleDown()
     {
         transform.Rotate(0, -10, 0);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(WiggleUp());
-    }
+    }*/
 }

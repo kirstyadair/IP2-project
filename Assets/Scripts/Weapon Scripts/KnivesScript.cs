@@ -27,6 +27,7 @@ public class KnivesScript : MonoBehaviour
         if (Input.GetMouseButton(0) == true && fireTimeout <= 0)
         {
             Vector3 bulletDirection = playerScript.reticlePos - transform.position;
+            bulletDirection.y = 0.25f;
             bulletDirection.Normalize();
 
             Shoot(bulletDirection);
