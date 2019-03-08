@@ -2,36 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TrapType
+{
+    COOKER, EXTINGUISHER, SINK
+}
+
 public class TrapScript : MonoBehaviour
 {
+    // Cooker trap variables
     bool trapDeactivated = false;
     float timeToExplode;
     public float trapRadius;
+
+    // Extinguisher trap variables
+    bool firing = true;
+
+    public TrapType trapType;
 
     // Start is called before the first frame update
     void Start()
     {
         timeToExplode = 3.0f;
-        transform.localScale = new Vector3(1, 1, 0);
+        if (trapType == TrapType.EXTINGUISHER)
+        {
+            GetComponent<ParticleSystem>().Play();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeToExplode <= 0)
+        if (trapType == TrapType.COOKER)
         {
-            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
-            //Debug.Log("Number of hit enemies: " + hitEnemies.Length);
-            foreach (Collider zombie in hitEnemies)
+            if (timeToExplode <= 0)
             {
-                if (zombie.tag == "Zombie")
+                Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
+                foreach (Collider zombie in hitEnemies)
                 {
-                    zombie.gameObject.GetComponent<ZombieScript>().Hit();
+                    if (zombie.tag == "Zombie")
+                    {
+                        zombie.gameObject.GetComponent<ZombieScript>().Hit();
+                    }
                 }
+                gameObject.SetActive(false);
+                trapDeactivated = true;
+                timeToExplode = 3;
             }
-            gameObject.SetActive(false);
-            trapDeactivated = true;
-            timeToExplode = 3;
+        }
+        
+        if (trapType == TrapType.EXTINGUISHER)
+        {
+            if (firing)
+            {
+
+            }
         }
     }
 
@@ -39,15 +63,19 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Collided, press E to detonate");
-            if (Input.GetKeyDown(KeyCode.E))
+            if (trapType == TrapType.COOKER)
             {
-                Debug.Log("E pressed");
-                if (!trapDeactivated)
+                Debug.Log("Collided, press E to detonate");
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    StartCoroutine(Grow());
+                    Debug.Log("E pressed");
+                    if (!trapDeactivated)
+                    {
+                        StartCoroutine(Grow());
+                    }
                 }
             }
+            
         }
     }
 
@@ -59,7 +87,7 @@ public class TrapScript : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
-        while (transform.localScale.x <= 1.5f);
+        while (transform.localScale.x <= 8.5f);
 
         if (timeToExplode > 0)
         {
@@ -76,7 +104,7 @@ public class TrapScript : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
         }
-        while (transform.localScale.x >= 1f);
+        while (transform.localScale.x >= 8f);
 
         if (timeToExplode > 0)
         {
