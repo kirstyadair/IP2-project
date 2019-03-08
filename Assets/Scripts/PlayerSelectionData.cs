@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct PlayerSelection
+public class PlayerSelection
 {
     public InputDevice input;
-    public ChefType chef;
+    public PlayerType playerType;
 }
 
 public class PlayerSelectionData : MonoBehaviour

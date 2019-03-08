@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ChefType
+public enum PlayerType
 {
-    FAT, CRAZY, THIN
+    UNDECIDED, FAT, CRAZY, THIN, HORDE
 }
 
 public class PlayerScript : MonoBehaviour
@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     public bool isAIControlled;
 
     [Tooltip("Type of chef")]
-    public ChefType chefType;
+    public PlayerType chefType;
     
 
     Rigidbody rb;
