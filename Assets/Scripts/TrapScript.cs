@@ -15,9 +15,15 @@ public class TrapScript : MonoBehaviour
     public float trapRadius;
 
     // Extinguisher trap variables
-    bool firing = true;
+    bool activated = true;
+    float timeToDeactivate = 10.0f;
+    float maxTimeToDeactivate;
+    float timeToActivate = 20.0f;
+    float maxTimeToActivate;
 
     public TrapType trapType;
+
+    public ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +31,9 @@ public class TrapScript : MonoBehaviour
         timeToExplode = 3.0f;
         if (trapType == TrapType.EXTINGUISHER)
         {
-            GetComponent<ParticleSystem>().Play();
+            ps = GetComponent<ParticleSystem>();
+            timeToDeactivate = maxTimeToDeactivate;
+            StartCoroutine(Deactivate());
         }
     }
 
@@ -52,10 +60,7 @@ public class TrapScript : MonoBehaviour
         
         if (trapType == TrapType.EXTINGUISHER)
         {
-            if (firing)
-            {
-
-            }
+            
         }
     }
 
@@ -110,6 +115,51 @@ public class TrapScript : MonoBehaviour
         {
             Debug.Log("Growing");
             StartCoroutine(Grow());
+        }
+    }
+
+    IEnumerator Deactivate()
+    {
+        Debug.Log("Coroutine called");
+
+        if (!ps.isPlaying)
+        {
+            ps.Play();
+            Debug.Log("Particle system playing");
+        }
+
+        do
+        {
+            Debug.Log("Loop reached");
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeToDeactivate -= Time.deltaTime;
+
+        } while (timeToDeactivate >= 0);
+        
+
+        if (timeToDeactivate <= 0)
+        {
+            Debug.Log("Loop finished");
+            StartCoroutine(Activate());
+            timeToDeactivate = maxTimeToDeactivate;
+        }
+    }
+
+    IEnumerator Activate()
+    {
+        if (ps.isPlaying) ps.Pause();
+
+        do
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeToActivate -= Time.deltaTime;
+
+        } while (timeToActivate >= 0);
+
+        if (timeToActivate <= 0)
+        {
+            StartCoroutine(Deactivate());
+            timeToActivate = maxTimeToActivate;
         }
     }
 }
