@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using InControl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,6 +37,9 @@ public class PlayerScript : MonoBehaviour
 
     public bool up, down, left, right;
 
+    // InControl InputDevice
+    InputDevice input;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,10 +69,17 @@ public class PlayerScript : MonoBehaviour
             lineRenderer.SetPosition(1, reticlePos);
             reticle.transform.position = reticlePos;
 
-            Vector3 direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
-            rb.velocity = direction * moveSpeed;
+            Vector3 direction = new Vector3(0, 0, 0);
 
-            
+            if (input == null) // If we have no controller, default to keyboard input
+            {
+                direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
+            } else
+            {
+                direction = new Vector3(input.LeftStick.Vector.x, 0, input.LeftStick.Vector.y);
+            }
+
+            rb.velocity = direction * moveSpeed;
         }
         else // if we are AI controlled
         {

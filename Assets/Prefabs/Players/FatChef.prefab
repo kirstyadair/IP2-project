@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfc51e64fd6d04479c0cb6200e7b48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ketchupPrefab: {fileID: 0}
+  ketchupPrefab: {fileID: 3409766765662946152, guid: a839d6fb1847a744e8e94c12c9b62a3a,
+    type: 3}
   ketchupSpread: {x: 0.09, y: 0, z: 0.075}
   playerScript: {fileID: 2400729507838504379}
 --- !u!1001 &7936617778958383098
@@ -53,11 +54,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 2400729509559249425}
     - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_Name
@@ -66,17 +62,17 @@ PrefabInstance:
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.204
+      value: 0.847
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.279
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -118,6 +114,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: reticle
+      value: 
+      objectReference: {fileID: 2400729509559249425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd07273a72bbf754f85f3fb2bdec8353, type: 3}
 --- !u!4 &2400729507838504377 stripped
