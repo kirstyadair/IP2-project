@@ -7077,8 +7077,8 @@ MonoBehaviour:
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   reticleSlowness: 5
   crosshairDefault: {fileID: 1994634841}
-  wiggleMultiplier: 25
-  forceMultiplier: 12
+  wiggleMultiplier: 15
+  forceMultiplier: 20
   crosshairBounds: 100
   eyesSushi: {fileID: 21300000, guid: bab1ecaf2af525f47ae6d5172330a44c, type: 3}
   tentacleSushi: {fileID: 21300000, guid: 6ca8ab5ba10ac2242951e31165f44e2e, type: 3}
@@ -10329,7 +10329,7 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 10
+    sushiCount: 20
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
   - sushiType: 1

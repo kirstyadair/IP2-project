@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8076792157544580354}
   - component: {fileID: 8076792157544580353}
   - component: {fileID: 3050425991681141169}
+  - component: {fileID: 8723889564263752200}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Zombie
@@ -5000,3 +5001,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &8723889564263752200
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076792157544580352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.37
+  m_Center: {x: 0, y: 0, z: 0}

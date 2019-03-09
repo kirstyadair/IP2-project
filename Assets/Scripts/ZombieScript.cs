@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class ZombieScript : MonoBehaviour
 {
-    public bool hasEnteredBuilding = true;
-    public bool isBeingYeeted = false;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +19,7 @@ public class ZombieScript : MonoBehaviour
 
     public void Hit()
     {
-        if (hasEnteredBuilding && !isBeingYeeted) Kill();
+        Kill();
     }
 
     public void Kill()
