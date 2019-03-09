@@ -6,30 +6,32 @@ public class SpatulaScript : MonoBehaviour
 {
     float hitCountdown = 0.2f;
     public float spatulaRadiusHit;
-
+    PlayerScript playerScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScript = GetComponent<PlayerScript>();
+        playerScript.OnFire += Fire;
+    }
+
+    void Fire()
+    {
+        if (hitCountdown > 0) return;
+
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, spatulaRadiusHit);
+        foreach (Collider sushi in hitEnemies)
+        {
+            if (sushi.tag == "Zombie")
+            {
+                sushi.gameObject.GetComponent<ZombieScript>().Hit();
+            }
+        }
+        hitCountdown = 0.2f;
     }
 
     // Update is called once per frame
     void Update()
     {
         hitCountdown -= Time.deltaTime;
-
-        if (Input.GetButton("Fire1") && hitCountdown <= 0)
-        {
-            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, spatulaRadiusHit);
-            foreach (Collider sushi in hitEnemies)
-            {
-                if (sushi.tag == "Zombie")
-                {
-                    sushi.gameObject.GetComponent<ZombieScript>().Hit();
-                }
-            }
-            hitCountdown = 0.2f;
-        }
-        
     }
 }
