@@ -11,11 +11,12 @@ public class PlayerSelectionScript : MonoBehaviour
     public GameObject pressStartToBegin;
     public List<PlayerSelection> players = new List<PlayerSelection>();
 
+    PlayerSelectionData playerSelectionObject;
     bool starting = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerSelectionObject = GameObject.Find("PlayerSelectionData").GetComponent<PlayerSelectionData>();
     }
 
     // Update is called once per frame
@@ -109,15 +110,12 @@ public class PlayerSelectionScript : MonoBehaviour
         foreach (PlayerSelection plr in players) if (plr.playerType == PlayerType.HORDE) hordePicked = true;
 
         if (!hordePicked) players[Random.Range(0, players.Count)].playerType = PlayerType.HORDE;
-
-
-        //StartCoroutine(ChangeScene());
     }
 
     // Pass the player selection details to the PlayerSelectionObject to be persisted into the GameScene
     void PreparePlayerSelectionObject()
     {
-
+        playerSelectionObject.playerSelections = players;
     }
 
     IEnumerator ChangeScene()
