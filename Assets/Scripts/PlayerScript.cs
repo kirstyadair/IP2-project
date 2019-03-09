@@ -137,11 +137,12 @@ public class PlayerScript : MonoBehaviour
         firingDown = false;
 
         Vector3 lineToReticle = transform.position - reticlePos;
+        lineToReticle.Normalize();
 
         if (firing)
         {
-            if (lineToReticle.x > 0.1f) firingLeft = true;
-            if (lineToReticle.x < -0.1f) firingRight = true;
+            if (lineToReticle.x > 0.5f) firingLeft = true;
+            if (lineToReticle.x < -0.5f) firingRight = true;
             if (lineToReticle.z > 0.1f) firingDown = true;
             if (lineToReticle.z < -0.1f) firingUp = true;
         }
