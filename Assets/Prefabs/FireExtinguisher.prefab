@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8486430056413082565}
   - component: {fileID: 3364252521612197361}
   - component: {fileID: 6822842157632632768}
-  - component: {fileID: 5406812077564749069}
+  - component: {fileID: 7833456862478749937}
   m_Layer: 0
   m_Name: FireExtinguisher
   m_TagString: Untagged
@@ -112,7 +112,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4775,7 +4775,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.2062113, y: 5.1237, z: 10.929513}
   m_Center: {x: 0.093617275, y: -1.5618495, z: 4.9647555}
---- !u!114 &5406812077564749069
+--- !u!114 &7833456862478749937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4784,9 +4784,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1359553584153114092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c2fdffa620b834e857f4bf5aa84df2, type: 3}
+  m_Script: {fileID: 11500000, guid: b9b339e597dc0674a8711fa4faf2079a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapRadius: 0
-  trapType: 1
   ps: {fileID: 8486430056413082565}
