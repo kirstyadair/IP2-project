@@ -26,6 +26,7 @@ public class HordeScript : MonoBehaviour
     [Header("Horde settings")]
     public float wiggleMultiplier;
     public float forceMultiplier;
+    public float crosshairBounds;
 
     [Header("Sushi sprites")]
     public Sprite eyesSushi;
@@ -34,6 +35,7 @@ public class HordeScript : MonoBehaviour
     public int zombiesAlive;
     public int zombiesTotal;
     public bool isSpawning = false;
+    public Transform center;
 
     // Start is called before the first frame update
     void Awake()
@@ -130,7 +132,7 @@ public class HordeScript : MonoBehaviour
     {
         //minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         //maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(-Screen.width, -Screen.height, Camera.main.transform.position.z));
-
+        /*
         Ray ray1 = Camera.main.ScreenPointToRay(new Vector3(0, 0));
         Ray ray2 = Camera.main.ScreenPointToRay(new Vector3(Screen.width, Screen.height));
 
@@ -142,6 +144,7 @@ public class HordeScript : MonoBehaviour
 
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
+        */
 
         int alive = 0;
         foreach (Transform child in transform)
@@ -154,11 +157,13 @@ public class HordeScript : MonoBehaviour
 
         zombiesAlive = alive;
 
+        Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
         centerPoint = crosshair.transform.position;
-
         // Move crosshair and constrain within world
         crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
-        crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
+
+        if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
+        //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }
 
 

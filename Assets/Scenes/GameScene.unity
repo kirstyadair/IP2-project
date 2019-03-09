@@ -4927,13 +4927,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.5997301, y: -0, z: -0, w: 0.8002025}
-  m_LocalPosition: {x: -4.61, y: 7.67, z: -4.24}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -4.61, y: 10.51, z: 0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 73.701004, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7079,11 +7079,13 @@ MonoBehaviour:
   crosshairDefault: {fileID: 1994634841}
   wiggleMultiplier: 25
   forceMultiplier: 12
+  crosshairBounds: 100
   eyesSushi: {fileID: 21300000, guid: bab1ecaf2af525f47ae6d5172330a44c, type: 3}
   tentacleSushi: {fileID: 21300000, guid: 6ca8ab5ba10ac2242951e31165f44e2e, type: 3}
   zombiesAlive: 0
   zombiesTotal: 0
   isSpawning: 0
+  center: {fileID: 1168982927}
 --- !u!4 &736823584
 Transform:
   m_ObjectHideFlags: 0
@@ -11789,6 +11791,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bbc729bb1cdbcc42835926fb3143f69, type: 3}
+--- !u!1 &1168982926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168982927}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168982927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168982926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.73, y: 0.72, z: -0.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170891720
 GameObject:
   m_ObjectHideFlags: 0
