@@ -1,4 +1,5 @@
 ﻿using InControl;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,5 +24,15 @@ public class PlayerSelectionData : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public InputDevice GetHordeController()
+    {
+        foreach (PlayerSelection plr in playerSelections)
+        {
+            if (plr.playerType == PlayerType.HORDE) return plr.input;
+        }
+
+        return null;
     }
 }
