@@ -8,27 +8,33 @@ public class KetchupScript : MonoBehaviour
     Rigidbody rb;
     public GameObject audioObject;
     KetchupBeamScript ketchupBeamScript;
+    bool firing = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         ketchupBeamScript = GameObject.Find("KetchupSpawnPoint").GetComponent<KetchupBeamScript>();
+        ketchupBeamScript.playerScript.OnFire += Fire;
     }
-    
+
+    void Fire()
+    {
+        firing = true;
+    }
+
 
     void Update()
     {
         timeToDestroy -= Time.deltaTime;
 
-        if (Input.GetButton("Fire1"))
+        if (firing)
         {
             transform.localScale += ketchupBeamScript.ketchupSpread;
-        }
-
-        if (Input.GetButtonUp("Fire1"))
+            firing = false;
+        } else
         {
-            transform.localScale -= new Vector3(ketchupBeamScript.ketchupSpread.x*3, 0f, ketchupBeamScript.ketchupSpread.z*2);
+            //transform.localScale -= new Vector3(ketchupBeamScript.ketchupSpread.x * 3, 0f, ketchupBeamScript.ketchupSpread.z * 2);
         }
 
 

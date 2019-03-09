@@ -244,10 +244,15 @@ MonoBehaviour:
   isAIControlled: 0
   chefType: 0
   reticlePos: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
+  up: 0
+  down: 0
+  left: 0
+  right: 0
 --- !u!199 &5725655216475216455
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5070,7 +5075,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5725655216475216478}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: cfcd8170191d0df4ca6d6cc5a02babf6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25

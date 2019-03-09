@@ -9,6 +9,7 @@ TagManager:
   - Map
   - Spawnpoint
   - Wall
+  - Player spawnpoint
   layers:
   - Default
   - TransparentFX

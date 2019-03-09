@@ -10,6 +10,11 @@ public class KetchupBeamScript : MonoBehaviour
     //public Vector3 ketchupPuddle;
     public PlayerScript playerScript;
 
+    private void Awake()
+    {
+        playerScript.OnFire += Fire;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,22 +24,24 @@ public class KetchupBeamScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 direction = playerScript.reticlePos - transform.position;
+        if (playerScript.controller == null && Input.GetButton("Fire1")) Fire(); // Fire with mouse click when in keyboard/mouse control
+    }
 
-        if (direction.x >= 2) direction.x = 2;
-        if (direction.y >= 2) direction.y = 2;
-        if (direction.z >= 2) direction.z = 2;
-
-        direction.Normalize();
-
+    public void Fire()
+    {
         if (gameData.state != GameState.PREP)
         {
-            if (Input.GetButton("Fire1"))
-            {
-                GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
-                ketchup.AddComponent<KetchupScript>();
-                ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-            }
+            Vector3 direction = playerScript.reticlePos - transform.position;
+
+            if (direction.x >= 2) direction.x = 2;
+            if (direction.y >= 2) direction.y = 2;
+            if (direction.z >= 2) direction.z = 2;
+
+            direction.Normalize();
+
+            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
+            //ketchup.AddComponent<KetchupScript>();
+            ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
         }
     }
 

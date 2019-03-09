@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePrefab: {fileID: 100960119685943176, guid: 5f735c972cf71664da1f33e111eceece,
     type: 3}
-  fireCooldown: 0
+  fireCooldown: 0.5
   reticle: {fileID: 2331695767902835932}
 --- !u!1001 &8011417647355775287
 PrefabInstance:
@@ -23,6 +23,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_Name
+      value: ThinChef
+      objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: reticle
@@ -30,13 +35,13 @@ PrefabInstance:
       objectReference: {fileID: 2331695767902835932}
     - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
       propertyPath: chefType
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_Name
-      value: ThinChef
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -46,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.444
+      value: 0.338
       objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}

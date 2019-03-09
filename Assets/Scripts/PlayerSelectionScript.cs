@@ -35,7 +35,6 @@ public class PlayerSelectionScript : MonoBehaviour
 
             foreach (PlayerSelection plr in players)
             {
-                Debug.Log("Comparing " + currentInput.GUID + " against " + plr.input.GUID + " - result: " + (plr.input.GUID == currentInput.GUID));
                 if (plr.input.GUID == currentInput.GUID) alreadyActive = true;
             }
 
@@ -86,7 +85,7 @@ public class PlayerSelectionScript : MonoBehaviour
         foreach (PlayerSelection plr in players) plr.playerType = PlayerType.UNDECIDED;
 
         // Available player types 
-        PlayerType[] availableTypes = { PlayerType.CRAZY, PlayerType.THIN, PlayerType.FAT, PlayerType.HORDE };
+        PlayerType[] availableTypes = {  PlayerType.FAT, PlayerType.HORDE };
 
         // Randomly pick a unique typ per player
         foreach (PlayerSelection plr in players)

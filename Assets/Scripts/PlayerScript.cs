@@ -11,6 +11,9 @@ public enum PlayerType
 
 public class PlayerScript : MonoBehaviour
 {
+    public delegate void ShootingEvent();
+    public event ShootingEvent OnFire;
+
     public GameObject reticle;
 
     [Tooltip("Hitpoints before player dies")]
@@ -38,7 +41,7 @@ public class PlayerScript : MonoBehaviour
     public bool up, down, left, right;
 
     // InControl InputDevice
-    InputDevice input;
+    public InputDevice controller;
 
     // Start is called before the first frame update
     void Start()
@@ -57,13 +60,34 @@ public class PlayerScript : MonoBehaviour
         // human player reticle
         if (!isAIControlled)
         {
-            // raycast to place reticle
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
-            reticlePos = hit.point;
+            // Keyboard and mouse input places the reticle via raycast
+            if (controller == null)
+            {
+                // raycast to place reticle
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
+                reticlePos = hit.point;
+                reticlePos.y = transform.position.y;
+            } else
+            {
+                // check if the right stick is being pushed enough to be past the deadzone
+                if (controller.RightStick.Vector.magnitude > controller.RightStick.LowerDeadZone)
+                {
+                    // otherwise the reticle is placed with the right analog stick
+                    Vector3 rightStick = new Vector3(controller.RightStick.Vector.x, 0, controller.RightStick.Vector.y);
 
-            reticlePos.y = transform.position.y;
+                    reticlePos = transform.position + rightStick;
+
+
+                    // trigger firing events
+                    OnFire();
+                } else
+                {
+                    reticlePos = transform.position;
+                }
+            }
+
             lineRenderer.enabled = true;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, reticlePos);
@@ -71,12 +95,12 @@ public class PlayerScript : MonoBehaviour
 
             Vector3 direction = new Vector3(0, 0, 0);
 
-            if (input == null) // If we have no controller, default to keyboard input
+            if (controller == null) // If we have no controller, default to keyboard input
             {
                 direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
             } else
             {
-                direction = new Vector3(input.LeftStick.Vector.x, 0, input.LeftStick.Vector.y);
+                direction = new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y);
             }
 
             rb.velocity = direction * moveSpeed;
