@@ -15,15 +15,14 @@ public class TrapScript : MonoBehaviour
     public float trapRadius;
 
     // Extinguisher trap variables
+    float timeToDeactivate = 5.0f;
+    float timeToActivate = 5.0f;
     bool activated = true;
-    float timeToDeactivate = 10.0f;
-    float maxTimeToDeactivate;
-    float timeToActivate = 20.0f;
-    float maxTimeToActivate;
 
     public TrapType trapType;
 
     public ParticleSystem ps;
+    public BoxCollider bCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +31,9 @@ public class TrapScript : MonoBehaviour
         if (trapType == TrapType.EXTINGUISHER)
         {
             ps = GetComponent<ParticleSystem>();
-            timeToDeactivate = maxTimeToDeactivate;
-            StartCoroutine(Deactivate());
+            timeToDeactivate = 5.0f;
+            StartCoroutine(PSActive());
+            bCollider = GetComponent<BoxCollider>();
         }
     }
 
@@ -60,7 +60,9 @@ public class TrapScript : MonoBehaviour
         
         if (trapType == TrapType.EXTINGUISHER)
         {
-            
+            // if active, enable the collider
+            if (activated) bCollider.enabled = true;
+            else bCollider.enabled = false;
         }
     }
 
@@ -118,37 +120,38 @@ public class TrapScript : MonoBehaviour
         }
     }
 
-    IEnumerator Deactivate()
+    IEnumerator PSActive()
     {
-        Debug.Log("Coroutine called");
-
+        activated = true;
         if (!ps.isPlaying)
         {
             ps.Play();
-            Debug.Log("Particle system playing");
         }
 
+        timeToDeactivate = 5.0f;
         do
         {
-            Debug.Log("Loop reached");
             yield return new WaitForSeconds(Time.deltaTime);
             timeToDeactivate -= Time.deltaTime;
 
         } while (timeToDeactivate >= 0);
         
-
         if (timeToDeactivate <= 0)
         {
-            Debug.Log("Loop finished");
-            StartCoroutine(Activate());
-            timeToDeactivate = maxTimeToDeactivate;
+            Debug.Log("Deactivating");
+            StartCoroutine(PSInactive());
         }
     }
 
-    IEnumerator Activate()
+    IEnumerator PSInactive()
     {
-        if (ps.isPlaying) ps.Pause();
+        activated = false;
+        if (ps.isPlaying)
+        {
+            ps.Stop();
+        }
 
+        timeToActivate = 5.0f;
         do
         {
             yield return new WaitForSeconds(Time.deltaTime);
@@ -158,8 +161,8 @@ public class TrapScript : MonoBehaviour
 
         if (timeToActivate <= 0)
         {
-            StartCoroutine(Deactivate());
-            timeToActivate = maxTimeToActivate;
+            Debug.Log("Activating");
+            StartCoroutine(PSActive());
         }
     }
 }
