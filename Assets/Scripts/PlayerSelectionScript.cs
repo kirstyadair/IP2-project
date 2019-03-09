@@ -85,7 +85,7 @@ public class PlayerSelectionScript : MonoBehaviour
         foreach (PlayerSelection plr in players) plr.playerType = PlayerType.UNDECIDED;
 
         // Available player types 
-        PlayerType[] availableTypes = {  PlayerType.FAT, PlayerType.HORDE };
+        PlayerType[] availableTypes = {  PlayerType.THIN, PlayerType.HORDE };
 
         // Randomly pick a unique typ per player
         foreach (PlayerSelection plr in players)
