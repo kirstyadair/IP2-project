@@ -24,7 +24,7 @@ public class KetchupBeamScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (playerScript.controller == null && Input.GetButton("Fire1")) Fire(); // Fire with mouse click when in keyboard/mouse control
+        //if (playerScript.controller == null && Input.GetButton("Fire1")) Fire(); // Fire with mouse click when in keyboard/mouse control
     }
 
     public void Fire()
@@ -40,6 +40,7 @@ public class KetchupBeamScript : MonoBehaviour
             direction.Normalize();
 
             GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
+            ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
             //ketchup.AddComponent<KetchupScript>();
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
         }

@@ -36,11 +36,16 @@ TextureImporter:
     21300062: Fat_Chef_Sprites_31
     21300064: Fat_Chef_Sprites_32
     21300066: Fat_Chef_Sprites_33
+    21300068: Fat_Chef_Sprites_34
+    21300070: Fat_Chef_Sprites_35
+    21300072: Fat_Chef_Sprites_36
+    21300074: Fat_Chef_Sprites_37
+    21300076: Fat_Chef_Sprites_38
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -79,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,9 +137,9 @@ TextureImporter:
       name: Fat_Chef_Sprites_0
       rect:
         serializedVersion: 2
-        x: 78
+        x: 863
         y: 2394
-        width: 707
+        width: 710
         height: 727
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -143,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe43e3565d34904590077368cc2ae9c
+      spriteID: 9f5229a8b64932d4892d129b3860f35f
       vertices: []
       indices: 
       edges: []
@@ -152,10 +157,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_1
       rect:
         serializedVersion: 2
-        x: 789
-        y: 2753
-        width: 17
-        height: 14
+        x: 1576
+        y: 2752
+        width: 18
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c92e3e3c4f8eb404e863a3f4676a24bd
+      spriteID: 108a99ccd05dfd54aa46ff729ba8bdce
       vertices: []
       indices: 
       edges: []
@@ -172,10 +177,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_2
       rect:
         serializedVersion: 2
-        x: 868
-        y: 2392
-        width: 707
-        height: 721
+        x: 1654
+        y: 2393
+        width: 710
+        height: 722
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f5dcdf1ef58baa4e918f2a284a5aafa
+      spriteID: 414ff6269a9529a46a066fb754dfa359
       vertices: []
       indices: 
       edges: []
@@ -192,10 +197,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_3
       rect:
         serializedVersion: 2
-        x: 1672
-        y: 2385
-        width: 707
-        height: 726
+        x: 2456
+        y: 2386
+        width: 710
+        height: 727
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f54fc755fdf50504fbc0c62e91fc25a2
+      spriteID: 608455887a7756849b56d48acd74bfde
       vertices: []
       indices: 
       edges: []
@@ -212,10 +217,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_4
       rect:
         serializedVersion: 2
-        x: 2383
+        x: 3169
         y: 2744
-        width: 11
-        height: 14
+        width: 10
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,7 +228,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fca2f67f1fef4f4fa608fa27a0c3053
+      spriteID: 3108f39e849a4204a913728755ec6169
       vertices: []
       indices: 
       edges: []
@@ -232,10 +237,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_5
       rect:
         serializedVersion: 2
-        x: 2485
-        y: 2396
-        width: 655
-        height: 723
+        x: 3271
+        y: 2394
+        width: 656
+        height: 727
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abf253dc7653b984a82682d8639d26d0
+      spriteID: c7210b3bc824d4d45b3101f63a3fb0a3
       vertices: []
       indices: 
       edges: []
@@ -252,69 +257,9 @@ TextureImporter:
       name: Fat_Chef_Sprites_6
       rect:
         serializedVersion: 2
-        x: 3202
-        y: 2389
-        width: 653
-        height: 717
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b47c4cf565d7e0e4cb025f07878a1c30
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_7
-      rect:
-        serializedVersion: 2
-        x: 2413
-        y: 2563
-        width: 24
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fefcb749138cf246a1a7b93dfa52678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_8
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 1647
-        width: 665
-        height: 713
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5d43b8199113984cad08ab795b57bc4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_9
-      rect:
-        serializedVersion: 2
-        x: 822
-        y: 1637
-        width: 665
+        x: 3987
+        y: 2386
+        width: 656
         height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -323,7 +268,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d757b5aea243c542b412aa003fb89e5
+      spriteID: 3ed4881007eb37a49ab1b8d62404f198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 4756
+        y: 2381
+        width: 604
+        height: 718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08fa27db50d27c4a825782923072560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2562
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a508454cd1026c34797251b9f7925d08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 5382
+        y: 2548
+        width: 13
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a59573599a6d643a833bb0e89c9dac
       vertices: []
       indices: 
       edges: []
@@ -332,10 +337,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_10
       rect:
         serializedVersion: 2
-        x: 2772
-        y: 2331
-        width: 36
-        height: 10
+        x: 860
+        y: 1646
+        width: 667
+        height: 716
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,7 +348,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6580cb10e709a24090f951991ad22ac
+      spriteID: 7d531bf33bbcae941b66489c6f586534
       vertices: []
       indices: 
       edges: []
@@ -352,10 +357,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_11
       rect:
         serializedVersion: 2
-        x: 3221
-        y: 1625
-        width: 523
-        height: 723
+        x: 1608
+        y: 1638
+        width: 664
+        height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,7 +368,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acf77e9ced167834aa5b2860bac5164b
+      spriteID: 2ba8544d99b52f641b42d82f591b0209
       vertices: []
       indices: 
       edges: []
@@ -372,10 +377,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_12
       rect:
         serializedVersion: 2
-        x: 1618
-        y: 2167
-        width: 4
-        height: 4
+        x: 3233
+        y: 1657
+        width: 653
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,7 +388,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72075885755603e48857ee2744fdf6aa
+      spriteID: 46fee8ecbc128b34094eab8e84a647f8
       vertices: []
       indices: 
       edges: []
@@ -392,10 +397,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_13
       rect:
         serializedVersion: 2
-        x: 1670
-        y: 1659
-        width: 651
-        height: 668
+        x: 3558
+        y: 2331
+        width: 37
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,7 +408,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae7588f430a80bb4d8d33fa1b6f19694
+      spriteID: 887fdd8e0cbca9d46b7fc01d600c45b3
       vertices: []
       indices: 
       edges: []
@@ -412,10 +417,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_14
       rect:
         serializedVersion: 2
-        x: 2447
-        y: 1658
-        width: 652
-        height: 673
+        x: 4005
+        y: 1624
+        width: 525
+        height: 724
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,7 +428,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a0b26fa906d04f45a54550b1b240def
+      spriteID: 7b0ca2ad826328543be10b5025fb2be4
       vertices: []
       indices: 
       edges: []
@@ -432,10 +437,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_15
       rect:
         serializedVersion: 2
-        x: 3745
-        y: 1880
-        width: 5
-        height: 8
+        x: 4744
+        y: 1630
+        width: 535
+        height: 716
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,7 +448,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a05833014d2af684b9eab1282027da34
+      spriteID: baae0d98b8674374ab3aa03b3133152b
       vertices: []
       indices: 
       edges: []
@@ -452,10 +457,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_16
       rect:
         serializedVersion: 2
-        x: 3743
-        y: 1868
-        width: 5
-        height: 6
+        x: 2406
+        y: 1658
+        width: 701
+        height: 670
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,7 +468,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26068f3dece24ca4ebc9f15b03552105
+      spriteID: 396a6d0f58c50fb4991f0653140c359e
       vertices: []
       indices: 
       edges: []
@@ -472,8 +477,108 @@ TextureImporter:
       name: Fat_Chef_Sprites_17
       rect:
         serializedVersion: 2
-        x: 3159
-        y: 1796
+        x: 2863
+        y: 2318
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c598307f355983e41a884362bc33f473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 4531
+        y: 1881
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fb7936d6e097e42a4df97b60e754e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 4712
+        y: 1755
+        width: 51
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0933b21b4547524cac5ca1a4a7d853d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 4528
+        y: 1867
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de2ad370fde8da42a922e32cb20b825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 4618
+        y: 1760
+        width: 107
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe08fc47e209c2e4e9c8c0adc429864c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_22
+      rect:
+        serializedVersion: 2
+        x: 3945
+        y: 1795
         width: 11
         height: 13
       alignment: 0
@@ -483,107 +588,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 480fd1c0b6ae1ef43afdee1cc2079750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_18
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 891
-        width: 555
-        height: 719
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf0667b246f02394b81c55a54beecd45
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_19
-      rect:
-        serializedVersion: 2
-        x: 853
-        y: 790
-        width: 655
-        height: 791
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d27e8520b95b1a44187ba25bdb8f3e4f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_20
-      rect:
-        serializedVersion: 2
-        x: 1645
-        y: 803
-        width: 655
-        height: 790
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1356166a0ebf8e54bbd395566f22c44c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_21
-      rect:
-        serializedVersion: 2
-        x: 2376
-        y: 807
-        width: 674
-        height: 784
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2d4380490ae5514ca801e704cf2c89a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_22
-      rect:
-        serializedVersion: 2
-        x: 2986
-        y: 1434
-        width: 138
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8026016d4b9eebe4faaef7c4844c0645
+      spriteID: fac7294f1916a2b498d5e66b28f126b0
       vertices: []
       indices: 
       edges: []
@@ -592,69 +597,9 @@ TextureImporter:
       name: Fat_Chef_Sprites_23
       rect:
         serializedVersion: 2
-        x: 3027
-        y: 793
-        width: 910
-        height: 797
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a83825d26717b0344827b3717db09479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_24
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 1029
-        width: 71
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ae5d9ecd2e48fb4593dfc1990afd5ea
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_25
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 61
-        width: 726
-        height: 747
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e064691d49968c446a0df2169f215fde
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_26
-      rect:
-        serializedVersion: 2
-        x: 803
-        y: 55
-        width: 694
+        x: 938
+        y: 890
+        width: 530
         height: 721
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -663,7 +608,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f4316e8c302ac844b10eb27b64cfd3d
+      spriteID: 138bc6677bacd6a448619279afa9b524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_24
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 790
+        width: 656
+        height: 791
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4864ba1227c9604da37ade90e195cf6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_25
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 801
+        width: 655
+        height: 794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222145a856f554d4cb191f97d03ba251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_26
+      rect:
+        serializedVersion: 2
+        x: 3162
+        y: 806
+        width: 676
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cd8a295f6caa549ac68ccfa7b4f12a
       vertices: []
       indices: 
       edges: []
@@ -672,10 +677,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_27
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 742
-        width: 13
-        height: 21
+        x: 3773
+        y: 1435
+        width: 137
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,7 +688,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33e4e902d39408941981c57792686161
+      spriteID: 53846fba3181ffb45b1dfd06875352cf
       vertices: []
       indices: 
       edges: []
@@ -692,10 +697,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_28
       rect:
         serializedVersion: 2
-        x: 1646
-        y: 39
-        width: 716
-        height: 723
+        x: 3812
+        y: 793
+        width: 914
+        height: 795
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -703,7 +708,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d594cb425b224743b196772339cf492
+      spriteID: cf7cc1c46ad9734478b36570171c302a
       vertices: []
       indices: 
       edges: []
@@ -712,69 +717,9 @@ TextureImporter:
       name: Fat_Chef_Sprites_29
       rect:
         serializedVersion: 2
-        x: 2485
-        y: 43
-        width: 650
-        height: 719
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64a1466227816564282be8a97c32733a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_30
-      rect:
-        serializedVersion: 2
-        x: 1550
-        y: 729
-        width: 9
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8b0db54dcc3af444ae7b576ede4c1e8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_31
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 731
-        width: 15
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0c1c51a1198ed744ab091d5997a01ad
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fat_Chef_Sprites_32
-      rect:
-        serializedVersion: 2
-        x: 1538
-        y: 721
-        width: 11
+        x: 912
+        y: 1136
+        width: 4
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -783,7 +728,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fea8c1777a6a82444be4523b6748a25c
+      spriteID: 07f5dd868fe685c41a722853bd8511e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 1028
+        width: 73
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10af3640ef82fdb4f8de1f3d52efb4d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_31
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 61
+        width: 663
+        height: 715
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06786c5c2adc0da4f8216e406f694c4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_32
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 55
+        width: 696
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0915341d1781d9d4b8d00beb83c21a9b
       vertices: []
       indices: 
       edges: []
@@ -792,10 +797,10 @@ TextureImporter:
       name: Fat_Chef_Sprites_33
       rect:
         serializedVersion: 2
-        x: 1434
-        y: 702
-        width: 102
-        height: 19
+        x: 2398
+        y: 743
+        width: 10
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -803,7 +808,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6d35ca681eb27c458a8133720cfc2bc
+      spriteID: 4692e918450ccaf47a36dff2b1c5ae35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_34
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 39
+        width: 716
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82b77c097f05fe4da065a98e200eead
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_35
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 42
+        width: 654
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7277cb6ea816f594fbfe08524f4af6b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_36
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 722
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4431adc8b25e8224baee49e49213ec8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_37
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 732
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcccd46c9c7ca3f418e227df21268bba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fat_Chef_Sprites_38
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 703
+        width: 102
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a41e57654945a140a5c7eba60d28af1
       vertices: []
       indices: 
       edges: []

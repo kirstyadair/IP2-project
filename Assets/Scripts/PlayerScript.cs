@@ -69,6 +69,8 @@ public class PlayerScript : MonoBehaviour
                 Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
                 reticlePos = hit.point;
                 reticlePos.y = transform.position.y;
+
+                if (Input.GetMouseButton(0)) OnFire();
             } else
             {
                 // check if the right stick is being pushed enough to be past the deadzone

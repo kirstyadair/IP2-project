@@ -7,14 +7,14 @@ public class KetchupScript : MonoBehaviour
     float timeToDestroy = 3.0f;
     Rigidbody rb;
     public GameObject audioObject;
-    KetchupBeamScript ketchupBeamScript;
+    public KetchupBeamScript ketchupBeamScript;
+
     bool firing = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        ketchupBeamScript = GameObject.Find("KetchupSpawnPoint").GetComponent<KetchupBeamScript>();
         ketchupBeamScript.playerScript.OnFire += Fire;
     }
 
