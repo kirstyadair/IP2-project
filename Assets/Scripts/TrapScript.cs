@@ -12,11 +12,13 @@ public class TrapScript : MonoBehaviour
     public float trapRadius;
     ParticleSystem smokePS;
     public ParticleSystem firePS;
+    Vector3 trapCentre;
 
     // Start is called before the first frame update
     void Start()
     {
         timeToExplode = 3.0f;
+        trapCentre = GetComponent<BoxCollider>().bounds.center;
     }
 
     // Update is called once per frame
@@ -28,15 +30,16 @@ public class TrapScript : MonoBehaviour
             {
                 Debug.Log("Emitting");
                 firePS.Emit(20);
+                firePS.emissionRate = 0;
                 hasExploded = true;
             }
             
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
-            foreach (Collider zombie in hitEnemies)
+            foreach (Collider hit in hitEnemies)
             {
-                if (zombie.tag == "Zombie")
+                if (hit.tag == "Zombie")
                 {
-                    zombie.gameObject.GetComponent<ZombieScript>().Hit();
+                    hit.gameObject.GetComponent<ZombieScript>().Hit();
                 }
             }
             trapDeactivated = true;
