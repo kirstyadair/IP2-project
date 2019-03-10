@@ -11,6 +11,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
 
     public ParticleSystem ps;
     BoxCollider bCollider;
+    CapsuleCollider cCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +20,14 @@ public class ExtinguisherTrapScript : MonoBehaviour
         timeToDeactivate = 5.0f;
         StartCoroutine(PSActive());
         bCollider = GetComponent<BoxCollider>();
+        cCollider = GetComponent<CapsuleCollider>();
+        bCollider.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if active, enable the collider
-        if (activated) bCollider.enabled = true;
-        else bCollider.enabled = false;
+        
     }
 
     IEnumerator PSActive()
@@ -47,7 +48,6 @@ public class ExtinguisherTrapScript : MonoBehaviour
 
         if (timeToDeactivate <= 0)
         {
-            Debug.Log("Deactivating");
             StartCoroutine(PSInactive());
         }
     }
@@ -67,27 +67,37 @@ public class ExtinguisherTrapScript : MonoBehaviour
             timeToActivate -= Time.deltaTime;
 
         } while (timeToActivate >= 0);
-
-        if (timeToActivate <= 0)
-        {
-            Debug.Log("Activating");
-            StartCoroutine(PSActive());
-        }
     }
 
     void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Zombie")
+    { 
+        if (activated)
         {
-            Rigidbody zombieRB = other.GetComponent<Rigidbody>();
-            Vector3 dir = (bCollider.center - transform.position);
-            zombieRB.AddForce(dir*2, ForceMode.Impulse);
-        }
+            if (other.tag == "Zombie")
+            {
+                Rigidbody zombieRB = other.GetComponent<Rigidbody>();
+                Vector3 dir = (bCollider.center - transform.position);
+                zombieRB.AddForce(dir * 2, ForceMode.Impulse);
+            }
 
-        if (other.tag == "Player")
+            if (other.tag == "Player")
+            {
+                Vector3 dir = (bCollider.center - transform.position);
+                other.GetComponent<PlayerScript>().pushForce = dir * 2;
+            }
+        }
+        
+        if (!activated)
         {
-            Vector3 dir = (bCollider.center - transform.position);
-            other.GetComponent<PlayerScript>().pushForce = dir*2;
+            if (other.tag == "Player")
+            {
+                Debug.Log("Collision");
+                if (Input.GetKey(KeyCode.R))
+                {
+                    Debug.Log("R pressed");
+                    StartCoroutine(PSActive());
+                }
+            }
         }
     }
 }
