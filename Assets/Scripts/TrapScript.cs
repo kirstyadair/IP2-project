@@ -6,10 +6,12 @@ public class TrapScript : MonoBehaviour
 {
     // Cooker trap variables
     bool trapDeactivated = false;
+    bool hasExploded = false;
     float timeToExplode;
     float timeToReactivate;
     public float trapRadius;
-    ParticleSystem ps;
+    ParticleSystem smokePS;
+    public ParticleSystem firePS;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,13 @@ public class TrapScript : MonoBehaviour
     {
         if (timeToExplode <= 0)
         {
+            if (!hasExploded)
+            {
+                Debug.Log("Emitting");
+                firePS.Emit(20);
+                hasExploded = true;
+            }
+            
             Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
             foreach (Collider zombie in hitEnemies)
             {
@@ -32,8 +41,8 @@ public class TrapScript : MonoBehaviour
             }
             trapDeactivated = true;
             timeToExplode = 3;
-            ps = GetComponent<ParticleSystem>();
-            if (!ps.isPlaying) ps.Play();
+            smokePS = GetComponent<ParticleSystem>();
+            if (!smokePS.isPlaying) smokePS.Play();
             StartCoroutine(Reactivate());
         }
     }
@@ -102,8 +111,9 @@ public class TrapScript : MonoBehaviour
 
         if (timeToReactivate <= 0)
         {
-            ps.Stop();
+            smokePS.Stop();
             trapDeactivated = false;
+            hasExploded = false;
         }
     }
 }
