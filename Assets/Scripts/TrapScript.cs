@@ -7,7 +7,9 @@ public class TrapScript : MonoBehaviour
     // Cooker trap variables
     bool trapDeactivated = false;
     float timeToExplode;
+    float timeToReactivate;
     public float trapRadius;
+    ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +30,11 @@ public class TrapScript : MonoBehaviour
                     zombie.gameObject.GetComponent<ZombieScript>().Hit();
                 }
             }
-            gameObject.SetActive(false);
             trapDeactivated = true;
             timeToExplode = 3;
+            ps = GetComponent<ParticleSystem>();
+            if (!ps.isPlaying) ps.Play();
+            StartCoroutine(Reactivate());
         }
     }
 
@@ -38,8 +42,10 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Collided");
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("E pressed, trap deactivated " + trapDeactivated);
                 if (!trapDeactivated)
                 {
                     StartCoroutine(Grow());
@@ -55,6 +61,7 @@ public class TrapScript : MonoBehaviour
             transform.localScale += new Vector3(0.05f, 0.05f, 0);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
+            if (timeToExplode <= 0) break;
         }
         while (transform.localScale.x <= 8.5f);
 
@@ -72,6 +79,7 @@ public class TrapScript : MonoBehaviour
             transform.localScale -= new Vector3(0.05f, 0.05f, 0);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToExplode -= Time.deltaTime;
+            if (timeToExplode <= 0) break;
         }
         while (transform.localScale.x >= 8f);
 
@@ -79,6 +87,23 @@ public class TrapScript : MonoBehaviour
         {
             Debug.Log("Growing");
             StartCoroutine(Grow());
+        }
+    }
+
+    IEnumerator Reactivate()
+    {
+        timeToReactivate = 60.0f;
+        do
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            timeToReactivate -= Time.deltaTime;
+        }
+        while (timeToReactivate >= 0);
+
+        if (timeToReactivate <= 0)
+        {
+            ps.Stop();
+            trapDeactivated = false;
         }
     }
 }

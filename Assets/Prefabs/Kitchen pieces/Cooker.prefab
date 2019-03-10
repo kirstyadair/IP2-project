@@ -781,6 +781,7 @@ GameObject:
   - component: {fileID: 772375462}
   - component: {fileID: 283540431}
   - component: {fileID: 283540430}
+  - component: {fileID: 7328016607943024868}
   m_Layer: 0
   m_Name: Cooker
   m_TagString: Untagged
@@ -5512,6 +5513,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &7328016607943024868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772375461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16245873, y: 0.08345059, z: 0.13080661}
+  m_Center: {x: 0.000101094505, y: 0.04062656, z: 0.021449571}
 --- !u!1 &828547881
 GameObject:
   m_ObjectHideFlags: 0
