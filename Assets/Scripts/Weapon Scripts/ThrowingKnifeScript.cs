@@ -6,13 +6,12 @@ public class ThrowingKnifeScript : MonoBehaviour
 {
     float timeToDestroy = 10.0f;
     float knifeLength = 0.25f;
-    Vector3 origin;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        origin = transform.position;
+
     }
 
     // Update is called once per frame
