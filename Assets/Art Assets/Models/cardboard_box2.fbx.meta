@@ -1,26 +1,15 @@
 fileFormatVersion: 2
-guid: 7a68ff9baf7a47c418af180832b6dee6
+guid: 385763ae414525f459d948acccd098f4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: wood4
-    2100002: metal
+    2100000: cardboard
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube14
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: metal
-    second: {fileID: 2100000, guid: 2c5081d2ececbbd4182b892d7763bdb7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wood4
-    second: {fileID: 2100000, guid: 246963ae8dad85d40815342fd59b87d8, type: 2}
+    4300000: pCube27
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
