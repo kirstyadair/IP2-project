@@ -12,6 +12,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
     bool canReactivate = true;
 
     public ParticleSystem ps;
+    //public ParticleSystem sparksPS;
     BoxCollider bCollider;
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
         canReactivate = false;
         if (!ps.isPlaying)
         {
+            //sparksPS.Stop();
             ps.Play();
         }
 
@@ -58,17 +60,19 @@ public class ExtinguisherTrapScript : MonoBehaviour
         if (ps.isPlaying)
         {
             ps.Stop();
+            //sparksPS.Play();
         }
         activated = false;
 
         // trap will not be able to activate again for the next 60 seconds
-        timeToActivate = 60.0f;
+        timeToActivate = 5.0f;
         do
         {
             yield return new WaitForSeconds(Time.deltaTime);
             timeToActivate -= Time.deltaTime;
 
         } while (timeToActivate >= 0);
+        //sparksPS.Stop();
         canReactivate = true;
     }
 
