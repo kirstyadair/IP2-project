@@ -79,12 +79,16 @@ public class ExtinguisherTrapScript : MonoBehaviour
     {
         if (other.tag == "Zombie")
         {
-
+            Rigidbody zombieRB = other.GetComponent<Rigidbody>();
+            Vector3 dir = (bCollider.center - transform.position);
+            zombieRB.AddForce(dir*2, ForceMode.Impulse);
         }
 
         if (other.tag == "Player")
         {
-
+            Rigidbody playerRB = other.GetComponent<Rigidbody>();
+            Vector3 dir = (bCollider.center - transform.position);
+            playerRB.AddForce(dir * -50, ForceMode.Impulse);
         }
     }
 }
