@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject reticle;
 
     [Tooltip("Hitpoints before player dies")]
-    int numOfHits = 5;
+    public int numOfHits = 5;
 
     [Tooltip("Speed the player moves at")]
     public float moveSpeed;

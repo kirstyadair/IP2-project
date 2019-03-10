@@ -8,6 +8,8 @@ public class ExtinguisherTrapScript : MonoBehaviour
     float timeToDeactivate = 10.0f;
     float timeToActivate = 60.0f;
     bool activated = true;
+    bool playerHurt = false;
+    bool canReactivate = true;
 
     public ParticleSystem ps;
     BoxCollider bCollider;
@@ -31,6 +33,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
     IEnumerator PSActive()
     {
         activated = true;
+        canReactivate = false;
         if (!ps.isPlaying)
         {
             ps.Play();
@@ -56,6 +59,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
         {
             ps.Stop();
         }
+        activated = false;
 
         // trap will not be able to activate again for the next 60 seconds
         timeToActivate = 60.0f;
@@ -65,8 +69,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
             timeToActivate -= Time.deltaTime;
 
         } while (timeToActivate >= 0);
-
-        activated = false;
+        canReactivate = true;
     }
 
 
@@ -80,18 +83,24 @@ public class ExtinguisherTrapScript : MonoBehaviour
             {
                 Rigidbody zombieRB = other.GetComponent<Rigidbody>();
                 Vector3 dir = (bCollider.center - transform.position);
-                zombieRB.AddForce(dir * 2, ForceMode.Impulse);
+                zombieRB.AddForce(dir, ForceMode.Impulse);
+                other.GetComponent<ZombieScript>().Hit();
             }
 
             if (other.tag == "Player")
             {
                 Vector3 dir = (bCollider.center - transform.position);
                 other.GetComponent<PlayerScript>().pushForce = dir * 2;
+                if (!playerHurt)
+                {
+                    playerHurt = true;
+                    other.GetComponent<PlayerScript>().numOfHits--;
+                }
             }
         }
         
         // if the trap is not activated, allow player to activate by pressing E
-        if (!activated)
+        if (!activated && canReactivate)
         {
             if (other.tag == "Player")
             {
