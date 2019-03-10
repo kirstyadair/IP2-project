@@ -5,22 +5,20 @@ using UnityEngine;
 public class ExtinguisherTrapScript : MonoBehaviour
 {
     // Variables
-    float timeToDeactivate = 5.0f;
-    float timeToActivate = 5.0f;
+    float timeToDeactivate = 10.0f;
+    float timeToActivate = 60.0f;
     bool activated = true;
 
     public ParticleSystem ps;
     BoxCollider bCollider;
-    CapsuleCollider cCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
-        timeToDeactivate = 5.0f;
+        timeToDeactivate = 10.0f;
         StartCoroutine(PSActive());
         bCollider = GetComponent<BoxCollider>();
-        cCollider = GetComponent<CapsuleCollider>();
         bCollider.enabled = true;
     }
 
@@ -38,7 +36,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
             ps.Play();
         }
 
-        timeToDeactivate = 5.0f;
+        timeToDeactivate = 10.0f;
         do
         {
             yield return new WaitForSeconds(Time.deltaTime);
@@ -59,7 +57,8 @@ public class ExtinguisherTrapScript : MonoBehaviour
             ps.Stop();
         }
 
-        timeToActivate = 5.0f;
+        // trap will not be able to activate again for the next 60 seconds
+        timeToActivate = 60.0f;
         do
         {
             yield return new WaitForSeconds(Time.deltaTime);
