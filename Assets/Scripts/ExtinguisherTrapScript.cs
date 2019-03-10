@@ -86,10 +86,8 @@ public class ExtinguisherTrapScript : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Rigidbody playerRB = other.GetComponent<Rigidbody>();
             Vector3 dir = (bCollider.center - transform.position);
             other.GetComponent<PlayerScript>().pushForce = dir*2;
-            //playerRB.AddForce(dir * -50, ForceMode.Impulse);
         }
     }
 }
