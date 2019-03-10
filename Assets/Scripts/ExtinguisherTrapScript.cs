@@ -54,7 +54,6 @@ public class ExtinguisherTrapScript : MonoBehaviour
 
     IEnumerator PSInactive()
     {
-        activated = false;
         if (ps.isPlaying)
         {
             ps.Stop();
@@ -67,10 +66,15 @@ public class ExtinguisherTrapScript : MonoBehaviour
             timeToActivate -= Time.deltaTime;
 
         } while (timeToActivate >= 0);
+
+        activated = false;
     }
 
+
+    
     void OnTriggerStay(Collider other)
     { 
+        // if the trap is activated, push away and apply damage
         if (activated)
         {
             if (other.tag == "Zombie")
@@ -87,14 +91,15 @@ public class ExtinguisherTrapScript : MonoBehaviour
             }
         }
         
+        // if the trap is not activated, allow player to activate by pressing E
         if (!activated)
         {
             if (other.tag == "Player")
             {
                 Debug.Log("Collision");
-                if (Input.GetKey(KeyCode.R))
+                if (Input.GetKey(KeyCode.E))
                 {
-                    Debug.Log("R pressed");
+                    Debug.Log("E pressed");
                     StartCoroutine(PSActive());
                 }
             }
