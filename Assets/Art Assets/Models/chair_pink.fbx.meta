@@ -12,7 +12,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube51
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bamboo1
+    second: {fileID: 2100000, guid: 311dc7f9914b48443bb5f4349124a5ff, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
