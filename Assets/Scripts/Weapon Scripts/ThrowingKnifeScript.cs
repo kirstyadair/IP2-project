@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ThrowingKnifeScript : MonoBehaviour
 {
-    float timeToDestroy = 10.0f;
+    public AudioClip knifeLandSound;
+    public AudioClip knifeThrowSound;
+    float timeToDestroy = 3f;
     float knifeLength = 0.25f;
+    Animator animator;
+    AudioSource audioSource;
+    public ParticleSystem particleSystem;
     Vector3 origin;
     Rigidbody rb;
 
@@ -13,6 +18,10 @@ public class ThrowingKnifeScript : MonoBehaviour
     void Start()
     {
         origin = transform.position;
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(knifeThrowSound);
     }
 
     // Update is called once per frame
@@ -36,7 +45,11 @@ public class ThrowingKnifeScript : MonoBehaviour
 
         if (collision.tag == "Wall")
         {
-            Destroy(gameObject);
+            rb.velocity = Vector3.zero;
+            animator.Play("wiggle");
+            particleSystem.Emit(50);
+            audioSource.PlayOneShot(knifeLandSound);
+            //Destroy(gameObject);
             //Rigidbody rb = GetComponent<Rigidbody>();
             //rb.constraints = RigidbodyConstraints.FreezePosition;
             //Wiggle();
