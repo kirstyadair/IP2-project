@@ -44,6 +44,9 @@ public class PlayerScript : MonoBehaviour
     // InControl InputDevice
     public InputDevice controller;
 
+    // If you want to apply a force to the player, do it with this vector
+    public Vector3 pushForce;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -112,7 +115,12 @@ public class PlayerScript : MonoBehaviour
                 direction = new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y);
             }
 
-            rb.velocity = direction * moveSpeed;
+
+            rb.velocity = (direction * moveSpeed) + pushForce;
+
+            pushForce /= 2;
+
+            //if (pushForce.magnitude < 0.2f) pushForce = new Vector3(0, 0, 0);
         }
         else // if we are AI controlled
         {

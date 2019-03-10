@@ -75,7 +75,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "Zombie")
         {
@@ -88,7 +88,8 @@ public class ExtinguisherTrapScript : MonoBehaviour
         {
             Rigidbody playerRB = other.GetComponent<Rigidbody>();
             Vector3 dir = (bCollider.center - transform.position);
-            playerRB.AddForce(dir * -50, ForceMode.Impulse);
+            other.GetComponent<PlayerScript>().pushForce = dir*2;
+            //playerRB.AddForce(dir * -50, ForceMode.Impulse);
         }
     }
 }
