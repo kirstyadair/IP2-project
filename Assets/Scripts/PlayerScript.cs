@@ -38,7 +38,8 @@ public class PlayerScript : MonoBehaviour
 
     public Animator animator;
 
-    public bool up, down, left, right;
+    public bool up, down, left, right, firingUp, firingDown, firingLeft, firingRight;
+    public bool firing = false;
 
     // InControl InputDevice
     public InputDevice controller;
@@ -56,7 +57,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        firing = false;
         // human player reticle
         if (!isAIControlled)
         {
@@ -70,11 +71,15 @@ public class PlayerScript : MonoBehaviour
                 reticlePos = hit.point;
                 reticlePos.y = transform.position.y;
 
-                if (Input.GetMouseButton(0)) OnFire();
+                if (Input.GetMouseButton(0))
+                {
+                    firing = true;
+                    OnFire();
+                }
             } else
             {
                 // check if the right stick is being pushed enough to be past the deadzone
-                if (controller.RightStick.Vector.magnitude > controller.RightStick.LowerDeadZone)
+                if (controller.RightStick.Vector.magnitude > 0.5)
                 {
                     // otherwise the reticle is placed with the right analog stick
                     Vector3 rightStick = new Vector3(controller.RightStick.Vector.x, 0, controller.RightStick.Vector.y);
@@ -84,6 +89,8 @@ public class PlayerScript : MonoBehaviour
 
                     // trigger firing events
                     OnFire();
+
+                    firing = true;
                 } else
                 {
                     reticlePos = transform.position;
@@ -118,10 +125,27 @@ public class PlayerScript : MonoBehaviour
         }
 
 
+        // this section is for working out the animation
         up = false;
         down = false;
         left = false;
         right = false;
+
+        firingLeft = false;
+        firingRight = false;
+        firingUp = false;
+        firingDown = false;
+
+        Vector3 lineToReticle = transform.position - reticlePos;
+        lineToReticle.Normalize();
+
+        if (firing)
+        {
+            if (lineToReticle.x > 0.5f) firingLeft = true;
+            if (lineToReticle.x < -0.5f) firingRight = true;
+            if (lineToReticle.z > 0.1f) firingDown = true;
+            if (lineToReticle.z < -0.1f) firingUp = true;
+        }
 
         if (rb.velocity.z > 0.1f) up = true; 
         if (rb.velocity.z < -0.1f) down = true;  
@@ -132,18 +156,39 @@ public class PlayerScript : MonoBehaviour
         if (animator != null)
         {
             animator.enabled = true;
-            if (right || left)
+
+            if (!firing)
             {
-                if (right) animator.Play("walk right");
-                if (left) animator.Play("walk left");
-            }
-            else if (up || down)
-            {
-                if (up) animator.Play("walk up");
-                if (down) animator.Play("walk down");
+                if (right || left)
+                {
+                    if (right) animator.Play("walk right");
+                    if (left) animator.Play("walk left");
+                }
+                else if (up || down)
+                {
+                    if (up) animator.Play("walk up");
+                    if (down) animator.Play("walk down");
+                }
+                else
+                {
+                    animator.enabled = false;
+                }
             } else
             {
-                animator.enabled = false;
+                if (firingRight || firingLeft)
+                {
+                    if (firingRight) animator.Play("fire right");
+                    if (firingLeft) animator.Play("fire left");
+                }
+                else if (firingUp || firingDown)
+                {
+                    if (firingUp) animator.Play("fire up");
+                    if (firingDown) animator.Play("fire down");
+                }
+                else
+                {
+                    animator.enabled = false;
+                }
             }
         }
     }

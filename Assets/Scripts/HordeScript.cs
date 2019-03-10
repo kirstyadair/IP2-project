@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using InControl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,11 +38,18 @@ public class HordeScript : MonoBehaviour
     public bool isSpawning = false;
     public Transform center;
 
+    InputDevice controller;
     // Start is called before the first frame update
     void Awake()
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += OnStateChange;
+
+        GameObject selectiomDataObj = GameObject.Find("PlayerSelectionData");
+        if (selectiomDataObj != null)
+        {
+            controller = selectiomDataObj.GetComponent<PlayerSelectionData>().GetHordeController();
+        }
     }
 
     public void OnStateChange(GameState oldState, GameState newState)
@@ -160,8 +168,8 @@ public class HordeScript : MonoBehaviour
         Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
         centerPoint = crosshair.transform.position;
         // Move crosshair and constrain within world
-        crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
-
+        if (controller == null) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
+        else crosshair.transform.position += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y)) / 10;
         if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
         //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }
