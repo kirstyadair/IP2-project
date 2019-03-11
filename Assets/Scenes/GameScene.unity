@@ -12689,6 +12689,18 @@ MonoBehaviour:
     sushiCount: 100
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
+  - sushiType: 0
+    sushiCount: 200
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.05
+  - sushiType: 1
+    sushiCount: 200
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.05
+  - sushiType: 0
+    sushiCount: 250
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.05
 --- !u!1 &1012832081
 GameObject:
   m_ObjectHideFlags: 0

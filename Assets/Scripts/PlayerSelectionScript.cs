@@ -22,6 +22,11 @@ public class PlayerSelectionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.E))
+        {
+            Destroy(GameObject.Find("PlayerSelectionData"));
+            SceneManager.LoadScene("GameScene");
+        }
         // Get the inputdevice that was most recently pressed
         InputDevice currentInput = InputManager.ActiveDevice;
 
