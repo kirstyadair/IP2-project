@@ -219,10 +219,10 @@ public class PlayerScript : MonoBehaviour
 
             numOfHits--;
 
-            if (numOfHits <= 0)
+           /* if (numOfHits <= 0)
             {
                 Destroy(gameObject);
-            }
+            }*/
         }
     }
     
