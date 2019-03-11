@@ -2965,7 +2965,22 @@ ModelImporter:
     2300000: pSphere1276
     3300000: pSphere1276
     4300000: pSphere1276
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: green_bamboo
+    second: {fileID: 2100000, guid: 2d6f1ccc50f7a5a4289578891c74f3eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone
+    second: {fileID: 2100000, guid: 4a740c142413fe54c97791e3bc2df55e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stones
+    second: {fileID: 2100000, guid: 5df074a9580738d438556669d118b62b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
