@@ -55,7 +55,7 @@ public class TrapScript : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("Collided");
-            if (Input.GetKeyDown(KeyCode.E))
+            if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
             {
                 Debug.Log("E pressed, trap deactivated " + trapDeactivated);
                 if (!trapDeactivated)

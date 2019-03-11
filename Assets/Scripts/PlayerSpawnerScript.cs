@@ -69,7 +69,7 @@ public class PlayerSpawnerScript : MonoBehaviour
     void SpawnPlayersForKeyboardAndMouseControl()
     {
         SpawnPlayerAt(playerSpawnPoints[0], PlayerType.FAT, null);
-        SpawnPlayerAt(playerSpawnPoints[1], PlayerType.CRAZY, null);
+        //SpawnPlayerAt(playerSpawnPoints[1], PlayerType.CRAZY, null);
         SpawnPlayerAt(playerSpawnPoints[2], PlayerType.THIN, null);
     }
 
