@@ -42,7 +42,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: light-wood-grain-background-and-cherry-wood-texture-brown-wooden-pattern-wooden-floor-texture-wooden-17
-    second: {fileID: 2800000, guid: 68ca0d9795f35f9459e550c5364c3950, type: 3}
+    second: {fileID: 2800000, guid: 966e00de299be2a4991dcf77ff0868f3, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

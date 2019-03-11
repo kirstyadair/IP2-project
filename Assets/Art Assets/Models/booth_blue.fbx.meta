@@ -33,7 +33,17 @@ ModelImporter:
     2300000: pCube35
     3300000: pCube35
     4300000: pCube35
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bamboo1
+    second: {fileID: 2800000, guid: 07b3d4c124249ef49bf41c8863eb27b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cushion_blue
+    second: {fileID: 2800000, guid: 122489cfeded93b4f8581421453ed616, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

@@ -10,7 +10,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCylinder3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cooker1
+    second: {fileID: 2800000, guid: 15b439e8b22542844974cbd2b85cf884, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stool_new
+    second: {fileID: 2800000, guid: 8e4914f3e52d3d44ea94a3aeb7f29e25, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

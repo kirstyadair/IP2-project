@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube26
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: boxes_cardboard
+    second: {fileID: 2800000, guid: 72152f1021d59614499161eefc98446d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

@@ -18,6 +18,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: bamboo1
     second: {fileID: 2100000, guid: 311dc7f9914b48443bb5f4349124a5ff, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bamboo1
+    second: {fileID: 2800000, guid: 1adc1408211ba314b9cab34513390bb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cushion_purple
+    second: {fileID: 2800000, guid: ae89ae5949a4bd645b34f8fafd1bc8d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood2
+    second: {fileID: 2800000, guid: 3f7b6d6d54265584f8d5325223e6c3df, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
