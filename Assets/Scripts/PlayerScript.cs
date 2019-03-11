@@ -1,4 +1,5 @@
 ﻿using InControl;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -199,6 +200,12 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool IsActivatingTrap()
+    {
+        if (controller != null) return controller.Action1.IsPressed;
+        else return Input.GetKey(KeyCode.E);
     }
 
     // Colliding with a zombie, take damage!

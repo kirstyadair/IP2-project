@@ -7,10 +7,11 @@ public class ExtinguisherTrapScript : MonoBehaviour
     // Variables
     float timeToDeactivate = 10.0f;
     float timeToActivate = 60.0f;
-    bool activated = true;
+    bool activated = false;
     bool playerHurt = false;
     bool canReactivate = true;
 
+    Animator popupAnimator;
     public ParticleSystem ps;
     //public ParticleSystem sparksPS;
     BoxCollider bCollider;
@@ -20,9 +21,10 @@ public class ExtinguisherTrapScript : MonoBehaviour
     {
         ps = GetComponent<ParticleSystem>();
         timeToDeactivate = 10.0f;
-        StartCoroutine(PSActive());
+        //StartCoroutine(PSActive());
         bCollider = GetComponent<BoxCollider>();
         bCollider.enabled = true;
+        popupAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -77,7 +79,26 @@ public class ExtinguisherTrapScript : MonoBehaviour
     }
 
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag != "Player") return;
+
+        if (!activated && canReactivate)
+        {
+            popupAnimator.SetBool("show", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag != "Player") return;
+
+        if (!activated && canReactivate)
+        {
+            popupAnimator.SetBool("show", false);
+        }
+    }
+
     void OnTriggerStay(Collider other)
     { 
         // if the trap is activated, push away and apply damage
@@ -109,9 +130,11 @@ public class ExtinguisherTrapScript : MonoBehaviour
             if (other.tag == "Player")
             {
                 Debug.Log("Collision");
-                if (Input.GetKey(KeyCode.E))
+                if (other.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
                     Debug.Log("E pressed");
+                    popupAnimator.Play("select");
+                    popupAnimator.SetBool("show", false);
                     StartCoroutine(PSActive());
                 }
             }
