@@ -6,18 +6,18 @@ public class TrapScript : MonoBehaviour
 {
     // Cooker trap variables
     bool trapDeactivated = false;
+    bool activate = false;
     float timeToReactivate;
     public float trapRadius;
     ParticleSystem smokePS;
     public ParticleSystem firePS;
     Vector3 trapCentre;
-    Animator promptAnim;
+    public Animator promptAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         trapCentre = GetComponent<BoxCollider>().bounds.center;
-        promptAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -30,11 +30,12 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            
+            promptAnim.SetBool("activate", true);
             if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
             {
                 if (!trapDeactivated)
                 {
+                    promptAnim.SetBool("activate", false);
                     StartCoroutine(Detonate());
                 }
             }
