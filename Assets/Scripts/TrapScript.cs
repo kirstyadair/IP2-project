@@ -30,15 +30,25 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            promptAnim.SetBool("activate", true);
-            if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
+            if (!trapDeactivated)
             {
-                if (!trapDeactivated)
+                promptAnim.SetBool("activate", true);
+                if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
+
                     promptAnim.SetBool("activate", false);
                     StartCoroutine(Detonate());
+
                 }
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            promptAnim.SetBool("activate", false);
         }
     }
 
