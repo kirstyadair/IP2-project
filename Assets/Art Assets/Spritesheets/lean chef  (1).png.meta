@@ -1,0 +1,2694 @@
+fileFormatVersion: 2
+guid: 1cc3384b928ba3346891df8184d0384f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: lean chef  (1)_0
+    21300002: lean chef  (1)_1
+    21300004: lean chef  (1)_2
+    21300006: lean chef  (1)_3
+    21300008: lean chef  (1)_4
+    21300010: lean chef  (1)_5
+    21300012: lean chef  (1)_6
+    21300014: lean chef  (1)_7
+    21300016: lean chef  (1)_8
+    21300018: lean chef  (1)_9
+    21300020: lean chef  (1)_10
+    21300022: lean chef  (1)_11
+    21300024: lean chef  (1)_12
+    21300026: lean chef  (1)_13
+    21300028: lean chef  (1)_14
+    21300030: lean chef  (1)_15
+    21300032: lean chef  (1)_16
+    21300034: lean chef  (1)_17
+    21300036: lean chef  (1)_18
+    21300038: lean chef  (1)_19
+    21300040: lean chef  (1)_20
+    21300042: lean chef  (1)_21
+    21300044: lean chef  (1)_22
+    21300046: lean chef  (1)_23
+    21300048: lean chef  (1)_24
+    21300050: lean chef  (1)_25
+    21300052: lean chef  (1)_26
+    21300054: lean chef  (1)_27
+    21300056: lean chef  (1)_28
+    21300058: lean chef  (1)_29
+    21300060: lean chef  (1)_30
+    21300062: lean chef  (1)_31
+    21300064: lean chef  (1)_32
+    21300066: lean chef  (1)_33
+    21300068: lean chef  (1)_34
+    21300070: lean chef  (1)_35
+    21300072: lean chef  (1)_36
+    21300074: lean chef  (1)_37
+    21300076: lean chef  (1)_38
+    21300078: lean chef  (1)_39
+    21300080: lean chef  (1)_40
+    21300082: lean chef  (1)_41
+    21300084: lean chef  (1)_42
+    21300086: lean chef  (1)_43
+    21300088: lean chef  (1)_44
+    21300090: lean chef  (1)_45
+    21300092: lean chef  (1)_46
+    21300094: lean chef  (1)_47
+    21300096: lean chef  (1)_48
+    21300098: lean chef  (1)_49
+    21300100: lean chef  (1)_50
+    21300102: lean chef  (1)_51
+    21300104: lean chef  (1)_52
+    21300106: lean chef  (1)_53
+    21300108: lean chef  (1)_54
+    21300110: lean chef  (1)_55
+    21300112: lean chef  (1)_56
+    21300114: lean chef  (1)_57
+    21300116: lean chef  (1)_58
+    21300118: lean chef  (1)_59
+    21300120: lean chef  (1)_60
+    21300122: lean chef  (1)_61
+    21300124: lean chef  (1)_62
+    21300126: lean chef  (1)_63
+    21300128: lean chef  (1)_64
+    21300130: lean chef  (1)_65
+    21300132: lean chef  (1)_66
+    21300134: lean chef  (1)_67
+    21300136: lean chef  (1)_68
+    21300138: lean chef  (1)_69
+    21300140: lean chef  (1)_70
+    21300142: lean chef  (1)_71
+    21300144: lean chef  (1)_72
+    21300146: lean chef  (1)_73
+    21300148: lean chef  (1)_74
+    21300150: lean chef  (1)_75
+    21300152: lean chef  (1)_76
+    21300154: lean chef  (1)_77
+    21300156: lean chef  (1)_78
+    21300158: lean chef  (1)_79
+    21300160: lean chef  (1)_80
+    21300162: lean chef  (1)_81
+    21300164: lean chef  (1)_82
+    21300166: lean chef  (1)_83
+    21300168: lean chef  (1)_84
+    21300170: lean chef  (1)_85
+    21300172: lean chef  (1)_86
+    21300174: lean chef  (1)_87
+    21300176: lean chef  (1)_88
+    21300178: lean chef  (1)_89
+    21300180: lean chef  (1)_90
+    21300182: lean chef  (1)_91
+    21300184: lean chef  (1)_92
+    21300186: lean chef  (1)_93
+    21300188: lean chef  (1)_94
+    21300190: lean chef  (1)_95
+    21300192: lean chef  (1)_96
+    21300194: lean chef  (1)_97
+    21300196: lean chef  (1)_98
+    21300198: lean chef  (1)_99
+    21300200: lean chef  (1)_100
+    21300202: lean chef  (1)_101
+    21300204: lean chef  (1)_102
+    21300206: lean chef  (1)_103
+    21300208: lean chef  (1)_104
+    21300210: lean chef  (1)_105
+    21300212: lean chef  (1)_106
+    21300214: lean chef  (1)_107
+    21300216: lean chef  (1)_108
+    21300218: lean chef  (1)_109
+    21300220: lean chef  (1)_110
+    21300222: lean chef  (1)_111
+    21300224: lean chef  (1)_112
+    21300226: lean chef  (1)_113
+    21300228: lean chef  (1)_114
+    21300230: lean chef  (1)_115
+    21300232: lean chef  (1)_116
+    21300234: lean chef  (1)_117
+    21300236: lean chef  (1)_118
+    21300238: lean chef  (1)_119
+    21300240: lean chef  (1)_120
+    21300242: lean chef  (1)_121
+    21300244: lean chef  (1)_122
+    21300246: lean chef  (1)_123
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lean chef  (1)_0
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 3964
+        width: 660
+        height: 934
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6310593266fb5834ebdee48b9f736dbe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_1
+      rect:
+        serializedVersion: 2
+        x: 5521
+        y: 4922
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6ad930333f52f4cb1ac58583e901eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_2
+      rect:
+        serializedVersion: 2
+        x: 5550
+        y: 4915
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24145bf528bd4ad4f833006ee01e5a44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_3
+      rect:
+        serializedVersion: 2
+        x: 5477
+        y: 4911
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84886ec374246954489a0cf43698a321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_4
+      rect:
+        serializedVersion: 2
+        x: 6737
+        y: 4900
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebb387ed6a4be147953146ebfa0f49e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 4773
+        width: 153
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c243935c6e8f8d4dbdd8fb0e7bdf067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_6
+      rect:
+        serializedVersion: 2
+        x: 6693
+        y: 4889
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5bf5e10b283c3498c30651262c9bb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_7
+      rect:
+        serializedVersion: 2
+        x: 6766
+        y: 4892
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5344bfc21f462d4eb718a1d54a304c4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_8
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 3995
+        width: 627
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fe7ea8aa84f364e9abb3259d914688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_9
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 3995
+        width: 613
+        height: 875
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e369992c26de8c54497d66df2558663e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_10
+      rect:
+        serializedVersion: 2
+        x: 2753
+        y: 3995
+        width: 604
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765097215b83f9345bc86226c8dcc8d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_11
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 4789
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c989437c03757ad4c8c8e405c12b3b95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_12
+      rect:
+        serializedVersion: 2
+        x: 5174
+        y: 3975
+        width: 638
+        height: 901
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a976266038daee44f92483367c3af320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_13
+      rect:
+        serializedVersion: 2
+        x: 6389
+        y: 4008
+        width: 626
+        height: 847
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acde6b92469007a4fb162be9aaa83570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_14
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 4557
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e566c6ba6f8094cb038c418377dd89
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_15
+      rect:
+        serializedVersion: 2
+        x: 4530
+        y: 4246
+        width: 216
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b5fa7128f89f84891e68bbef193fd8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_16
+      rect:
+        serializedVersion: 2
+        x: 4541
+        y: 4564
+        width: 128
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee7423e3f5793e49acb63078452d30e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_17
+      rect:
+        serializedVersion: 2
+        x: 4768
+        y: 4477
+        width: 29
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5727d8e385ed6f4cb57cb5541dbd548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_18
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 4308
+        width: 73
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea193dc4611c9e344b439f8ab68243c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_19
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 4440
+        width: 17
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47afa5e4787cb8849898c5d6c5890426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_20
+      rect:
+        serializedVersion: 2
+        x: 4776
+        y: 4422
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181c3c57a6fc8124fb61e46a25e62658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_21
+      rect:
+        serializedVersion: 2
+        x: 4754
+        y: 4326
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ebaf727dcf9ef4eb3e3671e20bc411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_22
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 3916
+        width: 85
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff5e7d5d3b59d644abc10b4f1942d2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_23
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 3887
+        width: 190
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70596a15e230f294794964dcd13929cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_24
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 3911
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8081f4c4b0e8d924cbde6d0b320cd72a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_25
+      rect:
+        serializedVersion: 2
+        x: 4152
+        y: 3908
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19134673f07862e459232eb7b6b2d847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_26
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 3901
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7644ae42c09adf4397a7b64df515060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_27
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 3905
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff414e9fbadd0d48aedc93107b3b1bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_28
+      rect:
+        serializedVersion: 2
+        x: 5328
+        y: 3890
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10a79a6951cd4a4caa4355c2b127fc4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_29
+      rect:
+        serializedVersion: 2
+        x: 6550
+        y: 3893
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a346caee6252b4796919b4705f7c78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_30
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 3035
+        width: 465
+        height: 831
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb6ba114e231be4cba3422cfd41acc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_31
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 3599
+        width: 117
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da07ff0b660fa8441a2013950b5d2cb1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_32
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 3034
+        width: 419
+        height: 872
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51526c405f2df0b4791e6496f8965121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_33
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 3838
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbde7ca67c50634a8c23359a53089fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_34
+      rect:
+        serializedVersion: 2
+        x: 2491
+        y: 3042
+        width: 1162
+        height: 833
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b641552c8fb87f9418fdb6b552c087ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_35
+      rect:
+        serializedVersion: 2
+        x: 3693
+        y: 3042
+        width: 1148
+        height: 827
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3552f13e23f2b3c42b3102ab5a25309d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_36
+      rect:
+        serializedVersion: 2
+        x: 4889
+        y: 3020
+        width: 1108
+        height: 837
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3201c4554fc4e845b9ae008fe5f2d95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_37
+      rect:
+        serializedVersion: 2
+        x: 5151
+        y: 3834
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb3f9d2a032f434e9a9f248f7a7ed06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_38
+      rect:
+        serializedVersion: 2
+        x: 5175
+        y: 3802
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9470e9fd4f39484b8dd0d95c6f07837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_39
+      rect:
+        serializedVersion: 2
+        x: 6085
+        y: 3035
+        width: 1130
+        height: 822
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd1710623a973a43aa84fd06e6b4b4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_40
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 3768
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e963d39f1f25f4a8497da1622986e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_41
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 3775
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff37d43aa053d484984519715e8485f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_42
+      rect:
+        serializedVersion: 2
+        x: 3943
+        y: 3771
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748c1bf98aa63e34bb769a7305d3f339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_43
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 3764
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1694828f6bd84b489c504626fc5d10c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_44
+      rect:
+        serializedVersion: 2
+        x: 6342
+        y: 3757
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e1abf8a7ee81c439a329995d6b86b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_45
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3753
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacd79519d7e59040a1ea0ca7f65eb23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_46
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 3706
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84987fb4c339cbb45bc6bdeecef32257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_47
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 3707
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed99ca5496a862d42aaae12a3c578690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_48
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3710
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc495bba5f3afb1499779f4152854921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_49
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 3682
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f57d2c6a79f6941a6ee74cd5227fe2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_50
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 3180
+        width: 201
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a96e3c8684adaa479dac5ff869e6021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_51
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 3271
+        width: 150
+        height: 406
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3f025864aee5d4bb33a82deb632a19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_52
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 3455
+        width: 55
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7dfe075f11b6c646ab3bc4f33a7f712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_53
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 3378
+        width: 58
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560d83d48775b0a4cafee5585246c4c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_54
+      rect:
+        serializedVersion: 2
+        x: 2186
+        y: 3579
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5360bf941fcbd4c8b9de0482dc1cd2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_55
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 3158
+        width: 73
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b0e293f07e6f34f8f7b879e6fbd169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_56
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 3297
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fc5987bcf057d41a57d9774db53fa8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_57
+      rect:
+        serializedVersion: 2
+        x: 2728
+        y: 3301
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcfdda0974242a478de53cce8fd5b93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_58
+      rect:
+        serializedVersion: 2
+        x: 6191
+        y: 3279
+        width: 111
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50b3a6e276de2c49a1b66ce55f0bdd4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_59
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 3229
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644ef807ad95a4943932630f1a48b10d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_60
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 3136
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c0379566d9a8348ae0d1d888074126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_61
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 2909
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f028d334e9fa8e948b96806b6f435a03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_62
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 2911
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d36b327f9e55e4e8e2c80a43ce58e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_63
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 2017
+        width: 998
+        height: 900
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd21171be8a7e14b81025e637deaee3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_64
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 2039
+        width: 837
+        height: 845
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc28f9babfd211e4b8e7132e0c22586d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_65
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2771
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f8197bbceda8842af58aad9f35238f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_66
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 2037
+        width: 844
+        height: 842
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939f2d5db438fda449f8f6c457cc2840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_67
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 2773
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab7b6401da664e4aa6aea117d673881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_68
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 2002
+        width: 1000
+        height: 897
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c032725153d29124680e59b20c084fe4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_69
+      rect:
+        serializedVersion: 2
+        x: 5170
+        y: 2035
+        width: 612
+        height: 861
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb91ff82ea710db47ab1979c027f6a6b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_70
+      rect:
+        serializedVersion: 2
+        x: 6401
+        y: 2037
+        width: 615
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9c21d794deb964499974ca32f76405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_71
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 2674
+        width: 67
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec0fbf8c1dceb94fa8d41024e1d7d5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_72
+      rect:
+        serializedVersion: 2
+        x: 5811
+        y: 2362
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27edbef9ef3bedb40a7aa70a4cd67b72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_73
+      rect:
+        serializedVersion: 2
+        x: 7041
+        y: 2366
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae74bd29f5c1f33448ac8fa1cef18f93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_74
+      rect:
+        serializedVersion: 2
+        x: 5924
+        y: 2138
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f8d78f5be9f1849ad00eec94d23e9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_75
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2108
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4363b378be23eff4c80dc0699008c13e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_76
+      rect:
+        serializedVersion: 2
+        x: 5562
+        y: 2021
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b1fe6f0e9ab5b47ab9511c7c8d38cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_77
+      rect:
+        serializedVersion: 2
+        x: 6792
+        y: 2030
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6761901c93d963d4aaaf65525594f133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_78
+      rect:
+        serializedVersion: 2
+        x: 6815
+        y: 2004
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341910d0d520f224d8efbbdf5f8038f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_79
+      rect:
+        serializedVersion: 2
+        x: 5461
+        y: 1997
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec69812616147e42806cb9fbbe78e39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_80
+      rect:
+        serializedVersion: 2
+        x: 5537
+        y: 2008
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3b9042cb2da3549bc613f95f4edf9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_81
+      rect:
+        serializedVersion: 2
+        x: 5583
+        y: 2010
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe61e777efc820845bb3aba8afd5097c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_82
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 1071
+        width: 847
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424a1fafefd7b94409b591b07928f377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_83
+      rect:
+        serializedVersion: 2
+        x: 5438
+        y: 1951
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb0f8a4cd72aef4496901cc53c62086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_84
+      rect:
+        serializedVersion: 2
+        x: 5490
+        y: 1964
+        width: 54
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c848e48e84443114fa6a5ebb7aa94038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_85
+      rect:
+        serializedVersion: 2
+        x: 6814
+        y: 1958
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5cd0d228295584781d714bb3451c9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_86
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1052
+        width: 616
+        height: 865
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe6070b818cb8d40b3da67f5c4b7705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_87
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 1022
+        width: 615
+        height: 899
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1a6e9aa54f3574882c876565069ef8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_88
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 1035
+        width: 615
+        height: 897
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4944493d71dd84d9aa1e619c6512b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_89
+      rect:
+        serializedVersion: 2
+        x: 3986
+        y: 1031
+        width: 615
+        height: 901
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afb86e4fa9b40841b5cb47f862494ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_91
+      rect:
+        serializedVersion: 2
+        x: 6210
+        y: 1063
+        width: 845
+        height: 842
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09a8bbebaa70bb4a974d2c330130b87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_92
+      rect:
+        serializedVersion: 2
+        x: 6874
+        y: 1849
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a8b14cec04e24468c7fc8caa236031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_93
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 1727
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0b10d4ae1a2cc478b0e3a31d51c5c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_94
+      rect:
+        serializedVersion: 2
+        x: 5768
+        y: 1660
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ad743fe7570304ca8f13bf157f8152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_95
+      rect:
+        serializedVersion: 2
+        x: 5794
+        y: 1616
+        width: 65
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a09be8a6595ea14ebc7f5682ed63bc7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_96
+      rect:
+        serializedVersion: 2
+        x: 5761
+        y: 1594
+        width: 10
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71419643aa3f7f74ba195f55dd76d7f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_97
+      rect:
+        serializedVersion: 2
+        x: 6848
+        y: 1638
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5c892b02ba3e44abf63402d33036ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_98
+      rect:
+        serializedVersion: 2
+        x: 5717
+        y: 1367
+        width: 14
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4e21baa948f684ba7ed21d855b82ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_99
+      rect:
+        serializedVersion: 2
+        x: 5742
+        y: 1620
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716b074c18833214db11cded1c9fbecd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_100
+      rect:
+        serializedVersion: 2
+        x: 5779
+        y: 1458
+        width: 22
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0022835cc6f46dd41ba043aff6c41e22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_101
+      rect:
+        serializedVersion: 2
+        x: 5834
+        y: 1432
+        width: 18
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a2a49918d3a734bb616e30cb6b6244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_102
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1315
+        width: 96
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45846d8f95815bd4785796fee0c3907c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_103
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 1376
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a77322ea727174d8528faf3805ffa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_104
+      rect:
+        serializedVersion: 2
+        x: 3398
+        y: 1396
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb06c265785b7c45b93ca41dace88c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_105
+      rect:
+        serializedVersion: 2
+        x: 4632
+        y: 1398
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 120e3e61c947be94b9b48437a8f8aaf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_106
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1380
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef3e6b2c953ec74d99f31d34f6c085c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_107
+      rect:
+        serializedVersion: 2
+        x: 4636
+        y: 1286
+        width: 51
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f15788248d4204da1e743c865a2888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_108
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1044
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495f9bebfe8382d479728667be2a3b69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_109
+      rect:
+        serializedVersion: 2
+        x: 4952
+        y: 112
+        width: 1141
+        height: 837
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360f2b68e38fb394cb3394839774b633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_110
+      rect:
+        serializedVersion: 2
+        x: 5686
+        y: 948
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa810634e6a79b7438531ed6e5347f7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_111
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 90
+        width: 1134
+        height: 822
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a18809ff9d1504487832ea61860ee8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_112
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 86
+        width: 1182
+        height: 835
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad14672ba86934d4986eb06008927dd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_113
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 82
+        width: 1163
+        height: 830
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5192ccb8295ef4683b21333ed754b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_114
+      rect:
+        serializedVersion: 2
+        x: 3732
+        y: 97
+        width: 1163
+        height: 824
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b732a11bd68b77498d13daa39ff8fc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_115
+      rect:
+        serializedVersion: 2
+        x: 6121
+        y: 101
+        width: 1130
+        height: 842
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d931f06dddde748aa3e6d8474bf7a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_116
+      rect:
+        serializedVersion: 2
+        x: 6955
+        y: 876
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e43079320b20b45a1ea33453880a01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_117
+      rect:
+        serializedVersion: 2
+        x: 4563
+        y: 868
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02ba1260b3da1b46971cc82d87f1fc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_118
+      rect:
+        serializedVersion: 2
+        x: 6929
+        y: 663
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7cdf46674422944a97eceeb0e67d51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_119
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 648
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140d196f4086a7642a4c471463e60877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_120
+      rect:
+        serializedVersion: 2
+        x: 4708
+        y: 570
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d93459b3b9edd49962798d2189d817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_121
+      rect:
+        serializedVersion: 2
+        x: 4574
+        y: 454
+        width: 9
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653f046ed69e2f6409fe5e23e9cef685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_122
+      rect:
+        serializedVersion: 2
+        x: 4636
+        y: 443
+        width: 55
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d66afe4c4871634e8ca11f50c32f3a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lean chef  (1)_123
+      rect:
+        serializedVersion: 2
+        x: 2342
+        y: 335
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136fbba70c45e1a4db19ae8045b28e69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c8c4b28cb2ad30b4c889dc2692a1f3e3
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -38,8 +38,13 @@ PrefabInstance:
     - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: chefType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 7835751264407329437}
     - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95,6 +100,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1089082156504258665, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b74e8595aa4d07e46bdf57c0d1026536, type: 2}
+    - target: {fileID: 5725655216300160881, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cc3384b928ba3346891df8184d0384f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd07273a72bbf754f85f3fb2bdec8353, type: 3}
 --- !u!1 &3230911776428660906 stripped
@@ -106,6 +122,12 @@ GameObject:
 --- !u!1 &3230911774324203295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5725655215257853419, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    type: 3}
+  m_PrefabInstance: {fileID: 7179613228190008052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7835751264407329437 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1089082156504258665, guid: dd07273a72bbf754f85f3fb2bdec8353,
     type: 3}
   m_PrefabInstance: {fileID: 7179613228190008052}
   m_PrefabAsset: {fileID: 0}
