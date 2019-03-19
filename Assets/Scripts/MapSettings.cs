@@ -14,6 +14,8 @@ public struct Wave
     public int sushiCount;
     public int secondsBeforeSpawning;
     public float timeBetweenSpawns;
+    public Transform spawnPoint;
+    public int hitpoints;
 }
 
 public class MapSettings : MonoBehaviour

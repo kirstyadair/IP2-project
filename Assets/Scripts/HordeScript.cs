@@ -64,19 +64,21 @@ public class HordeScript : MonoBehaviour
         if (newState == GameState.PLAY)
         {
             // Start spawning
-            SpawnPointScript spawnPoint = gameData.currentSpawnPoint;
+            Transform spawnPoint = gameData.currentMap.waves[gameData.wave].spawnPoint;
+
 
             // Find out how many zombies for this wave for this map
             SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
             int count = gameData.currentMap.waves[gameData.wave].sushiCount;
+            int hitpoints = gameData.currentMap.waves[gameData.wave].hitpoints;
             float timeBetweenSpawns = gameData.currentMap.waves[gameData.wave].timeBetweenSpawns;
             zombiesTotal = count;
 
-            StartCoroutine(Spawn(sushiType, count, timeBetweenSpawns, spawnPoint));
+            StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnPoint));
         }
     }
 
-    IEnumerator Spawn(SushiType sushiType, int count, float timeBetweenSpawns, SpawnPointScript spawnPoint)
+    IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnPoint)
     {
         isSpawning = true;
 

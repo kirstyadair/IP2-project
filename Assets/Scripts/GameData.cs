@@ -19,10 +19,6 @@ public class GameData : MonoBehaviour
     // Current wave
     public int wave = 0;
 
-    // Current chosen spawn point
-    // TODO: Randomly pick one
-    public SpawnPointScript currentSpawnPoint;
-
     public HordeScript horde;
 
     // Our countdown timer
