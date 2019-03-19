@@ -6,8 +6,6 @@ public class TrapScript : MonoBehaviour
 {
     // Cooker trap variables
     bool trapDeactivated = false;
-    bool hasExploded = false;
-    float timeToExplode;
     float timeToReactivate;
     public float trapRadius;
     ParticleSystem smokePS;
@@ -17,89 +15,55 @@ public class TrapScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeToExplode = 3.0f;
         trapCentre = GetComponent<BoxCollider>().bounds.center;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeToExplode <= 0)
-        {
-            if (!hasExploded)
-            {
-                Debug.Log("Emitting");
-                firePS.Emit(20);
-                firePS.emissionRate = 0;
-                hasExploded = true;
-            }
-            
-            Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
-            foreach (Collider hit in hitEnemies)
-            {
-                if (hit.tag == "Zombie")
-                {
-                    hit.gameObject.GetComponent<ZombieScript>().Hit();
-                }
-            }
-            trapDeactivated = true;
-            timeToExplode = 3;
-            smokePS = GetComponent<ParticleSystem>();
-            if (!smokePS.isPlaying) smokePS.Play();
-            StartCoroutine(Reactivate());
-        }
+
     }
 
     void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Collided");
             if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
             {
-                Debug.Log("E pressed, trap deactivated " + trapDeactivated);
                 if (!trapDeactivated)
                 {
-                    StartCoroutine(Grow());
+                    StartCoroutine(Detonate());
                 }
             }
         }
     }
 
-    IEnumerator Grow()
+    IEnumerator Detonate()
     {
+        float timeToDetonate = 3.0f;
         do
         {
-            transform.localScale += new Vector3(0.05f, 0.05f, 0);
+            Debug.Log(timeToDetonate);
             yield return new WaitForSeconds(Time.deltaTime);
-            timeToExplode -= Time.deltaTime;
-            if (timeToExplode <= 0) break;
+            timeToDetonate -= Time.deltaTime;
         }
-        while (transform.localScale.x <= 8.5f);
+        while (timeToDetonate >= 0);
 
-        if (timeToExplode > 0)
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
+        foreach (Collider hit in hitEnemies)
         {
-            Debug.Log("Shrinking");
-            StartCoroutine(Shrink());
+            if (hit.tag == "Zombie")
+            {
+                hit.gameObject.GetComponent<ZombieScript>().Hit();
+            }
         }
-    }
-
-    IEnumerator Shrink()
-    {
-        do
-        {
-            transform.localScale -= new Vector3(0.05f, 0.05f, 0);
-            yield return new WaitForSeconds(Time.deltaTime);
-            timeToExplode -= Time.deltaTime;
-            if (timeToExplode <= 0) break;
-        }
-        while (transform.localScale.x >= 8f);
-
-        if (timeToExplode > 0)
-        {
-            Debug.Log("Growing");
-            StartCoroutine(Grow());
-        }
+        Debug.Log("Emitting");
+        firePS.Emit(20);
+        firePS.emissionRate = 0;
+        trapDeactivated = true;
+        smokePS = GetComponent<ParticleSystem>();
+        if (!smokePS.isPlaying) smokePS.Play();
+        StartCoroutine(Reactivate());
     }
 
     IEnumerator Reactivate()
@@ -116,7 +80,6 @@ public class TrapScript : MonoBehaviour
         {
             smokePS.Stop();
             trapDeactivated = false;
-            hasExploded = false;
         }
     }
 }
