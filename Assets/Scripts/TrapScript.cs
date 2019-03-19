@@ -11,11 +11,13 @@ public class TrapScript : MonoBehaviour
     ParticleSystem smokePS;
     public ParticleSystem firePS;
     Vector3 trapCentre;
+    Animator promptAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         trapCentre = GetComponent<BoxCollider>().bounds.center;
+        promptAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class TrapScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            
             if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
             {
                 if (!trapDeactivated)
@@ -43,7 +46,6 @@ public class TrapScript : MonoBehaviour
         float timeToDetonate = 3.0f;
         do
         {
-            Debug.Log(timeToDetonate);
             yield return new WaitForSeconds(Time.deltaTime);
             timeToDetonate -= Time.deltaTime;
         }
@@ -57,7 +59,6 @@ public class TrapScript : MonoBehaviour
                 hit.gameObject.GetComponent<ZombieScript>().Hit();
             }
         }
-        Debug.Log("Emitting");
         firePS.Emit(20);
         firePS.emissionRate = 0;
         trapDeactivated = true;

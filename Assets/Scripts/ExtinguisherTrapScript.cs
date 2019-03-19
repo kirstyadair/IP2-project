@@ -13,7 +13,6 @@ public class ExtinguisherTrapScript : MonoBehaviour
 
     Animator popupAnimator;
     public ParticleSystem ps;
-    //public ParticleSystem sparksPS;
     BoxCollider bCollider;
 
     // Start is called before the first frame update
