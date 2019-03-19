@@ -7,12 +7,14 @@ public class TrapScript : MonoBehaviour
     // Cooker trap variables
     bool trapDeactivated = false;
     bool activate = false;
+    bool pulse = false;
     float timeToReactivate;
     public float trapRadius;
     ParticleSystem smokePS;
     public ParticleSystem firePS;
     Vector3 trapCentre;
     public Animator promptAnim;
+    public Animator explosionAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,7 @@ public class TrapScript : MonoBehaviour
                 {
 
                     promptAnim.SetBool("activate", false);
+                    explosionAnim.SetBool("pulse", true);
                     StartCoroutine(Detonate());
 
                 }
@@ -61,7 +64,9 @@ public class TrapScript : MonoBehaviour
             timeToDetonate -= Time.deltaTime;
         }
         while (timeToDetonate >= 0);
+        explosionAnim.SetBool("pulse", false);
 
+        
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
         foreach (Collider hit in hitEnemies)
         {
