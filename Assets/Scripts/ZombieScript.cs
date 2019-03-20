@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class ZombieScript : MonoBehaviour
 {
-    public int health;
-    public int maxHealth;
+    public float health;
+    public float maxHealth;
     public SpriteRenderer sprt;
+    HordeScript hordeScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.5f, 1.5f);    
+        this.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.5f, 1.5f);
+        hordeScript = GameObject.Find("Horde").GetComponent<HordeScript>();
     }
 
     // Update is called once per frame
@@ -20,14 +22,14 @@ public class ZombieScript : MonoBehaviour
     {
         // make it more red the deader it is
         Color clr = sprt.color;
-        clr.g = (float)health / (float)maxHealth;
-        clr.b = (float)health / (float)maxHealth;
+        clr.g = health / maxHealth;
+        clr.b = health / maxHealth;
         sprt.color = clr;
     }
 
-    public void Hit(int hp)
+    public void Hit(float hp)
     {
-        health -= hp;
+        health -= hp * hordeScript.defensiveStat;
         if (health <= 0) Kill();
     }
 

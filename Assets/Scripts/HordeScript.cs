@@ -43,10 +43,12 @@ public class HordeScript : MonoBehaviour
     public bool isSpawning = false;
     public Transform center;
 
-    HordeState state;
+    
+    [Header("Offensive/Defensive stats")]
     public float defensiveStat = 1;
     public float offensiveStat = 1;
-    const int baseStat = 1;
+    public HordeState state;
+    public const int baseStat = 1;
 
     InputDevice controller;
 
@@ -181,8 +183,8 @@ public class HordeScript : MonoBehaviour
 
         if (state == HordeState.OFFENSIVE)
         {
-            defensiveStat--;
-            offensiveStat++;
+            defensiveStat = baseStat + 0.5f;
+            offensiveStat = baseStat - 0.5f;
             if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
@@ -191,8 +193,8 @@ public class HordeScript : MonoBehaviour
 
         if (state == HordeState.DEFENSIVE)
         {
-            defensiveStat++;
-            offensiveStat--;
+            defensiveStat = baseStat - 0.5f;
+            offensiveStat = baseStat + 0.5f;
             if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
