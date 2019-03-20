@@ -11,6 +11,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
     bool playerHurt = false;
     bool canReactivate = true;
 
+    GameData gameData;
     Animator popupAnimator;
     public ParticleSystem ps;
     BoxCollider bCollider;
@@ -18,6 +19,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         ps = GetComponent<ParticleSystem>();
         timeToDeactivate = 10.0f;
         //StartCoroutine(PSActive());
@@ -108,7 +110,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
                 Rigidbody zombieRB = other.GetComponent<Rigidbody>();
                 Vector3 dir = (bCollider.center - transform.position);
                 zombieRB.AddForce(dir, ForceMode.Impulse);
-                other.GetComponent<ZombieScript>().Hit();
+                other.GetComponent<ZombieScript>().Hit(gameData.fireExtinguisherDamage);
             }
 
             if (other.tag == "Player")
@@ -128,7 +130,6 @@ public class ExtinguisherTrapScript : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                Debug.Log("Collision");
                 if (other.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
                     Debug.Log("E pressed");

@@ -7,9 +7,11 @@ public class SpatulaScript : MonoBehaviour
     float hitCountdown = 0.2f;
     public float spatulaRadiusHit;
     PlayerScript playerScript;
+    GameData gameData;
     // Start is called before the first frame update
     void Start()
     {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         playerScript = GetComponent<PlayerScript>();
         playerScript.OnFire += Fire;
     }
@@ -23,7 +25,7 @@ public class SpatulaScript : MonoBehaviour
         {
             if (sushi.tag == "Zombie")
             {
-                sushi.gameObject.GetComponent<ZombieScript>().Hit();
+                sushi.gameObject.GetComponent<ZombieScript>().Hit(gameData.spatulaDamage);
             }
         }
         hitCountdown = 0.2f;
