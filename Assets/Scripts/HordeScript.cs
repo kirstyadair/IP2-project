@@ -108,6 +108,8 @@ public class HordeScript : MonoBehaviour
             Vector3 force = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100));
             zombie.GetComponent<Rigidbody>().AddForce(force);
             zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
+            zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
+            zombie.GetComponent<ZombieScript>().health = hitpoints;
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
 

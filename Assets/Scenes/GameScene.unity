@@ -3397,6 +3397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -3466,10 +3470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1247355178, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4119,6 +4119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -4149,21 +4153,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionZone
       objectReference: {fileID: 0}
-    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3498139798193265160, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -4178,10 +4167,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.047
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1247355178, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4251,6 +4236,31 @@ PrefabInstance:
       propertyPath: explosionAnim
       value: 
       objectReference: {fileID: 476937356}
+    - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.28438783
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.09824021
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133292421113662418, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1999540421859137866, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -4265,16 +4275,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.28438783
-      objectReference: {fileID: 0}
-    - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0.09824021
       objectReference: {fileID: 0}
     - target: {fileID: 2135328929, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_RootOrder
@@ -12132,31 +12132,31 @@ MonoBehaviour:
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 746124518}
-    hitpoints: 5
+    hitpoints: 100
   - sushiType: 1
     sushiCount: 100
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
-    hitpoints: 5
+    hitpoints: 100
   - sushiType: 0
     sushiCount: 200
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
-    hitpoints: 5
+    hitpoints: 100
   - sushiType: 1
     sushiCount: 200
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
-    hitpoints: 5
+    hitpoints: 100
   - sushiType: 0
     sushiCount: 250
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
-    hitpoints: 5
+    hitpoints: 100
 --- !u!1 &1012832081
 GameObject:
   m_ObjectHideFlags: 0
@@ -33255,6 +33255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -33335,10 +33339,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.1135
       objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1247355178, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.8700004
@@ -33407,11 +33407,6 @@ PrefabInstance:
       propertyPath: explosionAnim
       value: 
       objectReference: {fileID: 1526612814}
-    - target: {fileID: 1999540421859137866, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Size.z
@@ -33426,6 +33421,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.x
       value: 0.000101094505
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999540421859137866, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2135328929, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_RootOrder

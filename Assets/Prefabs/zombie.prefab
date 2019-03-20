@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c875eaec9f55358408ea6b955af4a79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasEnteredBuilding: 1
-  isBeingYeeted: 0
+  health: 0
+  maxHealth: 0
+  sprt: {fileID: 1849862969246982456}
 --- !u!54 &7721359010831109620
 Rigidbody:
   m_ObjectHideFlags: 0
