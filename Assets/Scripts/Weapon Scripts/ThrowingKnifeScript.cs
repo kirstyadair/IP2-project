@@ -38,7 +38,8 @@ public class ThrowingKnifeScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        
+        if (collision.gameObject == null) return;
+
         if (collision.tag == "Zombie")
         {
             collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage);
