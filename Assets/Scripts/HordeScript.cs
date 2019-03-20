@@ -187,8 +187,8 @@ public class HordeScript : MonoBehaviour
 
         if (state == HordeState.OFFENSIVE)
         {
-            defensiveStat = baseStat + 0.5f;
-            offensiveStat = baseStat - 0.5f;
+            defensiveStat = baseStat + 0.75f;
+            offensiveStat = baseStat + 0.75f;
             if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
@@ -197,8 +197,8 @@ public class HordeScript : MonoBehaviour
 
         if (state == HordeState.DEFENSIVE)
         {
-            defensiveStat = baseStat - 0.5f;
-            offensiveStat = baseStat + 0.5f;
+            defensiveStat = baseStat - 0.75f;
+            offensiveStat = baseStat - 0.75f;
             if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);

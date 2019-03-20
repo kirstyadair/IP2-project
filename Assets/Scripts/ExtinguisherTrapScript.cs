@@ -117,11 +117,6 @@ public class ExtinguisherTrapScript : MonoBehaviour
             {
                 Vector3 dir = (bCollider.center - transform.position);
                 other.GetComponent<PlayerScript>().pushForce = dir * 2;
-                if (!playerHurt)
-                {
-                    playerHurt = true;
-                    other.GetComponent<PlayerScript>().numOfHits--;
-                }
             }
         }
         

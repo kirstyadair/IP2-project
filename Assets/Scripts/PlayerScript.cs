@@ -17,8 +17,8 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject reticle;
 
-    [Tooltip("Player HP")]
-    public float hp;
+    [Tooltip("Player health")]
+    public float health;
 
     [Tooltip("Speed the player moves at")]
     public float moveSpeed;
@@ -216,7 +216,13 @@ public class PlayerScript : MonoBehaviour
             // Push the player away from the zombie
             Vector3 normal = collision.GetContact(0).normal;
             rb.AddForce(normal * 5, ForceMode.Impulse);
-            
+
+            health -= 1 * GameObject.Find("Horde").GetComponent<HordeScript>().offensiveStat;
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     
