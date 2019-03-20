@@ -44,11 +44,13 @@ public class HordeScript : MonoBehaviour
     public Transform center;
 
     
-    [Header("Offensive/Defensive stats")]
+    [Header("Offensive/Defensive system stats")]
     public float defensiveStat = 1;
     public float offensiveStat = 1;
     public HordeState state;
     public const int baseStat = 1;
+    public float defenseModeTimer;
+    public float offenseModeTimer;
 
     InputDevice controller;
 
@@ -131,6 +133,32 @@ public class HordeScript : MonoBehaviour
         OnSpawnComplete();
     }
 
+    IEnumerator OffenseCountdown()
+    {
+        do
+        {
+            offenseModeTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+            if (offenseModeTimer <= 0) break;
+            if (state != HordeState.OFFENSIVE) break;
+        } while (offenseModeTimer > 0);
+
+        if (state != HordeState.DEFENSIVE) state = HordeState.NEUTRAL;
+    }
+
+    IEnumerator DefenceCountdown()
+    {
+        do
+        {
+            defenseModeTimer -= Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+            if (defenseModeTimer <= 0) break;
+            if (state != HordeState.DEFENSIVE) break;
+        } while (defenseModeTimer > 0);
+
+        if (state != HordeState.OFFENSIVE) state = HordeState.NEUTRAL;
+    }
+
     public void MoveZombieTowardsTarget(GameObject zombie, Vector3 point)
     {
         //xSum += zombie.transform.position.x;
@@ -171,9 +199,46 @@ public class HordeScript : MonoBehaviour
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
         */
-        if (Input.GetKeyDown(KeyCode.Alpha1)) state = HordeState.NEUTRAL;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) state = HordeState.OFFENSIVE;
-        if (Input.GetKeyDown(KeyCode.Alpha3)) state = HordeState.DEFENSIVE;
+        if (state != HordeState.OFFENSIVE)
+        {
+            if (offenseModeTimer < 5)
+            {
+                offenseModeTimer += Time.deltaTime / 2;
+            }
+            
+        }
+
+        if (state != HordeState.DEFENSIVE)
+        {
+            if (defenseModeTimer < 5)
+            {
+                defenseModeTimer += Time.deltaTime / 2;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            state = HordeState.NEUTRAL;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (offenseModeTimer > 0)
+            {
+                state = HordeState.OFFENSIVE;
+                StartCoroutine(OffenseCountdown());
+            }
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (defenseModeTimer > 0)
+            {
+                state = HordeState.DEFENSIVE;
+                StartCoroutine(DefenceCountdown());
+            }
+        }
 
         if (state == HordeState.NEUTRAL)
         {

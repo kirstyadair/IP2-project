@@ -9500,6 +9500,11 @@ MonoBehaviour:
   zombiesTotal: 0
   isSpawning: 0
   center: {fileID: 1168982927}
+  defensiveStat: 1
+  offensiveStat: 1
+  state: 0
+  defenseModeTimer: 5
+  offenseModeTimer: 5
 --- !u!4 &736823584
 Transform:
   m_ObjectHideFlags: 0
