@@ -39,6 +39,7 @@ public class HordeScript : MonoBehaviour
     public Transform center;
 
     InputDevice controller;
+
     // Start is called before the first frame update
     void Awake()
     {
