@@ -18,9 +18,10 @@ public class ZombieScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // make it more red the deader it is
         Color clr = sprt.color;
-        clr.g = (health / maxHealth);
-        clr.b = (health / maxHealth);
+        clr.g = (float)health / (float)maxHealth;
+        clr.b = (float)health / (float)maxHealth;
         sprt.color = clr;
     }
 

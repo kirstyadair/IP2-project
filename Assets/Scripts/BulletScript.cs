@@ -6,10 +6,12 @@ public class BulletScript : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
+    GameData gameData;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         Destroy(gameObject, 2f);
     }
 
@@ -26,7 +28,7 @@ public class BulletScript : MonoBehaviour
 
         if (collision.tag == "Zombie")
         {
-            collision.gameObject.GetComponent<ZombieScript>().Hit();
+            collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage);
 
          
         }

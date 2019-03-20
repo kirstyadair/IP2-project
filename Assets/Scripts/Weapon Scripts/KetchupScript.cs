@@ -8,6 +8,7 @@ public class KetchupScript : MonoBehaviour
     Rigidbody rb;
     public GameObject audioObject;
     public KetchupBeamScript ketchupBeamScript;
+    GameData gameData;
 
     bool firing = false;
 
@@ -16,6 +17,7 @@ public class KetchupScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         ketchupBeamScript.playerScript.OnFire += Fire;
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
     }
 
     void Fire()
@@ -54,7 +56,7 @@ public class KetchupScript : MonoBehaviour
 
         if (other.tag == "Zombie")
         {
-            other.gameObject.GetComponent<ZombieScript>().Hit();
+            other.gameObject.GetComponent<ZombieScript>().Hit(gameData.ketchupDamage);
         }
     }
 }

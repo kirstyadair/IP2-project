@@ -10,6 +10,7 @@ public class ThrowingKnifeScript : MonoBehaviour
     float knifeLength = 0.25f;
     Animator animator;
     AudioSource audioSource;
+    GameData gameData;
     public ParticleSystem particleSystem;
     Vector3 origin;
     Rigidbody rb;
@@ -22,6 +23,7 @@ public class ThrowingKnifeScript : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(knifeThrowSound);
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
     }
 
     // Update is called once per frame
@@ -39,12 +41,13 @@ public class ThrowingKnifeScript : MonoBehaviour
         
         if (collision.tag == "Zombie")
         {
-            collision.gameObject.GetComponent<ZombieScript>().Hit(50);
+            collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage);
             //Destroy(gameObject);
         }
 
         if (collision.tag == "Wall")
         {
+            if (rb == null) return;
             rb.velocity = Vector3.zero;
             animator.Play("wiggle");
             particleSystem.Emit(50);

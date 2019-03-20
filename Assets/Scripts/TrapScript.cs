@@ -15,10 +15,12 @@ public class TrapScript : MonoBehaviour
     Vector3 trapCentre;
     public Animator promptAnim;
     public Animator explosionAnim;
+    GameData gameData;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         trapCentre = GetComponent<BoxCollider>().bounds.center;
     }
 
@@ -72,7 +74,7 @@ public class TrapScript : MonoBehaviour
         {
             if (hit.tag == "Zombie")
             {
-                hit.gameObject.GetComponent<ZombieScript>().Hit();
+                hit.gameObject.GetComponent<ZombieScript>().Hit(gameData.cookerDamage);
             }
         }
         firePS.Emit(20);

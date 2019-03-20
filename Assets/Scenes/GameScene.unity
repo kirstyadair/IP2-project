@@ -5788,6 +5788,11 @@ MonoBehaviour:
   spawningIndicatorBGColor: {r: 0.41689453, g: 0.8584906, b: 0.21462265, a: 1}
   playingIndicatorFGColor: {r: 1, g: 1, b: 1, a: 1}
   playingIndicatorBGColor: {r: 0.8207547, g: 0.23616053, b: 0.23616053, a: 1}
+  ketchupDamage: 1
+  spatulaDamage: 100
+  throwingKnifeDamage: 80
+  fireExtinguisherDamage: 1
+  cookerDamage: 100
 --- !u!4 &467374299
 Transform:
   m_ObjectHideFlags: 0

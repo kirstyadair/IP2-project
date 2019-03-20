@@ -36,6 +36,14 @@ public class GameData : MonoBehaviour
     public Color playingIndicatorFGColor;
     public Color playingIndicatorBGColor;
 
+    [Header("Damage values")]
+    public int ketchupDamage;
+    public int spatulaDamage;
+    public int throwingKnifeDamage;
+    public int fireExtinguisherDamage;
+    public int cookerDamage;
+
+
     private void Awake()
     {
         timer = GameObject.Find("Timer").GetComponent<TimerScript>();
