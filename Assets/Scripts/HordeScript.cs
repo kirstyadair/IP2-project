@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum HordeState
+{
+    NEUTRAL, OFFENSIVE, DEFENSIVE
+}
+
 public class HordeScript : MonoBehaviour
 {
     public delegate void SpawningEvent();
@@ -38,11 +43,17 @@ public class HordeScript : MonoBehaviour
     public bool isSpawning = false;
     public Transform center;
 
+    HordeState state;
+    public float defensiveStat = 1;
+    public float offensiveStat = 1;
+    const int baseStat = 1;
+
     InputDevice controller;
 
     // Start is called before the first frame update
     void Awake()
     {
+        state = HordeState.NEUTRAL;
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += OnStateChange;
 
@@ -158,6 +169,35 @@ public class HordeScript : MonoBehaviour
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
         */
+        if (state == HordeState.NEUTRAL)
+        {
+            defensiveStat = baseStat;
+            offensiveStat = baseStat;
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
+            }
+        }
+
+        if (state == HordeState.OFFENSIVE)
+        {
+            defensiveStat--;
+            offensiveStat++;
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
+            }
+        }
+
+        if (state == HordeState.DEFENSIVE)
+        {
+            defensiveStat++;
+            offensiveStat--;
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
+            }
+        }
 
         int alive = 0;
         foreach (Transform child in transform)
