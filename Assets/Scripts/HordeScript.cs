@@ -171,6 +171,10 @@ public class HordeScript : MonoBehaviour
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
         */
+        if (Input.GetKeyDown(KeyCode.Alpha1)) state = HordeState.NEUTRAL;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) state = HordeState.OFFENSIVE;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) state = HordeState.DEFENSIVE;
+
         if (state == HordeState.NEUTRAL)
         {
             defensiveStat = baseStat;

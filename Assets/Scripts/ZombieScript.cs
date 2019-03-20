@@ -8,6 +8,8 @@ public class ZombieScript : MonoBehaviour
     public float health;
     public float maxHealth;
     public SpriteRenderer sprt;
+    public SpriteRenderer defBubble;
+    public SpriteRenderer offBubble;
     HordeScript hordeScript;
 
     // Start is called before the first frame update
@@ -25,6 +27,24 @@ public class ZombieScript : MonoBehaviour
         clr.g = health / maxHealth;
         clr.b = health / maxHealth;
         sprt.color = clr;
+
+        if (hordeScript.state == HordeState.DEFENSIVE)
+        {
+            offBubble.gameObject.SetActive(false);
+            defBubble.gameObject.SetActive(true);
+        }
+
+        if (hordeScript.state == HordeState.OFFENSIVE)
+        {
+            offBubble.gameObject.SetActive(true);
+            defBubble.gameObject.SetActive(false);
+        }
+
+        if (hordeScript.state == HordeState.NEUTRAL)
+        {
+            offBubble.gameObject.SetActive(false);
+            defBubble.gameObject.SetActive(false);
+        }
     }
 
     public void Hit(float hp)

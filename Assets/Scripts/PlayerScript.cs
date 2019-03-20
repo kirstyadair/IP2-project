@@ -17,8 +17,8 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject reticle;
 
-    [Tooltip("Hitpoints before player dies")]
-    public int numOfHits = 5;
+    [Tooltip("Player HP")]
+    public float hp;
 
     [Tooltip("Speed the player moves at")]
     public float moveSpeed;
@@ -216,13 +216,7 @@ public class PlayerScript : MonoBehaviour
             // Push the player away from the zombie
             Vector3 normal = collision.GetContact(0).normal;
             rb.AddForce(normal * 5, ForceMode.Impulse);
-
-            numOfHits--;
-
-           /* if (numOfHits <= 0)
-            {
-                Destroy(gameObject);
-            }*/
+            
         }
     }
     
