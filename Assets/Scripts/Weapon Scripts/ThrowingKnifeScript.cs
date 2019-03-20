@@ -38,7 +38,8 @@ public class ThrowingKnifeScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject == null) return;
+        // idk why i need to do this
+        if (gameData == null) gameData = GameObject.Find("GameData").GetComponent<GameData>();
 
         if (collision.tag == "Zombie")
         {
