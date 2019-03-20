@@ -77,6 +77,7 @@ public class TrapScript : MonoBehaviour
         }
         firePS.Emit(20);
         firePS.emissionRate = 0;
+        Debug.Log(firePS.emissionRate);
         trapDeactivated = true;
         smokePS = GetComponent<ParticleSystem>();
         if (!smokePS.isPlaying) smokePS.Play();
