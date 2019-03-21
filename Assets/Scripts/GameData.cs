@@ -43,6 +43,8 @@ public class GameData : MonoBehaviour
     public int fireExtinguisherDamage;
     public int cookerDamage;
 
+    [Header("Player colours")]
+    public Color[] playerColors;
 
     private void Awake()
     {

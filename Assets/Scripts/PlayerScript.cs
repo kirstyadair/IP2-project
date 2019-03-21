@@ -28,7 +28,18 @@ public class PlayerScript : MonoBehaviour
 
     [Tooltip("Type of chef")]
     public PlayerType chefType;
-    
+
+    // p1, p2, p3 etc
+    public int playerNumber;
+
+    public int showIndicatorFor;
+
+    public SpriteRenderer halo;
+
+    // to tint the UI
+    public Color playerColor;
+
+    public Animator animator;
 
     Rigidbody rb;
     GameData gameData;
@@ -37,8 +48,8 @@ public class PlayerScript : MonoBehaviour
     [HideInInspector]
     public Vector3 reticlePos;
 
-    public Animator animator;
-
+    public PlayerIndicatorScript playerIndicator;
+        
     public bool up, down, left, right, firingUp, firingDown, firingLeft, firingRight;
     public bool firing = false;
 
@@ -48,19 +59,26 @@ public class PlayerScript : MonoBehaviour
     // If you want to apply a force to the player, do it with this vector
     public Vector3 pushForce;
 
+    private void Awake()
+    {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        gameData.OnStateChange += OnStateChange;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        gameData = GameObject.Find("GameData").GetComponent<GameData>();
+      
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        gameData.OnStateChange += OnStateChange;
+        
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        halo.color = playerColor;
+
         firing = false;
         // human player reticle
         if (!isAIControlled)
@@ -202,6 +220,11 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void ShowIndicator()
+    {
+        playerIndicator.Show("P" + playerNumber, playerColor, showIndicatorFor);
+    }
+
     public bool IsActivatingTrap()
     {
         if (controller != null) return controller.Action1.IsPressed;
@@ -229,7 +252,11 @@ public class PlayerScript : MonoBehaviour
 
     public void OnStateChange(GameState oldState, GameState newState)
     {
-
+        if (newState == GameState.PREP)
+        {
+            Debug.Log("show indicator");
+            ShowIndicator();
+        }
     }
 
 }
