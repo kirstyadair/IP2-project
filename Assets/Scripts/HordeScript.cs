@@ -23,7 +23,6 @@ public class HordeScript : MonoBehaviour
     Vector3 minScreenBounds;
     Vector3 maxScreenBounds;
 
-    public float reticleSlowness; // How slow the reticle moves
     GameData gameData;
 
     // Where to locate the crosshair when we are respawning the horde
@@ -33,6 +32,7 @@ public class HordeScript : MonoBehaviour
     public float wiggleMultiplier;
     public float forceMultiplier;
     public float crosshairBounds;
+    public float crosshairSpeed;
 
     [Header("Sushi sprites")]
     public Sprite eyesSushi;
@@ -283,9 +283,17 @@ public class HordeScript : MonoBehaviour
 
         Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
         centerPoint = crosshair.transform.position;
-        // Move crosshair and constrain within world
-        if (controller == null) crosshair.transform.position += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde"))) / 10;// distanceFromCenter / reticleSlowness;
-        else crosshair.transform.position += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y)) / 10;
+
+        Vector3 moveBy = Vector3.zero;
+
+        // Move crosshair with either the controller or keyboard
+        if (controller == null) moveBy += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde")));// distanceFromCenter / reticleSlowness;
+        else moveBy += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y));
+
+        moveBy *= Time.deltaTime;
+        moveBy *= crosshairSpeed;
+
+        crosshair.transform.position += moveBy;
         if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
         //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }
