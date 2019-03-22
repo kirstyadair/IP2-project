@@ -15,7 +15,6 @@ public class KetchupScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         ketchupBeamScript.playerScript.OnFire += Fire;
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
     }
@@ -34,9 +33,6 @@ public class KetchupScript : MonoBehaviour
         {
             transform.localScale += ketchupBeamScript.ketchupSpread;
             firing = false;
-        } else
-        {
-            //transform.localScale -= new Vector3(ketchupBeamScript.ketchupSpread.x * 3, 0f, ketchupBeamScript.ketchupSpread.z * 2);
         }
 
 
@@ -52,7 +48,6 @@ public class KetchupScript : MonoBehaviour
         if (other.name == "Ground")
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            //transform.localScale = ketchupBeamScript.ketchupPuddle;
         }
 
         if (other.tag == "Zombie" && other.gameObject.GetComponent<ZombieScript>() != null)

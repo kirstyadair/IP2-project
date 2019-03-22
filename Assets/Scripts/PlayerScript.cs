@@ -87,6 +87,7 @@ public class PlayerScript : MonoBehaviour
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += OnStateChange;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,9 +96,8 @@ public class PlayerScript : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
     }
 
-
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (immuneFor > 0)
         {
@@ -111,76 +111,66 @@ public class PlayerScript : MonoBehaviour
         if (dead) return;
 
         // the following should never happen if the player is dead
-        // human player reticle
-        if (!isAIControlled)
+        // Keyboard and mouse input places the reticle via raycast
+        if (controller == null)
         {
-            // Keyboard and mouse input places the reticle via raycast
-            if (controller == null)
+            // raycast to place reticle
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
+            reticlePos = hit.point;
+            reticlePos.y = transform.position.y;
+
+            if (Input.GetMouseButton(0))
             {
-                // raycast to place reticle
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                Physics.Raycast(ray, out hit, LayerMask.GetMask("Ground"));
-                reticlePos = hit.point;
-                reticlePos.y = transform.position.y;
-
-                if (Input.GetMouseButton(0))
-                {
-                    firing = true;
-                    OnFire();
-                }
-            } else
-            {
-                // check if the right stick is being pushed enough to be past the deadzone
-                if (controller.RightStick.Vector.magnitude > 0.5)
-                {
-                    // otherwise the reticle is placed with the right analog stick
-                    Vector3 rightStick = new Vector3(controller.RightStick.Vector.x, 0, controller.RightStick.Vector.y);
-
-                    reticlePos = transform.position + rightStick;
-
-
-                    // trigger firing events
-                    OnFire();
-
-                    firing = true;
-                } else
-                {
-                    reticlePos = transform.position;
-                }
+                firing = true;
+                OnFire();
             }
-
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, reticlePos);
-            reticle.transform.position = reticlePos;
-
-            Vector3 direction = new Vector3(0, 0, 0);
-
-            if (controller == null) // If we have no controller, default to keyboard input
-            {
-                direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
-            } else
-            {
-                direction = new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y);
-            }
-
-
-            rb.velocity = (direction * moveSpeed) + pushForce;
-
-            pushForce /= 2;
-
-            //if (pushForce.magnitude < 0.2f) pushForce = new Vector3(0, 0, 0);
         }
-        else // if we are AI controlled
+        else
         {
-            reticlePos = new Vector3(0, 0, 0);
+            // check if the right stick is being pushed enough to be past the deadzone
+            if (controller.RightStick.Vector.magnitude > 0.5)
+            {
+                // otherwise the reticle is placed with the right analog stick
+                Vector3 rightStick = new Vector3(controller.RightStick.Vector.x, 0, controller.RightStick.Vector.y);
 
-            // If line is not set to the same position then it extends the size of the bounding rect and transform.position is all wack
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.position);
-            lineRenderer.enabled = false;
+                reticlePos = transform.position + rightStick;
+
+
+                // trigger firing events
+                OnFire();
+
+                firing = true;
+            }
+            else
+            {
+                reticlePos = transform.position;
+            }
         }
+
+        lineRenderer.enabled = true;
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, reticlePos);
+        reticle.transform.position = reticlePos;
+
+        Vector3 direction = new Vector3(0, 0, 0);
+
+        if (controller == null) // If we have no controller, default to keyboard input
+        {
+            direction = new Vector3(Input.GetAxis("HorizontalPlayer"), 0, Input.GetAxis("VerticalPlayer"));
+        }
+        else
+        {
+            direction = new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y);
+        }
+
+
+        rb.velocity = (direction * moveSpeed) + pushForce;
+
+        pushForce /= 2;
+
+        //if (pushForce.magnitude < 0.2f) pushForce = new Vector3(0, 0, 0);
 
 
         // this section is for working out the animation

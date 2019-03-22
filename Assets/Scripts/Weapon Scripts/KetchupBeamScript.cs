@@ -7,7 +7,7 @@ public class KetchupBeamScript : MonoBehaviour
     public GameObject ketchupPrefab;
     GameData gameData;
     public Vector3 ketchupSpread;
-    //public Vector3 ketchupPuddle;
+    public Vector3 spawnPos;
     public PlayerScript playerScript;
 
     private void Awake()
@@ -21,10 +21,12 @@ public class KetchupBeamScript : MonoBehaviour
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        //if (playerScript.controller == null && Input.GetButton("Fire1")) Fire(); // Fire with mouse click when in keyboard/mouse control
+        if (playerScript.up)
+        {
+            spawnPos = new Vector3(0, 0, 0.5f);
+        }
     }
 
     public void Fire()
@@ -39,15 +41,9 @@ public class KetchupBeamScript : MonoBehaviour
 
             direction.Normalize();
 
-            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
+            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, spawnPos, Quaternion.identity);
             ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
-            //ketchup.AddComponent<KetchupScript>();
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
