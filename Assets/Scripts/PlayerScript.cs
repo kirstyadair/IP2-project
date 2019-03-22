@@ -18,6 +18,9 @@ public class PlayerScript : MonoBehaviour
     public delegate void HealthChangedEvent(float health);
     public event HealthChangedEvent OnHealthChanged;
 
+    public delegate void PlayerDiedEvent(PlayerScript player);
+    public static event PlayerDiedEvent OnPlayerDeath;
+
     public GameObject reticle;
 
     [Tooltip("Player health")]
@@ -84,8 +87,11 @@ public class PlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         halo.color = playerColor;
-
         firing = false;
+
+        if (dead) return;
+
+        // the following should never happen if the player is dead
         // human player reticle
         if (!isAIControlled)
         {
@@ -261,6 +267,9 @@ public class PlayerScript : MonoBehaviour
     public void Die()
     {
         dead = true;
+        animator.enabled = true;
+        animator.Play("die");
+        OnPlayerDeath(this);
     }
 
     public void Respawn()

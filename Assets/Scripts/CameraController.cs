@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class CameraController : MonoBehaviour
 {
@@ -11,17 +12,34 @@ public class CameraController : MonoBehaviour
     Camera cam;
     public int cameraStillness;
     public float zoomDuration;
+    public float cameraShock = 0;
+    public PostProcessingBehaviour postProcessing;
+    public Animator animator;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
+        animator = GetComponent<Animator>();
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += OnStateChange;
         horde = GameObject.Find("Horde").GetComponent<HordeScript>();
         cameraInitialPosition = this.transform.position;
         centerScreen = gameData.currentMap.centerPoint.position;//cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, 10));
+
+        PlayerScript.OnPlayerDeath += OnPlayerDeath;
     }
     
+    void OnPlayerDeath(PlayerScript player)
+    {
+        StartCoroutine(DelayedPlayerDeath());
+    }
+
+    IEnumerator DelayedPlayerDeath()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.Play("camera shock");
+    }
+
     public void OnStateChange(GameState oldState, GameState newState)
     {
         /*
@@ -63,5 +81,9 @@ public class CameraController : MonoBehaviour
         Vector3 distanceFromCenterOfScreen = horde.crosshair.transform.position - centerScreen;
         distanceFromCenterOfScreen.z = 0;
         this.transform.position = cameraInitialPosition + distanceFromCenterOfScreen/cameraStillness;
+
+        ChromaticAberrationModel.Settings chromaticAbberation = postProcessing.profile.chromaticAberration.settings;
+        chromaticAbberation.intensity = cameraShock;
+        postProcessing.profile.chromaticAberration.settings = chromaticAbberation;
     }
 }
