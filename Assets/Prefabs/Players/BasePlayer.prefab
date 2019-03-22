@@ -825,6 +825,8 @@ MonoBehaviour:
   firingRight: 0
   firing: 0
   pushForce: {x: 0, y: 0, z: 0}
+  pushOnHitMultiplier: 10
+  secondsImmuneFor: 1
 --- !u!199 &5725655216475216455
 ParticleSystemRenderer:
   serializedVersion: 6

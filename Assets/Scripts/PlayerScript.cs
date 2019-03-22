@@ -76,6 +76,12 @@ public class PlayerScript : MonoBehaviour
     // If you want to apply a force to the player, do it with this vector
     public Vector3 pushForce;
 
+    // how far to yeet away when hit by a zombie
+    public float pushOnHitMultiplier;
+
+    public float secondsImmuneFor;
+    float immuneFor = 0f;
+
     private void Awake()
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
@@ -87,13 +93,18 @@ public class PlayerScript : MonoBehaviour
         collider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        
     }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (immuneFor > 0)
+        {
+            immuneFor -= Time.deltaTime;
+            if (immuneFor <= 0) animator.SetBool("immune", false); // deactivate flashing animation
+        }
+
         halo.color = playerColor;
         firing = false;
 
@@ -202,7 +213,7 @@ public class PlayerScript : MonoBehaviour
 
         if (animator != null)
         {
-            animator.enabled = true;
+            //animator.enabled = true;
 
             if (!firing)
             {
@@ -218,7 +229,7 @@ public class PlayerScript : MonoBehaviour
                 }
                 else
                 {
-                    animator.enabled = false;
+                    //animator.enabled = false;
                 }
             } else
             {
@@ -234,7 +245,7 @@ public class PlayerScript : MonoBehaviour
                 }
                 else
                 {
-                    animator.enabled = false;
+                   // animator.enabled = false;
                 }
             }
         }
@@ -254,26 +265,39 @@ public class PlayerScript : MonoBehaviour
     // Colliding with a zombie, take damage!
     public void OnCollisionEnter(Collision collision)
     {
+        if (dead) return;
+
         if (collision.collider.tag == "Zombie")
         {
             // Push the player away from the zombie
             Vector3 normal = collision.GetContact(0).normal;
-            rb.AddForce(normal * 5, ForceMode.Impulse);
+            pushForce = normal * pushOnHitMultiplier;
 
-            health -= 1 * GameObject.Find("Horde").GetComponent<HordeScript>().offensiveStat;
-
-            if (health <= 0)
+            // Only take damage if we're not immune right now
+            if (immuneFor <= 0)
             {
-                health = 0;
-                Die();
-            }
+                health -= 1 * GameObject.Find("Horde").GetComponent<HordeScript>().offensiveStat;
 
-            if (OnHealthChanged != null) OnHealthChanged(health);
+                if (health <= 0)
+                {
+                    health = 0;
+                    Die();
+                }
+                else
+                {
+                    animator.Play("chef hit");
+                    animator.SetBool("immune", true);
+                    immuneFor = secondsImmuneFor;
+                }
+
+                if (OnHealthChanged != null) OnHealthChanged(health);
+            }
         }
     }
 
     public void Die()
     {
+        gameData.playersAlive--;
         collider.enabled = false;
         dead = true;
         animator.enabled = true;
@@ -303,6 +327,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (newState == GameState.PREP)
         {
+            gameData.playersAlive++;
             if (dead) Respawn();
             ShowIndicator();
         }

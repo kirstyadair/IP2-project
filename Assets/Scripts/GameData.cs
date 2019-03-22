@@ -12,9 +12,10 @@ public class GameData : MonoBehaviour
     // Triggered when the state is changed suprisingly
     public delegate void StateChanged(GameState oldState, GameState newState);
     public event StateChanged OnStateChange;
-
     // Current state
     public GameState state = GameState.PREP;
+
+    public UIUpdater ui;
 
     // Current wave
     public int wave = 0;
@@ -46,9 +47,12 @@ public class GameData : MonoBehaviour
     [Header("Player colours")]
     public Color[] playerColors;
 
+    public int playersAlive = 0;
+
     private void Awake()
     {
         timer = GameObject.Find("Timer").GetComponent<TimerScript>();
+        PlayerScript.OnPlayerDeath += OnPlayerDeath;
     }
 
     // Start is called before the first frame update
@@ -62,6 +66,7 @@ public class GameData : MonoBehaviour
     {
         if (newState == GameState.PREP)
         {
+            playersAlive = 0;
             int seconds = currentMap.waves[0].secondsBeforeSpawning;
 
             // Initiate the countdown to start spawning
@@ -100,6 +105,12 @@ public class GameData : MonoBehaviour
             }
         }
     }
+
+    void OnPlayerDeath(PlayerScript player)
+    {
+        ui.ShowBigStatusBar("RIP " + player.chefType + " chef", 2f);
+    }
+
 
     public void StartSpawning()
     {

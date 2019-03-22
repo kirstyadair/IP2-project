@@ -8870,6 +8870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMap: {fileID: 1011659218}
   state: 0
+  ui: {fileID: 1993285898}
   wave: 0
   horde: {fileID: 736823583}
   waveIndicator: {fileID: 178040944}
@@ -8889,6 +8890,7 @@ MonoBehaviour:
   - {r: 0.9245283, g: 0.19624424, b: 0.35806057, a: 1}
   - {r: 0.48584908, g: 0.50200593, b: 1, a: 1}
   - {r: 0.9245283, g: 0.4753471, b: 0.8501577, a: 1}
+  playersAlive: 0
 --- !u!4 &467374299
 Transform:
   m_ObjectHideFlags: 0
