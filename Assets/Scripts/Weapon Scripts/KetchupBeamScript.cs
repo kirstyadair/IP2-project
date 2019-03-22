@@ -7,7 +7,6 @@ public class KetchupBeamScript : MonoBehaviour
     public GameObject ketchupPrefab;
     GameData gameData;
     public Vector3 ketchupSpread;
-    public Vector3 spawnPos;
     public PlayerScript playerScript;
 
     private void Awake()
@@ -23,9 +22,25 @@ public class KetchupBeamScript : MonoBehaviour
 
     void Update()
     {
-        if (playerScript.up)
+        if (playerScript.firingUp)
         {
-            spawnPos = new Vector3(0, 0, 0.5f);
+            Debug.Log("up");
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 0.5f);
+        }
+
+        if (playerScript.firingDown)
+        {
+            Debug.Log("down");
+        }
+
+        if (playerScript.firingLeft)
+        {
+            Debug.Log("left");
+        }
+
+        if (playerScript.firingRight)
+        {
+            Debug.Log("right");
         }
     }
 
@@ -41,7 +56,7 @@ public class KetchupBeamScript : MonoBehaviour
 
             direction.Normalize();
 
-            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, spawnPos, Quaternion.identity);
+            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
             ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
         }
