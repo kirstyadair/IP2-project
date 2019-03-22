@@ -48,13 +48,14 @@ public class KetchupScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (gameData == null) return;
         if (other.name == "Ground")
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
             //transform.localScale = ketchupBeamScript.ketchupPuddle;
         }
 
-        if (other.tag == "Zombie")
+        if (other.tag == "Zombie" && other.gameObject.GetComponent<ZombieScript>() != null)
         {
             other.gameObject.GetComponent<ZombieScript>().Hit(gameData.ketchupDamage);
         }

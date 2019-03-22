@@ -297,6 +297,8 @@ public class PlayerScript : MonoBehaviour
 
     public void Die()
     {
+        reticle.SetActive(false);
+        lineRenderer.enabled = false;
         gameData.playersAlive--;
         collider.enabled = false;
         dead = true;
@@ -318,8 +320,18 @@ public class PlayerScript : MonoBehaviour
 
     public void Respawn()
     {
+        reticle.SetActive(true);
+        lineRenderer.enabled = true;
         dead = false;
         collider.enabled = true;
+
+        // pick a respawn point
+        Vector3 spawnpoint = GameObject.FindGameObjectsWithTag("Player spawnpoint")[playerNumber - 1].transform.position;
+        health = maxHealth;
+
+        OnHealthChanged(health);
+
+        this.transform.position = spawnpoint;
     }
     
 
@@ -328,7 +340,16 @@ public class PlayerScript : MonoBehaviour
         if (newState == GameState.PREP)
         {
             gameData.playersAlive++;
-            if (dead) Respawn();
+            if (dead)
+            {
+                Respawn();
+            }
+            else
+            {
+                health = maxHealth;
+                OnHealthChanged(health);
+            }
+
             ShowIndicator();
         }
     }

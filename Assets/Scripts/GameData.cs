@@ -109,6 +109,13 @@ public class GameData : MonoBehaviour
     void OnPlayerDeath(PlayerScript player)
     {
         ui.ShowBigStatusBar("RIP " + player.chefType + " chef", 2f);
+
+        if (playersAlive == 0)
+        {
+            // game over!
+            ui.ShowBigStatusBar("The sushi took over...", 5f);
+           
+        }
     }
 
 

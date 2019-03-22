@@ -32,6 +32,10 @@ public class GravestoneScript : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        gameData.OnStateChange -= OnStateChange;
+    }
     // Update is called once per frame
     void Update()
     {
