@@ -8,6 +8,10 @@ public class KetchupBeamScript : MonoBehaviour
     GameData gameData;
     public Vector3 ketchupSpread;
     public PlayerScript playerScript;
+    bool hasMovedUp = false;
+    bool hasMovedDown = false;
+    bool hasMovedLeft = false;
+    bool hasMovedRight = false;
 
     private void Awake()
     {
@@ -24,23 +28,54 @@ public class KetchupBeamScript : MonoBehaviour
     {
         if (playerScript.firingUp)
         {
-            Debug.Log("up");
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 0.5f);
+            if (!hasMovedUp)
+            {
+                transform.localPosition = new Vector3(0, 0, 0);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + 0.5f);
+                hasMovedUp = true;
+                hasMovedDown = false;
+                hasMovedLeft = false;
+                hasMovedRight = false;
+            }
         }
 
         if (playerScript.firingDown)
         {
-            Debug.Log("down");
+            if (!hasMovedDown)
+            {
+                transform.localPosition = new Vector3(0, 0, 0);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.5f);
+                hasMovedUp = false;
+                hasMovedDown = true;
+                hasMovedLeft = false;
+                hasMovedRight = false;
+            }
         }
 
         if (playerScript.firingLeft)
         {
-            Debug.Log("left");
+            if (!hasMovedLeft)
+            {
+                transform.localPosition = new Vector3(0, 0, 0);
+                transform.localPosition = new Vector3(transform.localPosition.x - 0.5f, transform.localPosition.y, transform.localPosition.z - 0.3f);
+                hasMovedUp = false;
+                hasMovedDown = false;
+                hasMovedLeft = true;
+                hasMovedRight = false;
+            }
         }
 
         if (playerScript.firingRight)
         {
-            Debug.Log("right");
+            if (!hasMovedRight)
+            {
+                transform.localPosition = new Vector3(0, 0, 0);
+                transform.localPosition = new Vector3(transform.localPosition.x + 0.5f, transform.localPosition.y, transform.localPosition.z - 0.3f);
+                hasMovedUp = false;
+                hasMovedDown = false;
+                hasMovedLeft = false;
+                hasMovedRight = true;
+            }
         }
     }
 
