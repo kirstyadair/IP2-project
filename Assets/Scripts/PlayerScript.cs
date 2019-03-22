@@ -15,9 +15,13 @@ public class PlayerScript : MonoBehaviour
     public delegate void ShootingEvent();
     public event ShootingEvent OnFire;
 
+    public delegate void HealthChangedEvent(float health);
+    public event HealthChangedEvent OnHealthChanged;
+
     public GameObject reticle;
 
     [Tooltip("Player health")]
+    public float maxHealth;
     public float health;
 
     [Tooltip("Speed the player moves at")]
@@ -35,6 +39,8 @@ public class PlayerScript : MonoBehaviour
     public int showIndicatorFor;
 
     public SpriteRenderer halo;
+
+    public bool dead = false;
 
     // to tint the UI
     public Color playerColor;
@@ -244,9 +250,22 @@ public class PlayerScript : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                health = 0;
+                Die();
             }
+
+            if (OnHealthChanged != null) OnHealthChanged(health);
         }
+    }
+
+    public void Die()
+    {
+        dead = true;
+    }
+
+    public void Respawn()
+    {
+        dead = false;
     }
     
 
@@ -254,7 +273,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (newState == GameState.PREP)
         {
-            Debug.Log("show indicator");
+            if (dead) Respawn();
             ShowIndicator();
         }
     }

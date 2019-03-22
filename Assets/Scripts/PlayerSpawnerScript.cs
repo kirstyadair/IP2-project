@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerSpawnerScript : MonoBehaviour
 {
+    public HealthbarFactory healthbars;
     GameData gameData;
     List<GameObject> playerSpawnPoints;
     PlayerSelectionData playerSelectionData;
@@ -70,6 +71,8 @@ public class PlayerSpawnerScript : MonoBehaviour
 
         newPlayer.GetComponent<PlayerScript>().playerNumber = playerNumber;
         newPlayer.GetComponent<PlayerScript>().playerColor = playerColor;
+
+        if (healthbars != null) healthbars.CreateHealthbar(newPlayer.GetComponent<PlayerScript>());
     }
 
     void SpawnPlayersForKeyboardAndMouseControl()
