@@ -30,6 +30,8 @@ public class PlayerScript : MonoBehaviour
     [Tooltip("Speed the player moves at")]
     public float moveSpeed;
 
+    public float secondsBeforeSpawningGravestone;
+
     [Tooltip("Is this player AI-controlled?")]
     public bool isAIControlled;
 
@@ -40,6 +42,10 @@ public class PlayerScript : MonoBehaviour
     public int playerNumber;
 
     public int showIndicatorFor;
+    
+
+    // gravestone prefab
+    public GameObject gravestonePrefab;
 
     public SpriteRenderer halo;
 
@@ -49,6 +55,8 @@ public class PlayerScript : MonoBehaviour
     public Color playerColor;
 
     public Animator animator;
+
+    Collider collider;
 
     Rigidbody rb;
     GameData gameData;
@@ -76,7 +84,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        collider = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
         
@@ -266,15 +274,28 @@ public class PlayerScript : MonoBehaviour
 
     public void Die()
     {
+        collider.enabled = false;
         dead = true;
         animator.enabled = true;
         animator.Play("die");
         OnPlayerDeath(this);
+
+        StartCoroutine(DelaySpawningGravestone());
+    }
+
+    IEnumerator DelaySpawningGravestone()
+    {
+        yield return new WaitForSeconds(secondsBeforeSpawningGravestone);
+
+        GameObject gravestone = Instantiate(gravestonePrefab);
+        gravestone.name = chefType.ToString() + "'s gravestone";
+        gravestone.transform.position = transform.position;
     }
 
     public void Respawn()
     {
         dead = false;
+        collider.enabled = true;
     }
     
 

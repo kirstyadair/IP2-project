@@ -802,10 +802,13 @@ MonoBehaviour:
   maxHealth: 5
   health: 5
   moveSpeed: 7
+  secondsBeforeSpawningGravestone: 1.5
   isAIControlled: 0
   chefType: 0
   playerNumber: 2
   showIndicatorFor: 5
+  gravestonePrefab: {fileID: 8646065115765085130, guid: 5d5bbe962b3698d46bcee32cc4280680,
+    type: 3}
   halo: {fileID: 4121498756737939560}
   dead: 0
   playerColor: {r: 0.19063722, g: 0.25723848, b: 0.7924528, a: 1}
