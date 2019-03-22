@@ -44,7 +44,7 @@ public class KetchupBeamScript : MonoBehaviour
             if (!hasMovedDown)
             {
                 transform.localPosition = new Vector3(0, 0, 0);
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.5f);
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 0.75f);
                 hasMovedUp = false;
                 hasMovedDown = true;
                 hasMovedLeft = false;
