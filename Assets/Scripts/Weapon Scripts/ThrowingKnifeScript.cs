@@ -12,13 +12,11 @@ public class ThrowingKnifeScript : MonoBehaviour
     AudioSource audioSource;
     GameData gameData;
     public ParticleSystem particleSystem;
-    Vector3 origin;
     Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        origin = transform.position;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -44,7 +42,6 @@ public class ThrowingKnifeScript : MonoBehaviour
         if (collision.tag == "Zombie")
         {
             collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage);
-            //Destroy(gameObject);
         }
 
         if (collision.tag == "Wall")
@@ -54,46 +51,6 @@ public class ThrowingKnifeScript : MonoBehaviour
             animator.Play("wiggle");
             particleSystem.Emit(50);
             audioSource.PlayOneShot(knifeLandSound);
-            //Destroy(gameObject);
-            //Rigidbody rb = GetComponent<Rigidbody>();
-            //rb.constraints = RigidbodyConstraints.FreezePosition;
-            //Wiggle();
         }
     }
-
-    /*void Wiggle()
-    {
-        // find entry direction
-        Vector3 knifeDirection = transform.position - origin;
-        knifeDirection.y = 0.25f;
-        knifeDirection.Normalize();
-
-        
-
-        transform.Translate((-knifeDirection.x * (knifeLength/2)), 0, 0);
-        Vector3 newpos = transform.position;
-        newpos.y = 0.25f;
-
-        // find how much time is left until the knife is destroyed
-        float timeLeft = timeToDestroy;
-
-        if (timeLeft > 0.5f)
-        {
-            StartCoroutine(WiggleUp());
-        }
-    }*/
-
-    /*IEnumerator WiggleUp()
-    {
-        transform.Rotate(0, 10, 0);
-        yield return new WaitForSeconds(0.2f);
-        StartCoroutine(WiggleDown());
-    }
-
-    IEnumerator WiggleDown()
-    {
-        transform.Rotate(0, -10, 0);
-        yield return new WaitForSeconds(0.2f);
-        StartCoroutine(WiggleUp());
-    }*/
 }
