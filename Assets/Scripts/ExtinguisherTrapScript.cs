@@ -108,15 +108,20 @@ public class ExtinguisherTrapScript : MonoBehaviour
             if (other.tag == "Zombie")
             {
                 Rigidbody zombieRB = other.GetComponent<Rigidbody>();
-                Vector3 dir = (bCollider.center - transform.position);
+                Vector3 dir = (bCollider.center - other.transform.position);
+                dir.y = 0;
+                dir.Normalize();
                 zombieRB.AddForce(dir, ForceMode.Impulse);
                 other.GetComponent<ZombieScript>().Hit(gameData.fireExtinguisherDamage);
             }
 
             if (other.tag == "Player")
             {
-                Vector3 dir = (bCollider.center - transform.position);
-                other.GetComponent<PlayerScript>().pushForce = dir * 2;
+                Vector3 dir = (bCollider.center - other.transform.position);
+                dir.y = 0;
+                dir.Normalize();
+                Debug.Log(dir);
+                other.GetComponent<PlayerScript>().pushForce = dir * 10;
             }
         }
         
