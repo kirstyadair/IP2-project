@@ -9,6 +9,7 @@ public class UIUpdater : MonoBehaviour
     public Animator bigStatusBarAnimator;
     public GameObject slider;
     public GameData gameData;
+    public Animator sliderAnimator;
 
     public string hordeIncomingText = "HORDE INC[OMI]NG";
     public float hordeIncomingAppearFor = 2;
@@ -21,6 +22,7 @@ public class UIUpdater : MonoBehaviour
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += StateChange;
+        gameData.OnGameOver += OnGameOver;
     }
 
     public void StateChange(GameState oldState, GameState newState)
@@ -33,6 +35,11 @@ public class UIUpdater : MonoBehaviour
         {
             ShowBigStatusBar(hordeIncomingText, hordeIncomingAppearFor);
         }
+    }
+
+    public void OnGameOver(GameWinner winner)
+    {
+        sliderAnimator.Play("sliderin");
     }
 
     public void ShowBigStatusBar(string text, float secondsToShow)

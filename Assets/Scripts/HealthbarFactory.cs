@@ -13,6 +13,7 @@ public class HealthbarFactory : MonoBehaviour
 
     public void CreateHealthbar(PlayerScript player)
     {
+        Debug.Log("current y: " + currentY);
         GameObject prefab;
 
         switch (player.chefType)
@@ -33,7 +34,7 @@ public class HealthbarFactory : MonoBehaviour
 
         GameObject healthbar = Instantiate(prefab, this.transform);
         healthbar.transform.localPosition = new Vector3(0, currentY, 0);
-        currentY += distanceBetweenBars;
+        currentY -= distanceBetweenBars;
 
         healthbar.GetComponent<HealthbarScript>().Initialize(player);
     }

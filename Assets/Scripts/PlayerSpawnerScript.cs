@@ -69,6 +69,8 @@ public class PlayerSpawnerScript : MonoBehaviour
         // Assign the controller
         newPlayer.GetComponent<PlayerScript>().controller = input;
 
+        newPlayer.GetComponent<PlayerScript>().health = gameData.playerHealth;
+        newPlayer.GetComponent<PlayerScript>().maxHealth = gameData.playerHealth;
         newPlayer.GetComponent<PlayerScript>().playerNumber = playerNumber;
         newPlayer.GetComponent<PlayerScript>().playerColor = playerColor;
 

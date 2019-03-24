@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState { PREP, PLAY }
+public enum GameWinner { PLAYERS, HORDE }
 
 public class GameData : MonoBehaviour
 {
@@ -12,6 +14,10 @@ public class GameData : MonoBehaviour
     // Triggered when the state is changed suprisingly
     public delegate void StateChanged(GameState oldState, GameState newState);
     public event StateChanged OnStateChange;
+
+    public delegate void GameOver(GameWinner winner);
+    public event GameOver OnGameOver;
+
     // Current state
     public GameState state = GameState.PREP;
 
@@ -22,10 +28,15 @@ public class GameData : MonoBehaviour
 
     public HordeScript horde;
 
+    public bool gameover = false;
+
     // Our countdown timer
     TimerScript timer;
 
     public WaveIndicatorScript waveIndicator;
+
+    [Header("Pick player health here")]
+    public int playerHealth;
 
     [Header("Wave indicator colours")]
     public Color preparingIndicatorFGColor;
@@ -53,6 +64,7 @@ public class GameData : MonoBehaviour
     {
         timer = GameObject.Find("Timer").GetComponent<TimerScript>();
         PlayerScript.OnPlayerDeath += OnPlayerDeath;
+        this.OnGameOver += OnGAMEOVER;
     }
 
     // Start is called before the first frame update
@@ -90,7 +102,7 @@ public class GameData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == GameState.PLAY)
+        if (state == GameState.PLAY && !gameover)
         {
             if (horde.isSpawning) waveIndicator.ChangeText("SPAWNING " + horde.zombiesAlive + "/" + horde.zombiesTotal);
             else waveIndicator.ChangeText("LEFT: " + horde.zombiesAlive + "/" + horde.zombiesTotal);
@@ -101,9 +113,31 @@ public class GameData : MonoBehaviour
                 // zombies are dead!
                 // next wave
                 wave++;
-                ChangeState(GameState.PREP);
+
+                // all waves are done
+                if (wave >= currentMap.waves.Length)
+                {
+                    gameover = true;
+                    OnGameOver(GameWinner.PLAYERS);
+                }
+                else
+                {
+                    ChangeState(GameState.PREP);
+                }
             }
         }
+    }
+
+    void OnGAMEOVER(GameWinner winner)
+    {
+        // go to the end screen after a couple seconds
+        StartCoroutine(DelayEndScreen());
+    }
+
+    IEnumerator DelayEndScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("EndScene");
     }
 
     void OnPlayerDeath(PlayerScript player)
@@ -112,9 +146,8 @@ public class GameData : MonoBehaviour
 
         if (playersAlive == 0)
         {
-            // game over!
-            ui.ShowBigStatusBar("The sushi took over...", 5f);
-           
+            gameover = true;
+            OnGameOver(GameWinner.HORDE);
         }
     }
 

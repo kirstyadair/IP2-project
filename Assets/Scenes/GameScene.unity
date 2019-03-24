@@ -8784,7 +8784,9 @@ MonoBehaviour:
   ui: {fileID: 1993285898}
   wave: 0
   horde: {fileID: 736823583}
+  gameover: 0
   waveIndicator: {fileID: 178040944}
+  playerHealth: 5
   preparingIndicatorFGColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   preparingIndicatorBGColor: {r: 1, g: 1, b: 1, a: 1}
   spawningIndicatorFGColor: {r: 1, g: 1, b: 1, a: 1}
@@ -17015,6 +17017,7 @@ RectTransform:
   - {fileID: 340308329}
   - {fileID: 1282854017}
   - {fileID: 89788195}
+  - {fileID: 1392020042}
   m_Father: {fileID: 1993285896}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17385,8 +17388,8 @@ MonoBehaviour:
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
   - sushiType: 0
-    sushiCount: 250
-    secondsBeforeSpawning: 5
+    sushiCount: 10
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 100
@@ -21814,6 +21817,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6b3e5d5226e354da0e6866ec43bf9b, type: 3}
+--- !u!1 &1392020041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392020042}
+  - component: {fileID: 1392020044}
+  - component: {fileID: 1392020043}
+  m_Layer: 5
+  m_Name: White
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1392020042
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392020041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 976812561}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 878.5, y: 514.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1392020043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392020041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1392020044
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392020041}
+  m_CullTransparentMesh: 0
 --- !u!1 &1392664995
 GameObject:
   m_ObjectHideFlags: 0
@@ -22024,7 +22101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 223, y: -144}
+  m_AnchoredPosition: {x: 223, y: -32}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396825163
@@ -38629,6 +38706,7 @@ MonoBehaviour:
   bigStatusBarAnimator: {fileID: 1018727642}
   slider: {fileID: 976812560}
   gameData: {fileID: 0}
+  sliderAnimator: {fileID: 976812563}
   hordeIncomingText: HORDE INC[OMI]NG
   hordeIncomingAppearFor: 2
   getReadyText: GET READY
