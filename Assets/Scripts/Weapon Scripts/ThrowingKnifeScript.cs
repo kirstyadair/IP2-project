@@ -6,6 +6,7 @@ public class ThrowingKnifeScript : MonoBehaviour
 {
     public AudioClip knifeLandSound;
     public AudioClip knifeThrowSound;
+    public PlayerStats stats;
     float timeToDestroy = 3f;
     float knifeLength = 0.25f;
     Animator animator;
@@ -41,7 +42,7 @@ public class ThrowingKnifeScript : MonoBehaviour
 
         if (collision.tag == "Zombie")
         {
-            collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage);
+            if (collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage)) stats.kills++;
         }
 
         if (collision.tag == "Wall")

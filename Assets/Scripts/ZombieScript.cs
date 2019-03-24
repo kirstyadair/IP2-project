@@ -7,6 +7,7 @@ public class ZombieScript : MonoBehaviour
 {
     public float health;
     public float maxHealth;
+    public bool dead = false;
     public SpriteRenderer sprt;
     public SpriteRenderer defBubble;
     public SpriteRenderer offBubble;
@@ -28,6 +29,8 @@ public class ZombieScript : MonoBehaviour
         clr.b = health / maxHealth;
         sprt.color = clr;
 
+        if (dead) return;
+
         if (hordeScript.state == HordeState.DEFENSIVE)
         {
             offBubble.gameObject.SetActive(false);
@@ -47,14 +50,24 @@ public class ZombieScript : MonoBehaviour
         }
     }
 
-    public void Hit(float hp)
+    public bool Hit(float hp)
     {
+        if (dead) return false;
+
         health -= hp * hordeScript.defensiveStat;
-        if (health <= 0) Kill();
+        if (health <= 0) {
+            Kill();
+            return true;
+        }
+
+        return false;
     }
 
     public void Kill()
     {
+        offBubble.gameObject.SetActive(false);
+        defBubble.gameObject.SetActive(false);
+        dead = true;
         GetComponent<Animator>().SetTrigger("death");
         GetComponent<ParticleSystem>().Emit(10);
         Destroy(gameObject, 2f);

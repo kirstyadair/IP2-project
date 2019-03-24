@@ -4767,10 +4767,10 @@ GameObject:
   - component: {fileID: 7468556333950783700}
   - component: {fileID: 6285639958591706625}
   - component: {fileID: 6496719619789926515}
-  - component: {fileID: 6325514007855508364}
   - component: {fileID: 100960119685943177}
   - component: {fileID: 386380684}
   - component: {fileID: 1869257830198779272}
+  - component: {fileID: 1188639393729951506}
   m_Layer: 0
   m_Name: KnivePrefab
   m_TagString: Untagged
@@ -4847,20 +4847,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6325514007855508364
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100960119685943176}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &100960119685943177
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4992,6 +4978,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1188639393729951506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100960119685943176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.137875, z: 1}
+  m_Center: {x: 0, y: 0.56893766, z: 0}
 --- !u!1 &3649015231362864843
 GameObject:
   m_ObjectHideFlags: 0

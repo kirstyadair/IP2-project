@@ -25,7 +25,7 @@ public class SpatulaScript : MonoBehaviour
         {
             if (sushi.tag == "Zombie")
             {
-                sushi.gameObject.GetComponent<ZombieScript>().Hit(gameData.spatulaDamage);
+                if (sushi.gameObject.GetComponent<ZombieScript>().Hit(gameData.spatulaDamage)) playerScript.stats.kills++;
             }
         }
         hitCountdown = 0.2f;

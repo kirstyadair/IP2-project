@@ -7,11 +7,13 @@ public class PlayerIndicatorScript : MonoBehaviour
 {
     public Animator animator;
     public TextMeshPro text;
+    public TextMeshPro killedNumber;
     public SpriteRenderer sprite;
 
-    public void Show(string text, Color color, float seconds)
+    public void Show(int playerNumber, Color color, int kills, float seconds)
     {
-        this.text.text = text;
+        this.text.text = "P" + playerNumber;
+        this.killedNumber.text = kills.ToString();
         sprite.color = color;
         animator.Play("show");
         StartCoroutine(HideAfter(seconds));

@@ -114,9 +114,12 @@ public class GameData : MonoBehaviour
                 // next wave
                 wave++;
 
+                Debug.Log("wave " + wave + " of " + currentMap.waves.Length);
+
                 // all waves are done
                 if (wave >= currentMap.waves.Length)
                 {
+                    
                     gameover = true;
                     OnGameOver(GameWinner.PLAYERS);
                 }

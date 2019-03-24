@@ -35,6 +35,7 @@ public class KnivesScript : MonoBehaviour
 
         GameObject knife = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
 
+        knife.GetComponent<ThrowingKnifeScript>().stats = playerScript.stats;
         knife.GetComponent<Rigidbody>().AddForce(bulletDirection * 2, ForceMode.Impulse);
         knife.transform.up = bulletDirection;
         fireTimeout = fireCooldown;

@@ -93,6 +93,7 @@ public class KetchupBeamScript : MonoBehaviour
 
             GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
             ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
+            ketchup.GetComponent<KetchupScript>().stats = playerScript.stats;
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
         }
     }

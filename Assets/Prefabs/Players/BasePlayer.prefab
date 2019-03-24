@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 7702636376448067662}
   - component: {fileID: 227054832971952445}
   m_Layer: 0
-  m_Name: TextMeshPro (2)
+  m_Name: killedNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5745,6 +5745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1491049544071964480}
   text: {fileID: 3227668616684603537}
+  killedNumber: {fileID: 7702636376448067662}
   sprite: {fileID: 1119597772816391266}
 --- !u!1 &7875524304949688172
 GameObject:

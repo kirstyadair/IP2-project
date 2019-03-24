@@ -9,6 +9,7 @@ public class KetchupScript : MonoBehaviour
     public GameObject audioObject;
     public KetchupBeamScript ketchupBeamScript;
     GameData gameData;
+    public PlayerStats stats;
 
     bool firing = false;
 
@@ -52,7 +53,7 @@ public class KetchupScript : MonoBehaviour
 
         if (other.tag == "Zombie" && other.gameObject.GetComponent<ZombieScript>() != null)
         {
-            other.gameObject.GetComponent<ZombieScript>().Hit(gameData.ketchupDamage);
+            if (other.gameObject.GetComponent<ZombieScript>().Hit(gameData.ketchupDamage)) stats.kills++;
         }
     }
 }

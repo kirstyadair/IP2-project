@@ -13,9 +13,12 @@ public class PlayerSpawnerScript : MonoBehaviour
     public GameObject thinChefPrefab;
     public GameObject crazyChefPrefab;
 
+    StatsScript statsScript;
+
     void Start()
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        statsScript = GameObject.Find("StatsObject").GetComponent<StatsScript>();
 
         // This will only find the currently active spawn points
         playerSpawnPoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player spawnpoint"));
@@ -66,14 +69,17 @@ public class PlayerSpawnerScript : MonoBehaviour
         // Place it at the spawn point
         newPlayer.transform.position = spawnPoint.transform.position;
 
+        PlayerScript newPlayerScript = newPlayer.GetComponent<PlayerScript>();
+
         // Assign the controller
-        newPlayer.GetComponent<PlayerScript>().controller = input;
+        newPlayerScript.controller = input;
 
-        newPlayer.GetComponent<PlayerScript>().health = gameData.playerHealth;
-        newPlayer.GetComponent<PlayerScript>().maxHealth = gameData.playerHealth;
-        newPlayer.GetComponent<PlayerScript>().playerNumber = playerNumber;
-        newPlayer.GetComponent<PlayerScript>().playerColor = playerColor;
+        newPlayerScript.health = gameData.playerHealth;
+        newPlayerScript.maxHealth = gameData.playerHealth;
+        newPlayerScript.playerNumber = playerNumber;
+        newPlayerScript.playerColor = playerColor;
 
+        statsScript.RegisterStats(newPlayerScript);
         if (healthbars != null) healthbars.CreateHealthbar(newPlayer.GetComponent<PlayerScript>());
     }
 

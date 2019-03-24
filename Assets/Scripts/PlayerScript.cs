@@ -54,9 +54,12 @@ public class PlayerScript : MonoBehaviour
     // to tint the UI
     public Color playerColor;
 
+    // keeps hold of stat data, is assigned by StatsScript when player is spawned
+    public PlayerStats stats;
+
     public Animator animator;
 
-    Collider collider;
+    Collider collid;
 
     Rigidbody rb;
     GameData gameData;
@@ -91,7 +94,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<Collider>();
+        collid = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
     }
@@ -243,7 +246,7 @@ public class PlayerScript : MonoBehaviour
 
     public void ShowIndicator()
     {
-        playerIndicator.Show("P" + playerNumber, playerColor, showIndicatorFor);
+        playerIndicator.Show(playerNumber, playerColor, stats.kills, showIndicatorFor);
     }
 
     public bool IsActivatingTrap()
@@ -262,6 +265,9 @@ public class PlayerScript : MonoBehaviour
             // Push the player away from the zombie
             Vector3 normal = collision.GetContact(0).normal;
             pushForce = normal * pushOnHitMultiplier;
+
+            // don't do damage if this zombie is dead
+            if (collision.gameObject.GetComponent<ZombieScript>().dead) return;
 
             // Only take damage if we're not immune right now
             if (immuneFor <= 0)
@@ -290,7 +296,8 @@ public class PlayerScript : MonoBehaviour
         reticle.SetActive(false);
         lineRenderer.enabled = false;
         gameData.playersAlive--;
-        collider.enabled = false;
+        stats.deaths++; 
+        collid.enabled = false;
         dead = true;
         animator.enabled = true;
         animator.Play("die");
@@ -313,7 +320,7 @@ public class PlayerScript : MonoBehaviour
         reticle.SetActive(true);
         lineRenderer.enabled = true;
         dead = false;
-        collider.enabled = true;
+        collid.enabled = true;
 
         // pick a respawn point
         Vector3 spawnpoint = GameObject.FindGameObjectsWithTag("Player spawnpoint")[playerNumber - 1].transform.position;
