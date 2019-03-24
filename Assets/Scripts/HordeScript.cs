@@ -36,7 +36,9 @@ public class HordeScript : MonoBehaviour
 
     [Header("Sushi sprites")]
     public Sprite eyesSushi;
-    public Sprite tentacleSushi;
+    public Sprite teethSushi;
+    public Sprite tentaclesSushi;
+    public Sprite squidSushi;
 
     public int zombiesAlive;
     public int zombiesTotal;
@@ -113,8 +115,14 @@ public class HordeScript : MonoBehaviour
                 case SushiType.EYES:
                     sushiSprite = eyesSushi;
                     break;
+                case SushiType.TEETH:
+                    sushiSprite = teethSushi;
+                    break;
+                case SushiType.SQUID:
+                    sushiSprite = squidSushi;
+                    break;
                 case SushiType.TENTACLES:
-                    sushiSprite = tentacleSushi;
+                    sushiSprite = tentaclesSushi;
                     break;
                 default: break;
             }

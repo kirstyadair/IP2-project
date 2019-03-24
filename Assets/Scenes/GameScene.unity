@@ -12923,8 +12923,10 @@ MonoBehaviour:
   forceMultiplier: 20
   crosshairBounds: 10
   crosshairSpeed: 4
-  eyesSushi: {fileID: 21300000, guid: bab1ecaf2af525f47ae6d5172330a44c, type: 3}
-  tentacleSushi: {fileID: 21300000, guid: 6ca8ab5ba10ac2242951e31165f44e2e, type: 3}
+  eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
+  teethSushi: {fileID: 21300004, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
+  tentaclesSushi: {fileID: 21300000, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
+  squidSushi: {fileID: 21300006, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   zombiesAlive: 0
   zombiesTotal: 0
   isSpawning: 0
@@ -17448,34 +17450,34 @@ MonoBehaviour:
   waves:
   - sushiType: 0
     sushiCount: 5
-    secondsBeforeSpawning: 5
-    timeBetweenSpawns: 0.1
-    spawnPoint: {fileID: 746124518}
-    hitpoints: 100
-  - sushiType: 1
-    sushiCount: 10
-    secondsBeforeSpawning: 5
-    timeBetweenSpawns: 0.1
-    spawnPoint: {fileID: 1068208180}
-    hitpoints: 100
-  - sushiType: 0
-    sushiCount: 10
-    secondsBeforeSpawning: 5
-    timeBetweenSpawns: 0.05
-    spawnPoint: {fileID: 746124518}
-    hitpoints: 100
-  - sushiType: 1
-    sushiCount: 10
-    secondsBeforeSpawning: 5
-    timeBetweenSpawns: 0.05
-    spawnPoint: {fileID: 1068208180}
-    hitpoints: 100
-  - sushiType: 0
-    sushiCount: 10
     secondsBeforeSpawning: 1
+    timeBetweenSpawns: 0.1
+    spawnPoint: {fileID: 746124518}
+    hitpoints: 25
+  - sushiType: 1
+    sushiCount: 10
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.1
+    spawnPoint: {fileID: 1068208180}
+    hitpoints: 50
+  - sushiType: 3
+    sushiCount: 10
+    secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
+    hitpoints: 75
+  - sushiType: 2
+    sushiCount: 10
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.05
+    spawnPoint: {fileID: 1068208180}
     hitpoints: 100
+  - sushiType: 0
+    sushiCount: 10
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 0.05
+    spawnPoint: {fileID: 746124518}
+    hitpoints: 125
 --- !u!1 &1012832081
 GameObject:
   m_ObjectHideFlags: 0
