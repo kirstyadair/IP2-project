@@ -5434,6 +5434,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -5573,6 +5577,10 @@ PrefabInstance:
       propertyPath: explosionAnim
       value: 
       objectReference: {fileID: 1128935071}
+    - target: {fileID: 772375463, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: trapRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Size.z
@@ -6560,6 +6568,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -6678,6 +6690,10 @@ PrefabInstance:
       propertyPath: explosionAnim
       value: 
       objectReference: {fileID: 476937356}
+    - target: {fileID: 772375463, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: trapRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Size.z
@@ -31206,6 +31222,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Controller
@@ -31359,6 +31379,10 @@ PrefabInstance:
       propertyPath: explosionAnim
       value: 
       objectReference: {fileID: 1526612814}
+    - target: {fileID: 772375463, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: trapRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7328016607943024868, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Size.z
