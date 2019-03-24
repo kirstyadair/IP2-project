@@ -81,7 +81,8 @@ public class TrapScript : MonoBehaviour
                 if (hit.gameObject.GetComponent<ZombieScript>().Hit(gameData.cookerDamage) && stats != null) stats.kills++;
             }
         }
-        firePS.Emit(20);
+        firePS.Emit(1);
+        // I don't know why firePs.Stop() doesn't work, but it doesn't, so we're using emissionRate instead
         firePS.emissionRate = 0;
         trapDeactivated = true;
         smokePS = GetComponent<ParticleSystem>();
