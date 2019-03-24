@@ -17456,25 +17456,25 @@ MonoBehaviour:
     hitpoints: 25
   - sushiType: 1
     sushiCount: 10
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 50
   - sushiType: 3
     sushiCount: 10
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 75
   - sushiType: 2
     sushiCount: 10
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
   - sushiType: 0
     sushiCount: 10
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 125
