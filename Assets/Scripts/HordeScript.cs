@@ -229,7 +229,7 @@ public class HordeScript : MonoBehaviour
             state = HordeState.NEUTRAL;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || (controller != null && controller.RightBumper.IsPressed))
         {
             if (offenseModeTimer > 0)
             {
@@ -239,7 +239,7 @@ public class HordeScript : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || (controller != null && controller.LeftBumper.IsPressed))
         {
             if (defenseModeTimer > 0)
             {
