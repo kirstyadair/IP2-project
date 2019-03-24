@@ -109,6 +109,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
             {
                 Rigidbody zombieRB = other.GetComponent<Rigidbody>();
                 Vector3 dir = (bCollider.center - other.transform.position);
+                if (other.transform.position.z < bCollider.center.z) dir *= -1;
                 dir.y = 0;
                 dir.Normalize();
                 zombieRB.AddForce(dir, ForceMode.Impulse);
@@ -118,6 +119,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
             if (other.tag == "Player")
             {
                 Vector3 dir = (bCollider.center - other.transform.position);
+                if (other.transform.position.z < bCollider.center.z) dir *= -1;
                 dir.y = 0;
                 dir.Normalize();
                 Debug.Log(dir);
