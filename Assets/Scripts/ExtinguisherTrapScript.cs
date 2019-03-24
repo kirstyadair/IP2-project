@@ -8,8 +8,11 @@ public class ExtinguisherTrapScript : MonoBehaviour
     float timeToDeactivate = 10.0f;
     float timeToActivate = 60.0f;
     bool activated = false;
-    bool playerHurt = false;
+    //bool playerHurt = false;
     bool canReactivate = true;
+
+    // stats for the last person that activated this
+    PlayerStats stats;
 
     GameData gameData;
     Animator popupAnimator;
@@ -113,7 +116,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
                 dir.y = 0;
                 dir.Normalize();
                 zombieRB.AddForce(dir, ForceMode.Impulse);
-                other.GetComponent<ZombieScript>().Hit(gameData.fireExtinguisherDamage);
+                if (other.GetComponent<ZombieScript>().Hit(gameData.fireExtinguisherDamage) && stats != null) stats.kills++; 
             }
 
             if (other.tag == "Player")
@@ -134,6 +137,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
                 if (other.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
                     Debug.Log("E pressed");
+                    stats = other.GetComponent<PlayerScript>().stats;
                     popupAnimator.Play("select");
                     popupAnimator.SetBool("show", false);
                     StartCoroutine(PSActive());

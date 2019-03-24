@@ -12,6 +12,10 @@ public class TrapScript : MonoBehaviour
     public float trapRadius;
     ParticleSystem smokePS;
     public ParticleSystem firePS;
+
+    // stats for the player that most recently activated this trap
+    PlayerStats stats;
+
     Vector3 trapCentre;
     public Animator promptAnim;
     public Animator explosionAnim;
@@ -39,7 +43,7 @@ public class TrapScript : MonoBehaviour
                 promptAnim.SetBool("activate", true);
                 if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
-
+                    stats = collision.GetComponent<PlayerScript>().stats;
                     promptAnim.SetBool("activate", false);
                     explosionAnim.SetBool("pulse", true);
                     StartCoroutine(Detonate());
@@ -74,7 +78,7 @@ public class TrapScript : MonoBehaviour
         {
             if (hit.tag == "Zombie")
             {
-                hit.gameObject.GetComponent<ZombieScript>().Hit(gameData.cookerDamage);
+                if (hit.gameObject.GetComponent<ZombieScript>().Hit(gameData.cookerDamage) && stats != null) stats.kills++;
             }
         }
         firePS.Emit(20);
