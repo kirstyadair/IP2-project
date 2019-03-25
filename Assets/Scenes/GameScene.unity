@@ -12929,9 +12929,9 @@ MonoBehaviour:
   zombiesTotal: 0
   isSpawning: 0
   center: {fileID: 1168982927}
-  defensiveStat: 1
-  offensiveStat: 1
-  state: 0
+  defensiveStat: 5
+  offensiveStat: 5
+  state: 1
   defenseModeTimer: 5
   offenseModeTimer: 5
 --- !u!4 &736823584
@@ -17446,31 +17446,31 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 5
+    sushiCount: 30
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 746124518}
     hitpoints: 25
   - sushiType: 1
-    sushiCount: 10
+    sushiCount: 60
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 50
   - sushiType: 3
-    sushiCount: 10
+    sushiCount: 90
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 75
   - sushiType: 2
-    sushiCount: 10
+    sushiCount: 120
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
   - sushiType: 0
-    sushiCount: 10
+    sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
@@ -20578,7 +20578,7 @@ Transform:
   m_LocalScale: {x: 72.01497, y: 65.4248, z: 65.4248}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 62
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1276542256
 PrefabInstance:
@@ -24161,7 +24161,6 @@ Transform:
   - {fileID: 373246425}
   - {fileID: 1530410736}
   - {fileID: 913486210}
-  - {fileID: 1263688683}
   - {fileID: 826911652}
   - {fileID: 1706729617}
   - {fileID: 840795926}
@@ -24177,6 +24176,7 @@ Transform:
   - {fileID: 29950359}
   - {fileID: 1286831926198788554}
   - {fileID: 748297307}
+  - {fileID: 1263688683}
   - {fileID: 1392664998}
   - {fileID: 117891715}
   - {fileID: 619740024}
@@ -32608,7 +32608,7 @@ PrefabInstance:
     - target: {fileID: 5764935665683994387, guid: 7bbc729bb1cdbcc42835926fb3143f69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35700002
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 5764935665683994387, guid: 7bbc729bb1cdbcc42835926fb3143f69,
         type: 3}
