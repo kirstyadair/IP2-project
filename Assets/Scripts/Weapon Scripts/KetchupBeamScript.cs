@@ -104,8 +104,6 @@ public class KetchupBeamScript : MonoBehaviour
 
             ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
             ketchup.tag = "KetchupBlob";
-            //ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
-            //ketchup.GetComponent<KetchupScript>().stats = playerScript.stats;
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
             ketchupActive = true;
             StartCoroutine(StartKetchupDestroy(ketchup));
