@@ -8821,8 +8821,8 @@ MonoBehaviour:
   playingIndicatorFGColor: {r: 1, g: 1, b: 1, a: 1}
   playingIndicatorBGColor: {r: 0.8207547, g: 0.23616053, b: 0.23616053, a: 1}
   ketchupDamage: 1
-  spatulaDamage: 100
-  throwingKnifeDamage: 50
+  spatulaDamage: 20
+  throwingKnifeDamage: 3
   fireExtinguisherDamage: 1
   cookerDamage: 100
   playerColors:
@@ -12918,7 +12918,7 @@ MonoBehaviour:
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   crosshairDefault: {fileID: 1994634841}
   wiggleMultiplier: 15
-  forceMultiplier: 20
+  forceMultiplier: 40
   crosshairBounds: 10
   crosshairSpeed: 4
   eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
