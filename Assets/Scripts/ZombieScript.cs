@@ -12,12 +12,17 @@ public class ZombieScript : MonoBehaviour
     public SpriteRenderer defBubble;
     public SpriteRenderer offBubble;
     HordeScript hordeScript;
+    public PlayerScript playerScript;
+    GameData gameData;
+    public PlayerStats stats;
 
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.5f, 1.5f);
         hordeScript = GameObject.Find("Horde").GetComponent<HordeScript>();
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        stats = playerScript.stats;
     }
 
     // Update is called once per frame
@@ -71,5 +76,15 @@ public class ZombieScript : MonoBehaviour
         GetComponent<Animator>().SetTrigger("death");
         GetComponent<ParticleSystem>().Emit(10);
         Destroy(gameObject, 2f);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (gameData == null) return;
+
+        if (other.tag == "KetchupBlob")
+        {
+            if (Hit(gameData.ketchupDamage)) stats.kills++;
+        }
     }
 }

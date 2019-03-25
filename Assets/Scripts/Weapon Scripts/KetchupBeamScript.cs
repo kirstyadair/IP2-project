@@ -5,13 +5,17 @@ using UnityEngine;
 public class KetchupBeamScript : MonoBehaviour
 {
     public GameObject ketchupPrefab;
+    GameObject ketchup;
     GameData gameData;
     public Vector3 ketchupSpread;
+    Vector3 direction;
     public PlayerScript playerScript;
     bool hasMovedUp = false;
     bool hasMovedDown = false;
     bool hasMovedLeft = false;
     bool hasMovedRight = false;
+    bool ketchupActive = false;
+    float ketchupTimeToDestroy = 3.0f;
 
     private void Awake()
     {
@@ -26,6 +30,11 @@ public class KetchupBeamScript : MonoBehaviour
 
     void Update()
     {
+        if (ketchupActive)
+        {
+            
+        }
+
         if (playerScript.firingUp)
         {
             if (!hasMovedUp)
@@ -77,13 +86,15 @@ public class KetchupBeamScript : MonoBehaviour
                 hasMovedRight = true;
             }
         }
+
+        
     }
 
     public void Fire()
     {
         if (gameData.state != GameState.PREP)
         {
-            Vector3 direction = playerScript.reticlePos - transform.position;
+            direction = playerScript.reticlePos - transform.position;
 
             if (direction.x >= 2) direction.x = 2;
             if (direction.y >= 2) direction.y = 2;
@@ -91,10 +102,26 @@ public class KetchupBeamScript : MonoBehaviour
 
             direction.Normalize();
 
-            GameObject ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
-            ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
-            ketchup.GetComponent<KetchupScript>().stats = playerScript.stats;
+            ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
+            ketchup.tag = "KetchupBlob";
+            //ketchup.GetComponent<KetchupScript>().ketchupBeamScript = this;
+            //ketchup.GetComponent<KetchupScript>().stats = playerScript.stats;
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
+            ketchupActive = true;
+            StartCoroutine(StartKetchupDestroy(ketchup));
         }
+    }
+
+    IEnumerator StartKetchupDestroy(GameObject ketchup)
+    {
+        float timeToDestroy = 3.0f;
+        do
+        {
+            timeToDestroy -= Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+            ketchup.transform.localScale += ketchupSpread;
+        } while (timeToDestroy > 0);
+
+        Destroy(ketchup);
     }
 }
