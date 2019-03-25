@@ -17246,31 +17246,31 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 30
+    sushiCount: 50
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 746124518}
     hitpoints: 25
   - sushiType: 1
-    sushiCount: 60
+    sushiCount: 100
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 50
-  - sushiType: 3
-    sushiCount: 100
+  - sushiType: 0
+    sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 75
   - sushiType: 2
-    sushiCount: 120
+    sushiCount: 200
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
-  - sushiType: 0
-    sushiCount: 200
+  - sushiType: 3
+    sushiCount: 250
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
