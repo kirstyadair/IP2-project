@@ -12,7 +12,7 @@ public class ZombieScript : MonoBehaviour
     public SpriteRenderer defBubble;
     public SpriteRenderer offBubble;
     HordeScript hordeScript;
-    public PlayerScript playerScript;
+    PlayerScript playerScript;
     GameData gameData;
     public PlayerStats stats;
 
@@ -22,6 +22,7 @@ public class ZombieScript : MonoBehaviour
         this.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.5f, 1.5f);
         hordeScript = GameObject.Find("Horde").GetComponent<HordeScript>();
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        playerScript = GameObject.Find("FAT player").GetComponent<PlayerScript>();
         stats = playerScript.stats;
     }
 
