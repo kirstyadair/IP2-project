@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pPlane2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: floor_brown
+    second: {fileID: 2800000, guid: 08f06c8cede406e4fb1b9d249e0c8017, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
