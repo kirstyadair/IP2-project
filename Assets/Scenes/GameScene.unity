@@ -12803,8 +12803,8 @@ MonoBehaviour:
   crosshairDefault: {fileID: 1994634841}
   wiggleMultiplier: 15
   forceMultiplier: 40
-  crosshairBounds: 11.59
-  crosshairSpeed: 4
+  crosshairBounds: 14.04
+  crosshairSpeed: 8
   eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   teethSushi: {fileID: 21300004, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   tentaclesSushi: {fileID: 21300000, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
@@ -12813,8 +12813,8 @@ MonoBehaviour:
   zombiesTotal: 0
   isSpawning: 0
   center: {fileID: 1168982927}
-  defensiveStat: 2
-  offensiveStat: 2
+  defensiveStat: 3
+  offensiveStat: 3
   state: 0
   defenseModeTimer: 5
   offenseModeTimer: 5
