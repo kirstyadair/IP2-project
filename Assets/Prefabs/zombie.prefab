@@ -169,12 +169,11 @@ GameObject:
   - component: {fileID: 3804344890540156401}
   - component: {fileID: 8076792157544580359}
   - component: {fileID: 7721359010831109620}
-  - component: {fileID: 1731212811966871813}
   - component: {fileID: 8076792157544580355}
   - component: {fileID: 8076792157544580354}
   - component: {fileID: 8076792157544580353}
   - component: {fileID: 3050425991681141169}
-  - component: {fileID: 8723889564263752200}
+  - component: {fileID: 6584742671301105892}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Zombie
@@ -213,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
+  dead: 0
   sprt: {fileID: 1849862969246982456}
   defBubble: {fileID: 2237925211682015255}
   offBubble: {fileID: 4138144301438319080}
@@ -232,20 +232,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!136 &1731212811966871813
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8076792157544580352}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.22
-  m_Height: 0.62
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &8076792157544580355
 Animator:
   serializedVersion: 3
@@ -268,7 +254,7 @@ Animator:
 --- !u!199 &8076792157544580354
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5085,7 +5071,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!135 &8723889564263752200
+--- !u!135 &6584742671301105892
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5093,11 +5079,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8076792157544580352}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.37
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0.00001}
 --- !u!1 &8821752777949484031
 GameObject:
   m_ObjectHideFlags: 0
