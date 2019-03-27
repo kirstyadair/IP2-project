@@ -12,7 +12,7 @@ public class TrapScript : MonoBehaviour
     public float trapRadius;
     ParticleSystem smokePS;
     public ParticleSystem firePS;
-    public Light pointLight;
+    public GameObject pointLight;
 
     // stats for the player that most recently activated this trap
     PlayerStats stats;
@@ -27,7 +27,7 @@ public class TrapScript : MonoBehaviour
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         trapCentre = GetComponent<BoxCollider>().bounds.center;
-        pointLight.enabled = false;
+        pointLight.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class TrapScript : MonoBehaviour
         {
             if (!trapDeactivated)
             {
-                pointLight.enabled = true;
+                pointLight.SetActive(true);
                 promptAnim.SetBool("activate", true);
                 if (collision.GetComponent<PlayerScript>().IsActivatingTrap())
                 {
@@ -61,7 +61,7 @@ public class TrapScript : MonoBehaviour
         if (other.tag == "Player")
         {
             promptAnim.SetBool("activate", false);
-            pointLight.enabled = false;
+            pointLight.SetActive(false);
         }
     }
 
