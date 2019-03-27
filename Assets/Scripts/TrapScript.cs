@@ -86,6 +86,7 @@ public class TrapScript : MonoBehaviour
         firePS.emissionRate = 0;
         trapDeactivated = true;
         smokePS = GetComponent<ParticleSystem>();
+        GetComponent<AudioSource>().Play();
         if (!smokePS.isPlaying) smokePS.Play();
         StartCoroutine(Reactivate());
     }
