@@ -20,6 +20,8 @@ public class GravestoneScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
         gameData.OnStateChange += OnStateChange;
+        transform.position = new Vector3(transform.position.x, 0.1f, transform.position.z);
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     void OnStateChange(GameState oldState, GameState newState)
@@ -36,6 +38,7 @@ public class GravestoneScript : MonoBehaviour
     {
         gameData.OnStateChange -= OnStateChange;
     }
+
     // Update is called once per frame
     void Update()
     {
