@@ -28,11 +28,11 @@ public class KetchupBeamScript : MonoBehaviour
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         audioSource = GetComponent<AudioSource>();
+        ketchupActive = false;
     }
 
     void Update()
-    {
-
+    { 
         if (playerScript.firingUp)
         {
             if (!hasMovedUp)
@@ -90,6 +90,7 @@ public class KetchupBeamScript : MonoBehaviour
 
     public void Fire()
     {
+        ketchupActive = true;
         if (gameData.state != GameState.PREP)
         {
             if (!audioSource.isPlaying)
@@ -120,7 +121,10 @@ public class KetchupBeamScript : MonoBehaviour
         {
             timeToDestroy -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
-            ketchup.transform.localScale += ketchupSpread;
+            if (ketchup.gameObject != null)
+            {
+                ketchup.transform.localScale += ketchupSpread;
+            }
         } while (timeToDestroy > 0);
 
         Destroy(ketchup);
