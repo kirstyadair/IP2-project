@@ -5501,6 +5501,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5364221028771175147, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Intensity
@@ -5550,18 +5562,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
@@ -6615,6 +6615,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5364221028771175147, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Intensity
@@ -6664,18 +6676,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
@@ -7832,6 +7832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8.649059
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033581752278613858, guid: 6f55d9d6407af464daa2aeee43c03746,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f55d9d6407af464daa2aeee43c03746, type: 3}
@@ -10739,6 +10744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8.649057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033581752278613858, guid: 6f55d9d6407af464daa2aeee43c03746,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f55d9d6407af464daa2aeee43c03746, type: 3}
@@ -29523,6 +29533,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584755544}
     m_Modifications:
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Pot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 723060029891879166, guid: e08a0b6e53f54ed47969f08b8cce35d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29577,16 +29597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_Name
-      value: Pot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08a0b6e53f54ed47969f08b8cce35d2, type: 3}
@@ -31799,6 +31809,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029420861}
     m_Modifications:
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_Name
+      value: Cooker (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5364221028771175147, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_Intensity
@@ -31843,18 +31865,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_Name
-      value: Cooker (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 772375461, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2135328931, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5884596042737553513, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
@@ -33405,6 +33415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8.649062
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033581752278613858, guid: 6f55d9d6407af464daa2aeee43c03746,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f55d9d6407af464daa2aeee43c03746, type: 3}
