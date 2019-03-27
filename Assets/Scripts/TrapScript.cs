@@ -67,7 +67,7 @@ public class TrapScript : MonoBehaviour
 
     IEnumerator Detonate()
     {
-        float timeToDetonate = 3.0f;
+        float timeToDetonate = 1.0f;
         do
         {
             yield return new WaitForSeconds(Time.deltaTime);
