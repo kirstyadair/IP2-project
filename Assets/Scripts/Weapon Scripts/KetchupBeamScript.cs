@@ -7,6 +7,7 @@ public class KetchupBeamScript : MonoBehaviour
     public GameObject ketchupPrefab;
     GameObject ketchup;
     GameData gameData;
+    AudioSource audioSource;
     public Vector3 ketchupSpread;
     Vector3 direction;
     public PlayerScript playerScript;
@@ -26,14 +27,11 @@ public class KetchupBeamScript : MonoBehaviour
     void Start()
     {
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (ketchupActive)
-        {
-            
-        }
 
         if (playerScript.firingUp)
         {
@@ -94,6 +92,11 @@ public class KetchupBeamScript : MonoBehaviour
     {
         if (gameData.state != GameState.PREP)
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+
             direction = playerScript.reticlePos - transform.position;
 
             if (direction.x >= 2) direction.x = 2;
