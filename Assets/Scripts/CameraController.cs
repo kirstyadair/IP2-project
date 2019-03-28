@@ -78,9 +78,12 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        Vector3 distanceFromCenterOfScreen = horde.crosshair.transform.position - centerScreen;
-        distanceFromCenterOfScreen.z = 0;
-        this.transform.position = cameraInitialPosition + distanceFromCenterOfScreen/cameraStillness;
+        if (horde.kingZombie != null)
+        {
+            Vector3 distanceFromCenterOfScreen = horde.kingZombie.transform.position - centerScreen;
+            distanceFromCenterOfScreen.z = 0;
+            this.transform.position = cameraInitialPosition + distanceFromCenterOfScreen / cameraStillness;
+        }
 
         ChromaticAberrationModel.Settings chromaticAbberation = postProcessing.profile.chromaticAberration.settings;
         chromaticAbberation.intensity = cameraShock;

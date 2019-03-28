@@ -43,6 +43,7 @@ public class ThrowingKnifeScript : MonoBehaviour
         if (collision.tag == "Zombie")
         {
             if (collision.gameObject.GetComponent<ZombieScript>().Hit(gameData.throwingKnifeDamage)) stats.kills++;
+            Destroy(gameObject);
         }
 
         if (collision.tag == "Wall")
