@@ -41,6 +41,7 @@ public class HordeScript : MonoBehaviour
 
     public int zombiesAlive;
     public int zombiesTotal;
+    public int hpToLoseWhenKingDead;
     public bool isSpawning = false;
     public Transform center;
 
@@ -54,6 +55,8 @@ public class HordeScript : MonoBehaviour
     public float offenseModeTimer;
 
     InputDevice controller;
+
+    public List<ZombieScript> zombies = new List<ZombieScript>();
 
     // Start is called before the first frame update
     void Awake()
@@ -83,7 +86,7 @@ public class HordeScript : MonoBehaviour
             // Start spawning
             Transform spawnPoint = gameData.currentMap.waves[gameData.wave].spawnPoint;
 
-
+            zombies.Clear();
             // Find out how many zombies for this wave for this map
             SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
             int count = gameData.currentMap.waves[gameData.wave].sushiCount;
@@ -95,13 +98,48 @@ public class HordeScript : MonoBehaviour
             kingZombie = Instantiate(kingZombiePrefab, this.transform);
             kingZombie.transform.position = spawnPoint.position;
             kingZombie.GetComponent<KingZombieScript>().hordeScript = this;
+            kingZombie.GetComponent<KingZombieScript>().health = gameData.currentMap.waves[gameData.wave].kingHitpoints;
+            kingZombie.GetComponent<KingZombieScript>().maxHealth = gameData.currentMap.waves[gameData.wave].kingHitpoints;
 
+            kingZombie.GetComponent<KingZombieScript>().sprt.sprite = SushiTypeToSprite(sushiType);
+            kingZombie.GetComponent<KingZombieScript>().OnKingZombieDies += OnKingZombieDies;
             StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnPoint));
         }
     }
 
+    public void OnKingZombieDies()
+    {
+        isSpawning = false;
+    }
+
+    public Sprite SushiTypeToSprite(SushiType sushiType)
+    {
+        Sprite sushiSprite = eyesSushi;
+
+        switch (sushiType)
+        {
+            case SushiType.EYES:
+                sushiSprite = eyesSushi;
+                break;
+            case SushiType.TEETH:
+                sushiSprite = teethSushi;
+                break;
+            case SushiType.SQUID:
+                sushiSprite = squidSushi;
+                break;
+            case SushiType.TENTACLES:
+                sushiSprite = tentaclesSushi;
+                break;
+            default: break;
+        }
+
+        return sushiSprite;
+    }
+
     public void AttachZombie(GameObject zombie)
     {
+        // can't attach when we're dead
+        if (kingZombie.GetComponent<KingZombieScript>().dead) return;
         // if health is below half we can't attach
         if (zombie.GetComponent<ZombieScript>().health / zombie.GetComponent<ZombieScript>().maxHealth < 0.5f) return;
         zombie.GetComponent<ZombieScript>().isAttachedToKing = true;
@@ -124,30 +162,15 @@ public class HordeScript : MonoBehaviour
 
         for (int x = 0; x < count; x++)
         {
+            // cancel spawning when isSpawning is set to false
+            if (!isSpawning) break;
             Vector3 spawnPos = spawnPoint.gameObject.transform.position;
             spawnPos.y = this.transform.position.y;
             GameObject zombie = Instantiate(zombiePrefab, transform);
             zombie.transform.position = spawnPos;
-           
 
-            Sprite sushiSprite = eyesSushi;
 
-            switch (sushiType)
-            {
-                case SushiType.EYES:
-                    sushiSprite = eyesSushi;
-                    break;
-                case SushiType.TEETH:
-                    sushiSprite = teethSushi;
-                    break;
-                case SushiType.SQUID:
-                    sushiSprite = squidSushi;
-                    break;
-                case SushiType.TENTACLES:
-                    sushiSprite = tentaclesSushi;
-                    break;
-                default: break;
-            }
+            Sprite sushiSprite = SushiTypeToSprite(sushiType);
 
             zombie.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sushiSprite;
 
@@ -156,6 +179,8 @@ public class HordeScript : MonoBehaviour
             //zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
             zombie.GetComponent<ZombieScript>().health = hitpoints;
+
+            zombies.Add(zombie.GetComponent<ZombieScript>());
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
 
@@ -343,10 +368,22 @@ public class HordeScript : MonoBehaviour
                 Vector3 target = kingZombie.transform.position;
                 MoveZombieTowardsTarget(zombie, target);
             }
+        } else
+        {
+            int zombiesAlive = 0;
+            foreach (ZombieScript zombie in zombies)
+            {
+                if (zombie != null)
+                {
+                    zombie.Hit(hpToLoseWhenKingDead);
+                    zombiesAlive++;
+                }
+            }
 
-
-            zombiesAlive = 1;//alive;
+            if (zombiesAlive == 0) zombies.Clear();
         }
+
+        zombiesAlive = zombies.Count;
         //if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
         //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }

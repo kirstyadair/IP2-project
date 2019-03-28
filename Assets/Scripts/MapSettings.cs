@@ -16,6 +16,7 @@ public struct Wave
     public float timeBetweenSpawns;
     public Transform spawnPoint;
     public int hitpoints;
+    public int kingHitpoints;
 }
 
 public class MapSettings : MonoBehaviour

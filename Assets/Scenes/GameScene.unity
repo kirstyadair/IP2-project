@@ -7034,11 +7034,6 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1999540421859137866, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6472226663436032399, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -7048,6 +7043,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999540421859137866, guid: 7bd4a159327dfdf498d24a80bd00e9b9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2135328929, guid: 7bd4a159327dfdf498d24a80bd00e9b9, type: 3}
       propertyPath: m_RootOrder
@@ -10602,6 +10602,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584755544}
     m_Modifications:
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 723060029891879166, guid: e08a0b6e53f54ed47969f08b8cce35d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10656,16 +10666,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_Name
-      value: Pot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08a0b6e53f54ed47969f08b8cce35d2, type: 3}
@@ -12921,7 +12921,7 @@ MonoBehaviour:
   kingZombie: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   wiggleMultiplier: 15
-  forceMultiplier: 30
+  forceMultiplier: 10
   kingZombieRotateSpeed: 500
   kingZombieSpeed: 10
   regenerationSpeed: 0
@@ -17460,30 +17460,35 @@ MonoBehaviour:
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 25
+    kingHitpoints: 200
   - sushiType: 1
     sushiCount: 60
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 50
+    kingHitpoints: 200
   - sushiType: 3
     sushiCount: 90
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 75
+    kingHitpoints: 200
   - sushiType: 2
     sushiCount: 120
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
+    kingHitpoints: 200
   - sushiType: 0
     sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 125
+    kingHitpoints: 200
 --- !u!1 &1012832081
 GameObject:
   m_ObjectHideFlags: 0
@@ -18823,12 +18828,14 @@ MonoBehaviour:
     timeBetweenSpawns: 0.2
     spawnPoint: {fileID: 0}
     hitpoints: 0
+    kingHitpoints: 0
   - sushiType: 1
     sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 1
     spawnPoint: {fileID: 0}
     hitpoints: 0
+    kingHitpoints: 0
 --- !u!4 &1085049468
 Transform:
   m_ObjectHideFlags: 0
@@ -29003,6 +29010,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584755544}
     m_Modifications:
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Pot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 723060029891879166, guid: e08a0b6e53f54ed47969f08b8cce35d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29057,16 +29074,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_Name
-      value: Pot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5177893998444548857, guid: e08a0b6e53f54ed47969f08b8cce35d2,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e08a0b6e53f54ed47969f08b8cce35d2, type: 3}

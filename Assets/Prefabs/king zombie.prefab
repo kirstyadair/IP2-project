@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 5380409214480038939}
   - component: {fileID: 6365634508641854559}
   - component: {fileID: 8882315267760200507}
-  - component: {fileID: 4086939439759316010}
   - component: {fileID: 4097526978343922205}
+  - component: {fileID: 3952922739224845807}
   m_Layer: 0
   m_Name: king zombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ Animator:
   m_GameObject: {fileID: 1801784987727167075}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67e0b9e968f6ff244a7a8e74ed1b1be7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7d5a5482d04c15241a2b62bd03497485, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4796,19 +4796,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!135 &4086939439759316010
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801784987727167075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.81
-  m_Center: {x: 0, y: 0, z: 0.00001}
 --- !u!114 &4097526978343922205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4821,6 +4808,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bed52259e3ed4d43acc99a847c2e4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
+  dead: 0
+  sprt: {fileID: 2379710200595229372}
+  defBubble: {fileID: 0}
+  offBubble: {fileID: 0}
+  isAttachedToKing: 0
+  hordeScript: {fileID: 0}
+  animator: {fileID: 5380409214480038939}
+  moveAttachedBackBy: 0.2
+--- !u!136 &3952922739224845807
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801784987727167075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.97
+  m_Height: 2.54
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5034490767507791941
 GameObject:
   m_ObjectHideFlags: 0

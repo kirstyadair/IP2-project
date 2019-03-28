@@ -28,7 +28,7 @@ public class ZombieScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update ()
     {
         // make it more red the deader it is
         Color clr = sprt.color;
@@ -59,9 +59,10 @@ public class ZombieScript : MonoBehaviour
         if (health < maxHealth) health += hordeScript.regenerationSpeed;
     }
 
-    public bool Hit(float hp)
+    public virtual bool Hit(float hp)
     {
         if (dead) return false;
+        if (this == null) return false;
 
         health -= hp * hordeScript.defensiveStat;
         if (health <= 0) {
@@ -90,13 +91,13 @@ public class ZombieScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (gameData == null) return;
-
+        /*
         // if we touch another zombie while attached to the king, recruit that one too
-        if (other.tag == "Zombie" && isAttachedToKing)
+        if (other.tag == "Zombie" && isAttachedToKing && !hordeScript.kingZombie.GetComponent<KingZombieScript>().dead)
         {
-            hordeScript.AttachZombie(other.gameObject);
+           // hordeScript.AttachZombie(other.gameObject);
         }
-
+        */
         if (other.tag == "KetchupBlob")
         {
             if (Hit(gameData.ketchupDamage)) stats.kills++;
