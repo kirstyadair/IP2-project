@@ -353,8 +353,9 @@ public class HordeScript : MonoBehaviour
 
         if (kingZombie != null)
         {
-            kingZombie.transform.Rotate(Vector3.up, rotateBy);
+
             kingZombie.GetComponent<Rigidbody>().MovePosition(kingZombie.transform.position + moveBy);
+
             int alive = 0;
             foreach (Transform child in transform)
             {
