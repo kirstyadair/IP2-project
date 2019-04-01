@@ -8534,7 +8534,7 @@ Transform:
   m_LocalScale: {x: 33.86991, y: 1.8333013, z: 27.122658}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 122
+  m_RootOrder: 135
   m_LocalEulerAnglesHint: {x: 0, y: -82.892006, z: 0}
 --- !u!4 &371321498 stripped
 Transform:
@@ -10670,10 +10670,10 @@ MonoBehaviour:
   playingIndicatorFGColor: {r: 1, g: 1, b: 1, a: 1}
   playingIndicatorBGColor: {r: 0.8207547, g: 0.23616053, b: 0.23616053, a: 1}
   ketchupDamage: 1
-  spatulaDamage: 100
-  throwingKnifeDamage: 50
+  spatulaDamage: 40
+  throwingKnifeDamage: 10
   fireExtinguisherDamage: 1
-  cookerDamage: 100
+  cookerDamage: 75
   playerColors:
   - {r: 0.2988608, g: 0.8679245, b: 0.38461128, a: 1}
   - {r: 0.9245283, g: 0.19624424, b: 0.35806057, a: 1}
@@ -11791,7 +11791,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40
+  field of view: 89.2
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -11816,13 +11816,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.42959967, y: -0, z: -0, w: 0.9030195}
-  m_LocalPosition: {x: -5.63, y: 19.34, z: -15.39}
+  m_LocalRotation: {x: 0.6364144, y: -0, z: -0, w: 0.7713474}
+  m_LocalPosition: {x: -5.63, y: 11.89, z: -3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50.884003, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 79.05, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16588,9 +16588,9 @@ MonoBehaviour:
   kingZombie: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   wiggleMultiplier: 15
-  forceMultiplier: 10
+  forceMultiplier: 15
   kingZombieRotateSpeed: 500
-  kingZombieSpeed: 10
+  kingZombieSpeed: 15
   regenerationSpeed: 0
   eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   teethSushi: {fileID: 21300004, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
@@ -22787,35 +22787,35 @@ MonoBehaviour:
   centerPoint: {fileID: 732552774}
   waves:
   - sushiType: 0
-    sushiCount: 200
+    sushiCount: 20
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 25
     kingHitpoints: 200
   - sushiType: 1
-    sushiCount: 60
+    sushiCount: 50
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     spawnPoint: {fileID: 1068208180}
     hitpoints: 50
     kingHitpoints: 200
   - sushiType: 3
-    sushiCount: 90
+    sushiCount: 100
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
     hitpoints: 75
     kingHitpoints: 200
   - sushiType: 2
-    sushiCount: 120
+    sushiCount: 180
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 1068208180}
     hitpoints: 100
     kingHitpoints: 200
   - sushiType: 0
-    sushiCount: 150
+    sushiCount: 280
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     spawnPoint: {fileID: 746124518}
@@ -26588,7 +26588,7 @@ Transform:
   - {fileID: 1819813327}
   - {fileID: 1731721516}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 109
+  m_RootOrder: 118
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1178893878 stripped
 Transform:
@@ -31150,7 +31150,7 @@ Transform:
   - {fileID: 885279212}
   - {fileID: 758285193}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 118
+  m_RootOrder: 117
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &1436744297 stripped
 Transform:
@@ -33567,12 +33567,11 @@ Transform:
   - {fileID: 964090754}
   - {fileID: 1137246450}
   - {fileID: 73975636}
-  - {fileID: 943731912}
   - {fileID: 1671912915}
   - {fileID: 64810659}
-  - {fileID: 1175215894}
+  - {fileID: 943731912}
   - {fileID: 103937423}
-  - {fileID: 360871701}
+  - {fileID: 1653789903}
   - {fileID: 298025718}
   - {fileID: 848364640}
   - {fileID: 760392703}
@@ -33580,11 +33579,12 @@ Transform:
   - {fileID: 1733580015}
   - {fileID: 1607054061}
   - {fileID: 1431228921}
+  - {fileID: 1175215894}
   - {fileID: 1100240463}
   - {fileID: 2071640899}
-  - {fileID: 1653789903}
-  - {fileID: 367389511}
+  - {fileID: 360871701}
   - {fileID: 2124037665}
+  - {fileID: 2052334514}
   - {fileID: 273841702}
   - {fileID: 557052484}
   - {fileID: 1458599}
@@ -33596,7 +33596,7 @@ Transform:
   - {fileID: 1559404455}
   - {fileID: 1351800219}
   - {fileID: 1756333878}
-  - {fileID: 2052334514}
+  - {fileID: 367389511}
   - {fileID: 58478196}
   - {fileID: 1229137190}
   - {fileID: 1571836863}
@@ -34816,7 +34816,7 @@ Transform:
   - {fileID: 1911919567}
   - {fileID: 2113815822}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 121
+  m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1655416353
 PrefabInstance:
@@ -42460,7 +42460,7 @@ Transform:
   - {fileID: 1673123956}
   - {fileID: 1454718752}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 135
+  m_RootOrder: 123
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &2058323160 stripped
 Transform:
@@ -43453,7 +43453,7 @@ Transform:
   - {fileID: 718070583}
   - {fileID: 1202563021}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 123
+  m_RootOrder: 122
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &2124867734 stripped
 Transform:

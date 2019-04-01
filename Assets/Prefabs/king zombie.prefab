@@ -4810,7 +4810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  dead: 0
+  dead: 1
   sprt: {fileID: 2379710200595229372}
   defBubble: {fileID: 0}
   offBubble: {fileID: 0}
