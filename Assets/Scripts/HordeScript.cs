@@ -15,8 +15,13 @@ public class HordeScript : MonoBehaviour
     public event SpawningEvent OnSpawnComplete;
 
     public GameObject zombiePrefab;
-    public GameObject crosshair;
-    public Vector3 centerPoint;
+
+    public HordeCrosshairScript crosshairA;
+    public HordeCrosshairScript crosshairB;
+
+    List<GameObject> zombiesAttachedToCrosshairA = new List<GameObject>();
+    List<GameObject> zombiesAttachedToCrosshairB = new List<GameObject>();
+
     public AudioClip spawnSound;
     // Used for keeping stuff inside the screen
     Vector3 minScreenBounds;
@@ -24,8 +29,6 @@ public class HordeScript : MonoBehaviour
 
     GameData gameData;
 
-    // Where to locate the crosshair when we are respawning the horde
-    public Transform crosshairDefault;
 
     [Header("Horde settings")]
     public float wiggleMultiplier;
@@ -63,27 +66,40 @@ public class HordeScript : MonoBehaviour
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
         gameData.OnStateChange += OnStateChange;
 
-        GameObject selectiomDataObj = GameObject.Find("PlayerSelectionData");
-        if (selectiomDataObj != null)
+        GameObject selectionDataObj = GameObject.Find("PlayerSelectionData");
+        if (selectionDataObj != null)
         {
-            controller = selectiomDataObj.GetComponent<PlayerSelectionData>().GetHordeController();
+            controller = selectionDataObj.GetComponent<PlayerSelectionData>().GetHordeController();
         }
     }
 
     public void OnStateChange(GameState oldState, GameState newState)
     {
-
+        Transform spawnA = gameData.currentMap.hordeSpawnA;
+        Transform spawnB = gameData.currentMap.hordeSpawnB;
         if (newState == GameState.PREP)
         {
             // Kill off all old zombies
             foreach (Transform child in transform) child.gameObject.GetComponent<ZombieScript>().Kill();
+
+            if (crosshairA.showing) crosshairA.Hide();
+            if (crosshairB.showing) crosshairB.Hide();
+
+            // Start spawning
+
+            crosshairA.transform.position = spawnA.position;
+            crosshairB.transform.position = spawnB.position;
         }
 
         if (newState == GameState.PLAY)
         {
-            // Start spawning
-            Transform spawnPoint = gameData.currentMap.waves[gameData.wave].spawnPoint;
+            zombiesAttachedToCrosshairA.Clear();
+            zombiesAttachedToCrosshairB.Clear();
 
+
+
+            crosshairA.Show();
+            crosshairB.Show();
 
             // Find out how many zombies for this wave for this map
             SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
@@ -92,17 +108,18 @@ public class HordeScript : MonoBehaviour
             float timeBetweenSpawns = gameData.currentMap.waves[gameData.wave].timeBetweenSpawns;
             zombiesTotal = count;
 
-            StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnPoint));
+            StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnA, spawnB));
         }
     }
 
-    IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnPoint)
+    IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnA, Transform spawnB)
     {
         isSpawning = true;
 
+        bool isSpawnA = true;
         for (int x = 0; x < count; x++)
         {
-            Vector3 spawnPos = spawnPoint.gameObject.transform.position;
+            Vector3 spawnPos = isSpawnA ? spawnA.position : spawnB.position;
             spawnPos.y = this.transform.position.y;
             GameObject zombie = Instantiate(zombiePrefab, transform);
             zombie.transform.position = spawnPos;
@@ -134,6 +151,10 @@ public class HordeScript : MonoBehaviour
             //zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
             zombie.GetComponent<ZombieScript>().health = hitpoints;
+
+            if (isSpawnA) zombiesAttachedToCrosshairA.Add(zombie);
+            if (!isSpawnA) zombiesAttachedToCrosshairB.Add(zombie);
+            isSpawnA = !isSpawnA;
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
 
@@ -169,9 +190,6 @@ public class HordeScript : MonoBehaviour
 
     public void MoveZombieTowardsTarget(GameObject zombie, Vector3 point)
     {
-        //xSum += zombie.transform.position.x;
-        // ySum += zombie.transform.position.y;
-
         Vector3 force = new Vector3(0, 0, 0);
         force = point - zombie.transform.position;
         force.Normalize();
@@ -181,29 +199,11 @@ public class HordeScript : MonoBehaviour
         Vector3 wiggle = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
         wiggle *= wiggleMultiplier;
         force += wiggle;
-        //force /= 10f;
         zombie.GetComponent<Rigidbody>().AddForce(force);
-
-
-        //if (force.x < -30f) zombie.GetComponent<SpriteRenderer>().flipX = true;
-        //if (force.x > 30f) zombie.GetComponent<SpriteRenderer>().flipX = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CalcOffensiveDefensive()
     {
-        //minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        //maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(-Screen.width, -Screen.height, Camera.main.transform.position.z));
-        /*
-        Ray ray1 = Camera.main.ScreenPointToRay(new Vector3(0, 0));
-        Ray ray2 = Camera.main.ScreenPointToRay(new Vector3(Screen.width, Screen.height));
-        RaycastHit hit1;
-        RaycastHit hit2;
-        Physics.Raycast(ray1, out hit1, LayerMask.GetMask("Ground"));
-        Physics.Raycast(ray2, out hit2, LayerMask.GetMask("Ground"));
-        minScreenBounds = hit1.point;
-        maxScreenBounds = hit2.point;
-        */
         if (state != HordeState.OFFENSIVE)
         {
             if (offenseModeTimer < 5)
@@ -274,39 +274,72 @@ public class HordeScript : MonoBehaviour
                 Debug.Log("DefensiveStat = " + defensiveStat + " OffensiveStat = " + offensiveStat);
             }
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        CalcOffensiveDefensive();
+
+        MoveZombies();
+
+        MoveCrosshairs();
+    }
+
+    private void MoveZombies()
+    {
         int alive = 0;
-        foreach (Transform child in transform)
+
+        foreach (GameObject zombie in zombiesAttachedToCrosshairA)
         {
+            if (zombie == null) return;
             alive++;
-            GameObject zombie = child.gameObject;
-            Vector3 target = centerPoint;
-            MoveZombieTowardsTarget(zombie, target);
+            MoveZombieTowardsTarget(zombie, crosshairA.transform.position);
+        }
+
+        foreach (GameObject zombie in zombiesAttachedToCrosshairB)
+        {
+            if (zombie == null) return;
+
+            alive++;
+            MoveZombieTowardsTarget(zombie, crosshairB.transform.position);
         }
 
         zombiesAlive = alive;
-
-        Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
-        centerPoint = crosshair.transform.position;
-
-        Vector3 moveBy = Vector3.zero;
-
-        // Move crosshair with either the controller or keyboard
-        if (controller == null) moveBy += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde")));// distanceFromCenter / reticleSlowness;
-        else moveBy += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y));
-
-        moveBy *= Time.deltaTime;
-        moveBy *= crosshairSpeed;
-
-        crosshair.transform.position += moveBy;
-        if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
-        //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }
 
-
-    /*
-    public void OnDrawGizmos()
+    private void MoveCrosshairs()
     {
-        Gizmos.DrawWireSphere(centerPoint, 0.2f);
-    }*/
+
+        Vector3 centerOfScreen = new Vector3(center.transform.position.x, this.transform.position.y, center.transform.position.z);
+
+        // figure out how we will move both the crosshairs
+        Vector3 moveByA = Vector3.zero;
+        Vector3 moveByB = Vector3.zero;
+
+        if (controller == null)
+        {
+            moveByA = (new Vector3(Input.GetAxis("HorizontalHordeA"), 0, Input.GetAxis("VerticalHordeA")));
+            moveByB = (new Vector3(Input.GetAxis("HorizontalHordeB"), 0, Input.GetAxis("VerticalHordeB")));
+        }
+        else
+        {
+            moveByA = (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y));
+            moveByB = (new Vector3(controller.RightStick.Vector.x, 0, controller.RightStick.Vector.y));
+        }
+
+        moveByA *= Time.deltaTime * crosshairSpeed;
+        moveByB *= Time.deltaTime * crosshairSpeed;
+
+        crosshairA.transform.position += moveByA;
+        crosshairB.transform.position += moveByB;
+
+        KeepCrosshairWithinLimits(crosshairA, centerOfScreen);
+        KeepCrosshairWithinLimits(crosshairB, centerOfScreen);
+    }
+
+    private void KeepCrosshairWithinLimits(HordeCrosshairScript crosshair, Vector3 centerOfScreen)
+    {
+        if (Vector3.Distance(crosshairA.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
+    }
 }

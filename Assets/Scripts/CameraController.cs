@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         gameData.OnStateChange += OnStateChange;
         horde = GameObject.Find("Horde").GetComponent<HordeScript>();
         cameraInitialPosition = this.transform.position;
-        centerScreen = gameData.currentMap.centerPoint.position;//cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, 10));
+        centerScreen = horde.center.position;
 
         PlayerScript.OnPlayerDeath += OnPlayerDeath;
     }
@@ -78,7 +78,9 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        Vector3 distanceFromCenterOfScreen = horde.crosshair.transform.position - centerScreen;
+        // find midpoint between two crosshairs
+        Vector3 midpoint = (horde.crosshairA.transform.position + horde.crosshairB.transform.position) / 2;
+        Vector3 distanceFromCenterOfScreen = midpoint - centerScreen;
         distanceFromCenterOfScreen.z = 0;
         this.transform.position = cameraInitialPosition + distanceFromCenterOfScreen / cameraStillness;
 
