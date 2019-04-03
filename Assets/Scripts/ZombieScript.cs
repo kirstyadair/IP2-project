@@ -70,11 +70,6 @@ public class ZombieScript : MonoBehaviour
             return true;
         }
 
-        // detach from king once we leave half health
-        if (health / maxHealth < 0.5f && isAttachedToKing) {
-            hordeScript.DetachZombie(this.gameObject);
-        }
-
         return false;
     }
 

@@ -15,10 +15,8 @@ public class HordeScript : MonoBehaviour
     public event SpawningEvent OnSpawnComplete;
 
     public GameObject zombiePrefab;
-    public GameObject kingZombiePrefab;
-
-    public GameObject kingZombie;
-
+    public GameObject crosshair;
+    public Vector3 centerPoint;
     public AudioClip spawnSound;
     // Used for keeping stuff inside the screen
     Vector3 minScreenBounds;
@@ -26,26 +24,28 @@ public class HordeScript : MonoBehaviour
 
     GameData gameData;
 
+    // Where to locate the crosshair when we are respawning the horde
+    public Transform crosshairDefault;
+
     [Header("Horde settings")]
     public float wiggleMultiplier;
     public float forceMultiplier;
-    public float kingZombieRotateSpeed;
-    public float kingZombieSpeed;
-    public float regenerationSpeed;
+    public float crosshairBounds;
+    public float crosshairSpeed;
 
     [Header("Sushi sprites")]
     public Sprite eyesSushi;
     public Sprite teethSushi;
     public Sprite tentaclesSushi;
     public Sprite squidSushi;
+    public float regenerationSpeed;
 
     public int zombiesAlive;
     public int zombiesTotal;
-    public int hpToLoseWhenKingDead;
     public bool isSpawning = false;
     public Transform center;
 
-    
+
     [Header("Offensive/Defensive system stats")]
     public float defensiveStat = 1;
     public float offensiveStat = 1;
@@ -55,8 +55,6 @@ public class HordeScript : MonoBehaviour
     public float offenseModeTimer;
 
     InputDevice controller;
-
-    public List<ZombieScript> zombies = new List<ZombieScript>();
 
     // Start is called before the first frame update
     void Awake()
@@ -86,7 +84,7 @@ public class HordeScript : MonoBehaviour
             // Start spawning
             Transform spawnPoint = gameData.currentMap.waves[gameData.wave].spawnPoint;
 
-            zombies.Clear();
+
             // Find out how many zombies for this wave for this map
             SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
             int count = gameData.currentMap.waves[gameData.wave].sushiCount;
@@ -94,66 +92,8 @@ public class HordeScript : MonoBehaviour
             float timeBetweenSpawns = gameData.currentMap.waves[gameData.wave].timeBetweenSpawns;
             zombiesTotal = count;
 
-            // Spawn the king zombie
-            kingZombie = Instantiate(kingZombiePrefab, this.transform);
-            kingZombie.transform.position = spawnPoint.position;
-            kingZombie.GetComponent<KingZombieScript>().hordeScript = this;
-            kingZombie.GetComponent<KingZombieScript>().health = gameData.currentMap.waves[gameData.wave].kingHitpoints;
-            kingZombie.GetComponent<KingZombieScript>().maxHealth = gameData.currentMap.waves[gameData.wave].kingHitpoints;
-
-            kingZombie.GetComponent<KingZombieScript>().sprt.sprite = SushiTypeToSprite(sushiType);
-            kingZombie.GetComponent<KingZombieScript>().OnKingZombieDies += OnKingZombieDies;
             StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnPoint));
         }
-    }
-
-    public void OnKingZombieDies()
-    {
-        isSpawning = false;
-    }
-
-    public Sprite SushiTypeToSprite(SushiType sushiType)
-    {
-        Sprite sushiSprite = eyesSushi;
-
-        switch (sushiType)
-        {
-            case SushiType.EYES:
-                sushiSprite = eyesSushi;
-                break;
-            case SushiType.TEETH:
-                sushiSprite = teethSushi;
-                break;
-            case SushiType.SQUID:
-                sushiSprite = squidSushi;
-                break;
-            case SushiType.TENTACLES:
-                sushiSprite = tentaclesSushi;
-                break;
-            default: break;
-        }
-
-        return sushiSprite;
-    }
-
-    public void AttachZombie(GameObject zombie)
-    {
-        // can't attach when we're dead
-        if (kingZombie.GetComponent<KingZombieScript>().dead) return;
-        // if health is below half we can't attach
-        if (zombie.GetComponent<ZombieScript>().health / zombie.GetComponent<ZombieScript>().maxHealth < 0.5f) return;
-        zombie.GetComponent<ZombieScript>().isAttachedToKing = true;
-        zombie.transform.SetParent(kingZombie.transform);
-        zombie.GetComponent<Rigidbody>().isKinematic = true;
-        zombie.GetComponent<Collider>().isTrigger = true;
-    }
-
-    public void DetachZombie(GameObject zombie)
-    {
-        zombie.GetComponent<ZombieScript>().isAttachedToKing = false;
-        zombie.transform.SetParent(this.transform);
-        zombie.GetComponent<Rigidbody>().isKinematic = false;
-        zombie.GetComponent<Collider>().isTrigger = false;
     }
 
     IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnPoint)
@@ -162,15 +102,30 @@ public class HordeScript : MonoBehaviour
 
         for (int x = 0; x < count; x++)
         {
-            // cancel spawning when isSpawning is set to false
-            if (!isSpawning) break;
             Vector3 spawnPos = spawnPoint.gameObject.transform.position;
             spawnPos.y = this.transform.position.y;
             GameObject zombie = Instantiate(zombiePrefab, transform);
             zombie.transform.position = spawnPos;
 
 
-            Sprite sushiSprite = SushiTypeToSprite(sushiType);
+            Sprite sushiSprite = eyesSushi;
+
+            switch (sushiType)
+            {
+                case SushiType.EYES:
+                    sushiSprite = eyesSushi;
+                    break;
+                case SushiType.TEETH:
+                    sushiSprite = teethSushi;
+                    break;
+                case SushiType.SQUID:
+                    sushiSprite = squidSushi;
+                    break;
+                case SushiType.TENTACLES:
+                    sushiSprite = tentaclesSushi;
+                    break;
+                default: break;
+            }
 
             zombie.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sushiSprite;
 
@@ -179,8 +134,6 @@ public class HordeScript : MonoBehaviour
             //zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
             zombie.GetComponent<ZombieScript>().health = hitpoints;
-
-            zombies.Add(zombie.GetComponent<ZombieScript>());
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
 
@@ -217,7 +170,7 @@ public class HordeScript : MonoBehaviour
     public void MoveZombieTowardsTarget(GameObject zombie, Vector3 point)
     {
         //xSum += zombie.transform.position.x;
-       // ySum += zombie.transform.position.y;
+        // ySum += zombie.transform.position.y;
 
         Vector3 force = new Vector3(0, 0, 0);
         force = point - zombie.transform.position;
@@ -231,7 +184,7 @@ public class HordeScript : MonoBehaviour
         //force /= 10f;
         zombie.GetComponent<Rigidbody>().AddForce(force);
 
-  
+
         //if (force.x < -30f) zombie.GetComponent<SpriteRenderer>().flipX = true;
         //if (force.x > 30f) zombie.GetComponent<SpriteRenderer>().flipX = false;
     }
@@ -244,13 +197,10 @@ public class HordeScript : MonoBehaviour
         /*
         Ray ray1 = Camera.main.ScreenPointToRay(new Vector3(0, 0));
         Ray ray2 = Camera.main.ScreenPointToRay(new Vector3(Screen.width, Screen.height));
-
         RaycastHit hit1;
         RaycastHit hit2;
-
         Physics.Raycast(ray1, out hit1, LayerMask.GetMask("Ground"));
         Physics.Raycast(ray2, out hit2, LayerMask.GetMask("Ground"));
-
         minScreenBounds = hit1.point;
         maxScreenBounds = hit2.point;
         */
@@ -325,67 +275,31 @@ public class HordeScript : MonoBehaviour
             }
         }
 
+        int alive = 0;
+        foreach (Transform child in transform)
+        {
+            alive++;
+            GameObject zombie = child.gameObject;
+            Vector3 target = centerPoint;
+            MoveZombieTowardsTarget(zombie, target);
+        }
 
+        zombiesAlive = alive;
 
-        //Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
-        //centerPoint = crosshair.transform.position;
+        Vector3 centerOfScreen = new Vector3(center.transform.position.x, crosshair.transform.position.y, center.transform.position.z);
+        centerPoint = crosshair.transform.position;
 
         Vector3 moveBy = Vector3.zero;
-        float rotateBy = 0;
 
-        // Move king zombie with either the controller or keyboard
-        if (controller == null)
-        {
-            rotateBy = Input.GetAxis("RotateHorde");
-            moveBy += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde")));// distanceFromCenter / reticleSlowness;
-        }
-        else
-        {
-            rotateBy = controller.RightStick.Vector.x;
-            moveBy += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y));
-        }
+        // Move crosshair with either the controller or keyboard
+        if (controller == null) moveBy += (new Vector3(Input.GetAxis("HorizontalHorde"), 0, Input.GetAxis("VerticalHorde")));// distanceFromCenter / reticleSlowness;
+        else moveBy += (new Vector3(controller.LeftStick.Vector.x, 0, controller.LeftStick.Vector.y));
 
         moveBy *= Time.deltaTime;
-        moveBy *= kingZombieSpeed;
+        moveBy *= crosshairSpeed;
 
-        rotateBy *= Time.deltaTime;
-        rotateBy *= kingZombieRotateSpeed;
-
-        if (kingZombie != null)
-        {
-
-            kingZombie.GetComponent<Rigidbody>().MovePosition(kingZombie.transform.position + moveBy);
-
-            int alive = 0;
-            foreach (Transform child in transform)
-            {
-                if (child.tag != "Zombie") continue;
-                alive++;
-
-                if (child.transform.parent == kingZombie.transform) continue;
-
-
-                GameObject zombie = child.gameObject;
-                Vector3 target = kingZombie.transform.position;
-                MoveZombieTowardsTarget(zombie, target);
-            }
-        } else
-        {
-            int zombiesAlive = 0;
-            foreach (ZombieScript zombie in zombies)
-            {
-                if (zombie != null)
-                {
-                    zombie.Hit(hpToLoseWhenKingDead);
-                    zombiesAlive++;
-                }
-            }
-
-            if (zombiesAlive == 0) zombies.Clear();
-        }
-
-        zombiesAlive = zombies.Count;
-        //if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
+        crosshair.transform.position += moveBy;
+        if (Vector3.Distance(crosshair.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
         //crosshair.transform.position = new Vector3(Mathf.Clamp(crosshair.transform.position.x, minScreenBounds.x + 1, maxScreenBounds.x - 1), crosshair.transform.position.y, Mathf.Clamp(crosshair.transform.position.z, minScreenBounds.z + 1, maxScreenBounds.z - 1));
     }
 
