@@ -88,16 +88,14 @@ public class HordeScript : MonoBehaviour
 
             // Start spawning
 
-            crosshairA.transform.position = spawnA.position;
-            crosshairB.transform.position = spawnB.position;
+            crosshairA.transform.position = new Vector3(spawnA.position.x, crosshairA.transform.position.y, spawnA.position.z);
+            crosshairB.transform.position = new Vector3(spawnB.position.x, crosshairB.transform.position.y, spawnB.position.z);
         }
 
         if (newState == GameState.PLAY)
         {
             zombiesAttachedToCrosshairA.Clear();
             zombiesAttachedToCrosshairB.Clear();
-
-
 
             crosshairA.Show();
             crosshairB.Show();
@@ -115,8 +113,15 @@ public class HordeScript : MonoBehaviour
 
     public void ZombieDied(ZombieScript zombieScript)
     {
-        zombiesAttachedToCrosshairA.Remove(zombieScript.gameObject);
-        zombiesAttachedToCrosshairB.Remove(zombieScript.gameObject);
+        if (zombiesAttachedToCrosshairA.Contains(zombieScript.gameObject))
+        {
+            zombiesAttachedToCrosshairA.Remove(zombieScript.gameObject);
+            crosshairA.currentZombies--;
+        } else if (zombiesAttachedToCrosshairB.Contains(zombieScript.gameObject))
+        {
+            zombiesAttachedToCrosshairB.Remove(zombieScript.gameObject);
+            crosshairB.currentZombies--;
+        }
     }
 
     IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnA, Transform spawnB)
@@ -130,7 +135,6 @@ public class HordeScript : MonoBehaviour
             spawnPos.y = this.transform.position.y;
             GameObject zombie = Instantiate(zombiePrefab, transform);
             zombie.transform.position = spawnPos;
-
 
             Sprite sushiSprite = eyesSushi;
 
@@ -159,8 +163,21 @@ public class HordeScript : MonoBehaviour
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
             zombie.GetComponent<ZombieScript>().health = hitpoints;
 
-            if (isSpawnA) zombiesAttachedToCrosshairA.Add(zombie);
-            if (!isSpawnA) zombiesAttachedToCrosshairB.Add(zombie);
+            if (isSpawnA)
+            {
+                zombiesAttachedToCrosshairA.Add(zombie);
+                crosshairA.maxZombies++;
+                crosshairA.currentZombies++;
+            }
+
+            if (!isSpawnA)
+            {
+                crosshairB.maxZombies++;
+                crosshairB.currentZombies++;
+                zombiesAttachedToCrosshairB.Add(zombie);
+            }
+
+            
             isSpawnA = !isSpawnA;
             yield return new WaitForSeconds(timeBetweenSpawns);
         }

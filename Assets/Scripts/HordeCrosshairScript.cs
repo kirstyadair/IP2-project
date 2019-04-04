@@ -17,6 +17,11 @@ public class HordeCrosshairScript : MonoBehaviour
     public bool showing = false;
     public float wobbleFactor = 1f;
 
+    public int currentZombies = 0;
+    public int maxZombies = 0;
+    public Color fullHealthColour;
+    public Color emptyHealthColour;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,9 @@ public class HordeCrosshairScript : MonoBehaviour
     {
         animator.Play("grow");
         showing = true;
+
+        currentZombies = 0;
+        maxZombies = 0;
     }
 
     public void Hide()
@@ -48,5 +56,12 @@ public class HordeCrosshairScript : MonoBehaviour
         lastPosition = transform.position;
 
         velocity *= wobbleFactor;
+
+        innerRing.GetComponent<SpriteRenderer>().color = Color.Lerp(emptyHealthColour, fullHealthColour,  (float)currentZombies / (float)maxZombies);
+    
+        if (currentZombies <= 0 && maxZombies > 0)
+        {
+            Hide();
+        }
     }
 }
