@@ -8,11 +8,14 @@ using UnityEngine.UI;
 public class PlayerSelectionScript : MonoBehaviour
 {
     public Text playerList;
+    public int playerCount = 0;
     public GameObject pressStartToBegin;
     public List<PlayerSelection> players = new List<PlayerSelection>();
 
     PlayerSelectionData playerSelectionObject;
     bool starting = false;
+    bool alreadyActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class PlayerSelectionScript : MonoBehaviour
             Destroy(GameObject.Find("PlayerSelectionData"));
             SceneManager.LoadScene("GameScene");
         }
+
         // Get the inputdevice that was most recently pressed
         InputDevice currentInput = InputManager.ActiveDevice;
 
@@ -36,7 +40,7 @@ public class PlayerSelectionScript : MonoBehaviour
             Debug.Log("Input " + currentInput.GUID + " pressed X");
 
             // Check to see if this player is already active
-            bool alreadyActive = false;
+            
 
             foreach (PlayerSelection plr in players)
             {
@@ -56,6 +60,18 @@ public class PlayerSelectionScript : MonoBehaviour
                 };
 
                 players.Add(newPlr);
+                playerCount++;
+                Debug.Log("players joined: " + playerCount);
+            }
+            
+        }
+
+        if (playerCount >= 1 && alreadyActive)
+        {
+            if (currentInput.Action1.WasPressed)
+            {
+                // choose characters
+                Debug.Log("yeet");
             }
         }
 
