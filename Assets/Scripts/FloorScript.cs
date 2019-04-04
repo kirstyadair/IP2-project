@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class FloorScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.tag == "KetchupBlob")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

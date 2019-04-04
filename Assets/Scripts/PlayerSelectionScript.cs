@@ -66,7 +66,7 @@ public class PlayerSelectionScript : MonoBehaviour
             
         }
 
-        if (playerCount >= 1 && alreadyActive)
+        if (playerCount > 1 && alreadyActive)
         {
             if (currentInput.Action1.WasPressed)
             {
