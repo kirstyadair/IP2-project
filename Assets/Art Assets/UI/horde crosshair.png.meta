@@ -101,7 +101,7 @@ TextureImporter:
       name: horde crosshair_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
         width: 908
         height: 908
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81d35996755448409dc0413956c5258
+      spriteID: 02093d37d13d33640a03f65b42b79a7a
       vertices: []
       indices: 
       edges: []
@@ -132,7 +132,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02991ef29df4c4a4c8f51689e45468cd
+      spriteID: f300528a055db3f438544017ab4bd1d6
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: horde crosshair_2
       rect:
         serializedVersion: 2
-        x: 1491
-        y: 287
-        width: 335
-        height: 335
+        x: 1314
+        y: 199
+        width: 481
+        height: 481
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,7 +152,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a19fde7dc4d1d4d921ccff6dedf0bb
+      spriteID: a440ded3bd5dcbf4f81bdbc4c81b5ea9
       vertices: []
       indices: 
       edges: []

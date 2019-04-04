@@ -79,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 1611460651965635290}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1611460650795117025}
   m_RootOrder: 0
@@ -181,6 +181,10 @@ MonoBehaviour:
   animator: {fileID: 1611460650795117024}
   showing: 0
   wobbleFactor: 0.95
+  currentZombies: 0
+  maxZombies: 0
+  fullHealthColour: {r: 0.44591236, g: 1, b: 0, a: 1}
+  emptyHealthColour: {r: 1, g: 0.10849059, b: 0.1929215, a: 1}
 --- !u!1 &1611460652144555740
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 1611460652144555740}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1611460650795117025}
   m_RootOrder: 1
@@ -286,7 +290,7 @@ Transform:
   m_GameObject: {fileID: 1611460652354053865}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1611460650795117025}
   m_RootOrder: 2
