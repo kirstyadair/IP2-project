@@ -22702,7 +22702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1011659217
 Transform:
   m_ObjectHideFlags: 0
@@ -22743,7 +22743,7 @@ MonoBehaviour:
     sushiCount: 20
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
-    hitpoints: 1
+    hitpoints: 20
   - sushiType: 1
     sushiCount: 50
     secondsBeforeSpawning: 1
@@ -22760,7 +22760,7 @@ MonoBehaviour:
     timeBetweenSpawns: 0.05
     hitpoints: 100
   - sushiType: 2
-    sushiCount: 280
+    sushiCount: 300
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 125
@@ -24471,7 +24471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1085049467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24489,27 +24489,27 @@ MonoBehaviour:
   waves:
   - sushiType: 2
     sushiCount: 100
-    secondsBeforeSpawning: 2
+    secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.2
     hitpoints: 20
   - sushiType: 1
     sushiCount: 200
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 50
   - sushiType: 0
     sushiCount: 350
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 100
   - sushiType: 3
     sushiCount: 420
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 150
   - sushiType: 2
     sushiCount: 500
-    secondsBeforeSpawning: 5
+    secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 250
 --- !u!4 &1085049468
