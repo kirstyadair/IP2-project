@@ -15,6 +15,7 @@ public class PlayerSelectionScript : MonoBehaviour
     PlayerSelectionData playerSelectionObject;
     bool starting = false;
     bool alreadyActive = false;
+    public bool playersAllActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,7 @@ public class PlayerSelectionScript : MonoBehaviour
             {
                 // choose characters
                 Debug.Log("yeet");
+                playersAllActive = true;
             }
         }
 
