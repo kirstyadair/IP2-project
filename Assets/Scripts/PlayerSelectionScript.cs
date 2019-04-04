@@ -14,7 +14,8 @@ public class PlayerSelectionScript : MonoBehaviour
 
     PlayerSelectionData playerSelectionObject;
     bool starting = false;
-    bool alreadyActive = false;
+
+    public bool playersAllActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,19 +35,19 @@ public class PlayerSelectionScript : MonoBehaviour
         // Get the inputdevice that was most recently pressed
         InputDevice currentInput = InputManager.ActiveDevice;
 
+        bool alreadyActive = false;
+
         // If X was pressed
         if (currentInput.Action1.WasPressed)
         {
-            Debug.Log("Input " + currentInput.GUID + " pressed X");
 
             // Check to see if this player is already active
-            
-
             foreach (PlayerSelection plr in players)
             {
                 if (plr.input.GUID == currentInput.GUID) alreadyActive = true;
             }
 
+            Debug.Log(alreadyActive);
             // Don't add any more than 4 players
             if (players.Count >= 4) alreadyActive = true;
 
@@ -61,7 +62,6 @@ public class PlayerSelectionScript : MonoBehaviour
 
                 players.Add(newPlr);
                 playerCount++;
-                Debug.Log("players joined: " + playerCount);
             }
             
         }
@@ -72,6 +72,8 @@ public class PlayerSelectionScript : MonoBehaviour
             {
                 // choose characters
                 Debug.Log("yeet");
+                playersAllActive = true;
+
             }
         }
 
