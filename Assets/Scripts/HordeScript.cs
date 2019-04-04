@@ -1,4 +1,5 @@
 ﻿using InControl;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -112,6 +113,12 @@ public class HordeScript : MonoBehaviour
         }
     }
 
+    public void ZombieDied(ZombieScript zombieScript)
+    {
+        zombiesAttachedToCrosshairA.Remove(zombieScript.gameObject);
+        zombiesAttachedToCrosshairB.Remove(zombieScript.gameObject);
+    }
+
     IEnumerator Spawn(SushiType sushiType, int count, int hitpoints, float timeBetweenSpawns, Transform spawnA, Transform spawnB)
     {
         isSpawning = true;
@@ -146,7 +153,7 @@ public class HordeScript : MonoBehaviour
 
             zombie.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sushiSprite;
 
-            Vector3 force = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100));
+            Vector3 force = new Vector3(UnityEngine.Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
             zombie.GetComponent<Rigidbody>().AddForce(force);
             //zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
@@ -196,7 +203,7 @@ public class HordeScript : MonoBehaviour
         force.y = 0;
         force *= forceMultiplier;
 
-        Vector3 wiggle = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+        Vector3 wiggle = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
         wiggle *= wiggleMultiplier;
         force += wiggle;
         zombie.GetComponent<Rigidbody>().AddForce(force);

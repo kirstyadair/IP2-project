@@ -22743,7 +22743,7 @@ MonoBehaviour:
     sushiCount: 20
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
-    hitpoints: 25
+    hitpoints: 1
   - sushiType: 1
     sushiCount: 50
     secondsBeforeSpawning: 1
@@ -29684,7 +29684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 29541d1f4f428dd42886aae7ab269a3b, type: 3}
       propertyPath: m_Name
-      value: floorcornercut
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 29541d1f4f428dd42886aae7ab269a3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30305,7 +30305,7 @@ RectTransform:
   m_GameObject: {fileID: 1392020041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.2338, y: 4.2338, z: 4.2338}
   m_Children: []
   m_Father: {fileID: 976812561}
   m_RootOrder: 3
