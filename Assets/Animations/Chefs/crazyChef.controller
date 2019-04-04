@@ -14,7 +14,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -382,7 +382,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: crazy chef fire up
+  m_Name: fire up 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -462,10 +462,10 @@ AnimatorStateMachine:
     m_Position: {x: 574, y: 466, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102836022425197358}
-    m_Position: {x: 609, y: 531, z: 0}
+    m_Position: {x: 612, y: 528, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102199857185476744}
-    m_Position: {x: 828, y: 576, z: 0}
+    m_Position: {x: 636, y: 588, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

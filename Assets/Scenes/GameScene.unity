@@ -16635,7 +16635,7 @@ MonoBehaviour:
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   wiggleMultiplier: 15
   forceMultiplier: 15
-  crosshairBounds: 5
+  crosshairBounds: 10
   crosshairSpeed: 13
   eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   teethSushi: {fileID: 21300004, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
