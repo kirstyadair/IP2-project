@@ -22702,7 +22702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1011659217
 Transform:
   m_ObjectHideFlags: 0
@@ -24471,7 +24471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1085049467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24487,16 +24487,31 @@ MonoBehaviour:
   hordeSpawnA: {fileID: 0}
   hordeSpawnB: {fileID: 0}
   waves:
-  - sushiType: 0
-    sushiCount: 10
+  - sushiType: 2
+    sushiCount: 100
     secondsBeforeSpawning: 2
     timeBetweenSpawns: 0.2
-    hitpoints: 0
+    hitpoints: 20
   - sushiType: 1
-    sushiCount: 10
+    sushiCount: 200
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 1
-    hitpoints: 0
+    hitpoints: 50
+  - sushiType: 0
+    sushiCount: 350
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 1
+    hitpoints: 100
+  - sushiType: 3
+    sushiCount: 420
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 1
+    hitpoints: 150
+  - sushiType: 2
+    sushiCount: 500
+    secondsBeforeSpawning: 5
+    timeBetweenSpawns: 1
+    hitpoints: 250
 --- !u!4 &1085049468
 Transform:
   m_ObjectHideFlags: 0
