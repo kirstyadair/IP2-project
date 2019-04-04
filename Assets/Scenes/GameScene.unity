@@ -24493,12 +24493,12 @@ MonoBehaviour:
     timeBetweenSpawns: 0.2
     hitpoints: 20
   - sushiType: 1
-    sushiCount: 200
+    sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 50
   - sushiType: 0
-    sushiCount: 350
+    sushiCount: 250
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 100
