@@ -22754,12 +22754,12 @@ MonoBehaviour:
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 75
-  - sushiType: 2
+  - sushiType: 0
     sushiCount: 180
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 100
-  - sushiType: 0
+  - sushiType: 2
     sushiCount: 280
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
@@ -44403,6 +44403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horde crosshair A
       objectReference: {fileID: 0}
+    - target: {fileID: 1611460652138383239, guid: eb5ad6760d45e2b4a8bd9c4a68c8e63f,
+        type: 3}
+      propertyPath: emptyHealthColour.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1611460652138383240, guid: eb5ad6760d45e2b4a8bd9c4a68c8e63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44457,11 +44462,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1611460652138383239, guid: eb5ad6760d45e2b4a8bd9c4a68c8e63f,
-        type: 3}
-      propertyPath: emptyHealthColour.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5ad6760d45e2b4a8bd9c4a68c8e63f, type: 3}
