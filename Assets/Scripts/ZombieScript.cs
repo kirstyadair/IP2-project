@@ -81,6 +81,8 @@ public class ZombieScript : MonoBehaviour
         GetComponent<Animator>().SetTrigger("death");
         GetComponent<ParticleSystem>().Emit(10);
         Destroy(gameObject, 2f);
+
+        hordeScript.ZombieDied(this);
     }
 
     void OnTriggerEnter(Collider other)

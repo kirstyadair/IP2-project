@@ -13,7 +13,8 @@ public class HordeCrosshairScript : MonoBehaviour
     Vector3 velocity = Vector3.zero;
     public GameObject innerRing;
     public GameObject innerMostRing;
-
+    public Animator animator;
+    public bool showing = false;
     public float wobbleFactor = 1f;
 
     // Start is called before the first frame update
@@ -24,9 +25,22 @@ public class HordeCrosshairScript : MonoBehaviour
         innerMostPosition = innerMostRing.transform.localPosition;
     }
 
+    public void Show()
+    {
+        animator.Play("grow");
+        showing = true;
+    }
+
+    public void Hide()
+    {
+        animator.Play("shrink");
+        showing = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!showing) return;
         velocity += (lastPosition - transform.position);
 
         innerRing.transform.localPosition = innerPosition - velocity / 2;
