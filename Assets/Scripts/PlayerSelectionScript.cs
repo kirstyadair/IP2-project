@@ -88,19 +88,35 @@ public class PlayerSelectionScript : MonoBehaviour
         }
 
         // If there is more than one player, give option to start game
-        if (players.Count > 1)
+        //if (players.Count > 1)
+        if (playersAllActive)
         {
             pressStartToBegin.SetActive(true);
+            ChoosePlayerType();
 
             // If start button was pressed, assign the player types and start the game
             if (currentInput.Command.WasPressed && !starting)
             {
                 starting = true;
-                AssignPlayers();
+                
                 PreparePlayerSelectionObject();
                 StartCoroutine(ChangeScene());
             }
         } 
+    }
+
+    void ChoosePlayerType()
+    {
+        PlayerType[] availableTypes = { PlayerType.THIN, PlayerType.FAT, PlayerType.CRAZY, PlayerType.HORDE };
+
+        bool canSelectChefs = true;
+        bool fatChefSelected = false;
+        bool thinChefSelected = false;
+        bool crazyChefSelected = false;
+        bool hordeSelected = false;
+
+        // allow playerCount-1 people to choose a chef
+
     }
 
     void AssignPlayers()
