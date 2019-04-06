@@ -24789,27 +24789,27 @@ MonoBehaviour:
     sushiCount: 20
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
-    hitpoints: 20
+    hitpoints: 10
   - sushiType: 1
     sushiCount: 50
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
-    hitpoints: 50
+    hitpoints: 30
   - sushiType: 3
     sushiCount: 100
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 75
+    hitpoints: 50
   - sushiType: 0
     sushiCount: 180
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 100
+    hitpoints: 75
   - sushiType: 2
     sushiCount: 300
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 125
+    hitpoints: 100
 --- !u!1 &1011748860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 29541d1f4f428dd42886aae7ab269a3b,
@@ -28868,7 +28868,7 @@ Transform:
   - {fileID: 1819813327}
   - {fileID: 1731721516}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 119
+  m_RootOrder: 118
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1176841371
 PrefabInstance:
@@ -35138,7 +35138,7 @@ Transform:
   - {fileID: 885279212}
   - {fileID: 758285193}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 118
+  m_RootOrder: 119
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &1436744297 stripped
 Transform:
@@ -37708,8 +37708,8 @@ Transform:
   - {fileID: 1100240463}
   - {fileID: 2071640899}
   - {fileID: 360871701}
-  - {fileID: 1431228921}
   - {fileID: 1175215894}
+  - {fileID: 1431228921}
   - {fileID: 273841702}
   - {fileID: 1653789903}
   - {fileID: 557052484}
@@ -46183,7 +46183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1993285893
 MonoBehaviour:
   m_ObjectHideFlags: 0
