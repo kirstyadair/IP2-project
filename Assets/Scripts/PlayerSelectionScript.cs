@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +13,10 @@ public class PlayerSelectionScript : MonoBehaviour
     public GameObject pressStartToBegin;
     public List<PlayerSelection> players = new List<PlayerSelection>();
 
+    GraphicRaycaster raycaster;
+    EventSystem eventSystem;
+    PointerEventData pointerEventData;
+
     PlayerSelectionData playerSelectionObject;
     bool starting = false;
 
@@ -21,11 +26,31 @@ public class PlayerSelectionScript : MonoBehaviour
     void Start()
     {
         playerSelectionObject = GameObject.Find("PlayerSelectionData").GetComponent<PlayerSelectionData>();
+        raycaster = GetComponent<GraphicRaycaster>();
+        eventSystem = GetComponent<EventSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*if (input)
+        {
+            pointerEventData = new PointerEventData(eventSystem);
+            pointerEventData.position = Input.mousePosition;
+
+            List<RaycastResult> results = new List<RaycastResult>();
+
+            raycaster.Raycast(pointerEventData, results);
+
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.tag == whateverTag)
+                {
+                    
+                }
+            }
+        }*/
+
         if (Input.GetKey(KeyCode.E))
         {
             Destroy(GameObject.Find("PlayerSelectionData"));
@@ -108,46 +133,16 @@ public class PlayerSelectionScript : MonoBehaviour
     void ChoosePlayerType()
     {
         PlayerType[] availableTypes = { PlayerType.THIN, PlayerType.FAT, PlayerType.CRAZY, PlayerType.HORDE };
-
+        PlayerType currentPlayerType;
         bool canSelectChefs = true;
         bool fatChefSelected = false;
         bool thinChefSelected = false;
         bool crazyChefSelected = false;
         bool hordeSelected = false;
 
+
         // allow playerCount-1 people to choose a chef
 
-    }
-
-    void AssignPlayers()
-    {
-        foreach (PlayerSelection plr in players) plr.playerType = PlayerType.UNDECIDED;
-
-        // Available player types 
-        PlayerType[] availableTypes = {  PlayerType.THIN, PlayerType.FAT, PlayerType.HORDE };
-
-        // Randomly pick a unique typ per player
-        foreach (PlayerSelection plr in players)
-        {
-            bool alreadyPicked = false;
-            PlayerType randomChef = PlayerType.UNDECIDED;
-            do
-            {
-                // Keep picking random types until it's unqiue
-                alreadyPicked = false;
-                randomChef = availableTypes[Random.Range(0, availableTypes.Length)];
-                foreach (PlayerSelection player in players) if (player.playerType == randomChef) alreadyPicked = true;
-            } while (alreadyPicked);
-
-            plr.playerType = randomChef;
-        }
-
-        // Check if one of the players is already assigned as the horde, otherwise pick a random one to be
-        bool hordePicked = false;
-
-        foreach (PlayerSelection plr in players) if (plr.playerType == PlayerType.HORDE) hordePicked = true;
-
-        if (!hordePicked) players[Random.Range(0, players.Count)].playerType = PlayerType.HORDE;
     }
 
     // Pass the player selection details to the PlayerSelectionObject to be persisted into the GameScene
