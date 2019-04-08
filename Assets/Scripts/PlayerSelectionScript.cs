@@ -60,7 +60,10 @@ public class PlayerSelectionScript : MonoBehaviour
         // Get the inputdevice that was most recently pressed
         InputDevice currentInput = InputManager.ActiveDevice;
 
+
         bool alreadyActive = false;
+
+        
 
         // If X was pressed
         if (currentInput.Action1.WasPressed)
@@ -85,8 +88,16 @@ public class PlayerSelectionScript : MonoBehaviour
                     input = currentInput
                 };
 
+                GameObject playerCursor = GameObject.Find((playerCount + 1).ToString());
+                Color cursorColour = playerCursor.GetComponent<Image>().color;
+                cursorColour.a = 1;
+                playerCursor.GetComponent<Image>().color = cursorColour;
+                playerCursor.GetComponent<CursorScript>().controller = currentInput;
+
                 players.Add(newPlr);
                 playerCount++;
+
+
             }
             
         }
@@ -96,7 +107,6 @@ public class PlayerSelectionScript : MonoBehaviour
             if (currentInput.Action1.WasPressed)
             {
                 // choose characters
-                Debug.Log("yeet");
                 playersAllActive = true;
 
             }
