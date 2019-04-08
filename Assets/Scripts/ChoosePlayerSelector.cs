@@ -15,6 +15,8 @@ public class ChoosePlayerSelector : MonoBehaviour
 
     PlayerSelectionData playerSelectionData;
 
+    public PlayerType playerType;
+
     public void Start()
     {
         playerSelectionData = GameObject.Find("PlayerSelectionData").GetComponent<PlayerSelectionData>();
