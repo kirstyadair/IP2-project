@@ -93,7 +93,7 @@ public class PlayerSelectionScript : MonoBehaviour
                 cursorColour.a = 1;
                 playerCursor.GetComponent<Image>().color = cursorColour;
                 playerCursor.GetComponent<CursorScript>().controller = currentInput;
-
+                playerCursor.GetComponent<CursorScript>().Yeet();
                 players.Add(newPlr);
                 playerCount++;
 
@@ -144,11 +144,6 @@ public class PlayerSelectionScript : MonoBehaviour
     {
         PlayerType[] availableTypes = { PlayerType.THIN, PlayerType.FAT, PlayerType.CRAZY, PlayerType.HORDE };
         PlayerType currentPlayerType;
-        bool canSelectChefs = true;
-        bool fatChefSelected = false;
-        bool thinChefSelected = false;
-        bool crazyChefSelected = false;
-        bool hordeSelected = false;
 
 
         // allow playerCount-1 people to choose a chef

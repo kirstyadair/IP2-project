@@ -45,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: PS
+    uniqueID: 3531184603
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
