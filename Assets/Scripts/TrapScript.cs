@@ -67,6 +67,7 @@ public class TrapScript : MonoBehaviour
 
     IEnumerator Detonate()
     {
+        // Wait one second after activation before detonating
         float timeToDetonate = 1.0f;
         do
         {
@@ -74,9 +75,10 @@ public class TrapScript : MonoBehaviour
             timeToDetonate -= Time.deltaTime;
         }
         while (timeToDetonate >= 0);
+        // Stop the pulsing animation 
         explosionAnim.SetBool("pulse", false);
 
-        
+        // Create an array of sushi colliders to apply damage to
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, trapRadius);
         foreach (Collider hit in hitEnemies)
         {
@@ -85,13 +87,17 @@ public class TrapScript : MonoBehaviour
                 if (hit.gameObject.GetComponent<ZombieScript>().Hit(gameData.cookerDamage) && stats != null) stats.kills++;
             }
         }
+
+        // Play the fire particle effect
         firePS.Emit(1);
-        // I don't know why firePs.Stop() doesn't work, but it doesn't, so we're using emissionRate instead
         firePS.emissionRate = 0;
         trapDeactivated = true;
+
+        // Play the smoke particle effect and the explosion sound
         smokePS = GetComponent<ParticleSystem>();
         if (!GetComponent<AudioSource>().isPlaying) GetComponent<AudioSource>().Play();
         if (!smokePS.isPlaying) smokePS.Play();
+        // Start the countdown to re-enable the oven trap
         StartCoroutine(Reactivate());
     }
 
