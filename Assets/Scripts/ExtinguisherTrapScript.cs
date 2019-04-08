@@ -6,7 +6,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
 {
     // Variables
     float timeToDeactivate = 10.0f;
-    float timeToActivate = 60.0f;
+    float timeToActivate = 5.0;
     bool activated = false;
     //bool playerHurt = false;
     bool canReactivate = true;
@@ -70,7 +70,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
         }
         activated = false;
 
-        // trap will not be able to activate again for the next 60 seconds
+        // trap will not be able to activate again for the next 5 seconds
         timeToActivate = 5.0f;
         do
         {
@@ -108,21 +108,24 @@ public class ExtinguisherTrapScript : MonoBehaviour
         // if the trap is activated, push away and apply damage
         if (activated)
         {
+            // If a zombie hits the fire extinguisher
             if (other.tag == "Zombie")
             {
                 Rigidbody zombieRB = other.GetComponent<Rigidbody>();
+                // Push them back in the direction they entered
                 Vector3 dir = (other.transform.position - bCollider.bounds.center);
-                //if (other.transform.position.z < bCollider.center.z) dir *= -1;
                 dir.y = 0;
                 dir.Normalize();
                 zombieRB.AddForce(dir, ForceMode.Impulse);
+                // Apply light damage
                 if (other.GetComponent<ZombieScript>().Hit(gameData.fireExtinguisherDamage) && stats != null) stats.kills++; 
             }
 
+            // If a player hits the trap
             if (other.tag == "Player")
             {
+                // Again, push them back in the direction they entered
                 Vector3 dir = (other.transform.position - bCollider.bounds.center);
-                //if (other.transform.position.z < bCollider.center.z) dir *= -1;
                 dir.y = 0;
                 dir.Normalize();
                 other.GetComponent<PlayerScript>().pushForce = dir * 10;

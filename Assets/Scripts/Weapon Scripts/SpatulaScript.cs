@@ -18,8 +18,10 @@ public class SpatulaScript : MonoBehaviour
 
     void Fire()
     {
+        // If the cooldown isn't at 0, don't allow a hit
         if (hitCountdown > 0) return;
 
+        // Create an array of hit enemy colliders to apply damage to
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, spatulaRadiusHit);
         foreach (Collider sushi in hitEnemies)
         {
@@ -28,6 +30,7 @@ public class SpatulaScript : MonoBehaviour
                 if (sushi.gameObject.GetComponent<ZombieScript>().Hit(gameData.spatulaDamage)) playerScript.stats.kills++;
             }
         }
+        // Reset the cooldown, which decreases in Update()
         hitCountdown = 0.2f;
     }
 
