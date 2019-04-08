@@ -13,6 +13,7 @@ public class PlayerSelection
 public class PlayerSelectionData : MonoBehaviour
 {
     public List<PlayerSelection> playerSelections;
+    public Color[] playerColors;
 
     // Start is called before the first frame update
     void Start()

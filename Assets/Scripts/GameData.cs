@@ -70,6 +70,8 @@ public class GameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject selData = GameObject.Find("PlayerSelectionData");
+        if (selData != null) playerColors = selData.GetComponent<PlayerSelectionData>().playerColors;
         ChangeState(GameState.PREP);
     }
 

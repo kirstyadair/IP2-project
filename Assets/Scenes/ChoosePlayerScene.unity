@@ -250,6 +250,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300006, guid: 0b038bd42ad3cbf4d8558dd7f1f2cfbf,
         type: 3}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 662
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1104
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193416390788687933, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 0b038bd42ad3cbf4d8558dd7f1f2cfbf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c744b88136ac4747b99c3a8d55e4a81, type: 3}
 --- !u!224 &32464155 stripped
@@ -755,6 +776,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ada25da15d3927429da256bf64d3aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerColors:
+  - {r: 0.8962264, g: 0.33397114, b: 0.33397114, a: 1}
+  - {r: 0.40719378, g: 0.8018868, b: 0.34420612, a: 1}
+  - {r: 0.12927197, g: 0.6902328, b: 0.7830189, a: 1}
+  - {r: 0.8466561, g: 0.8490566, b: 0.18823424, a: 1}
 --- !u!4 &758168930
 Transform:
   m_ObjectHideFlags: 0
@@ -1217,6 +1243,17 @@ PrefabInstance:
       value: 0.2406408
       objectReference: {fileID: 0}
     - target: {fileID: 8597284888941903184, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 0b038bd42ad3cbf4d8558dd7f1f2cfbf,
+        type: 3}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 695
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193416390788687933, guid: 8c744b88136ac4747b99c3a8d55e4a81,
         type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1697,6 +1734,27 @@ PrefabInstance:
       value: 0.2406408
       objectReference: {fileID: 0}
     - target: {fileID: 8597284888941903184, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300016, guid: 0b038bd42ad3cbf4d8558dd7f1f2cfbf,
+        type: 3}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1086
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242218681470199293, guid: 8c744b88136ac4747b99c3a8d55e4a81,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193416390788687933, guid: 8c744b88136ac4747b99c3a8d55e4a81,
         type: 3}
       propertyPath: m_Sprite
       value: 
