@@ -27,8 +27,10 @@ public class KnivesScript : MonoBehaviour
 
     public void Shoot()
     {
+        // Don't shoot if the cooldown isn't finished
         if (fireTimeout > 0) return;
-        if (gameData.state == GameState.PREP) return; // Don't shoot whilst we're preparing
+        // Don't shoot whilst we're preparing
+        if (gameData.state == GameState.PREP) return; 
         Vector3 bulletDirection = playerScript.reticlePos - transform.position;
         bulletDirection.Normalize();
         bulletDirection.y = 0;

@@ -91,42 +91,48 @@ public class KetchupBeamScript : MonoBehaviour
     public void Fire()
     {
         ketchupActive = true;
+        // Don't fire before play has started
         if (gameData.state != GameState.PREP)
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
+            // Play the ketchup sound effect 
+            if (!audioSource.isPlaying) audioSource.Play();
 
+            // Find the direction of firing
             direction = playerScript.reticlePos - transform.position;
 
+            // Limit how far the ketchup can travel on each axis
             if (direction.x >= 2) direction.x = 2;
             if (direction.y >= 2) direction.y = 2;
             if (direction.z >= 2) direction.z = 2;
-
             direction.Normalize();
 
+            // Instantiate the ketchup blob
             ketchup = (GameObject)Instantiate(ketchupPrefab, transform.position, Quaternion.identity);
             ketchup.tag = "KetchupBlob";
             ketchup.GetComponent<Rigidbody>().AddForce(direction, ForceMode.Impulse);
-            ketchupActive = true;
             StartCoroutine(StartKetchupDestroy(ketchup));
         }
     }
 
+    // This is applied to every ketchup blob as soon as it is instantiated
     IEnumerator StartKetchupDestroy(GameObject ketchup)
     {
+        // If the blob does not hit the floor or a wall, it has three seconds before it is destroyed
         float timeToDestroy = 3.0f;
         do
         {
+            // Reduce the time left until the blob is destroyed
             timeToDestroy -= Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
+            // Don't try to change the scale of the ketchup blob if it has already been destroyed by a wall or floor
             if (ketchup.gameObject != null)
             {
+                // ketchupSpread is a public variable with its value assigned in the inspector
                 ketchup.transform.localScale += ketchupSpread;
             }
         } while (timeToDestroy > 0);
 
+        // Once the three seconds are done, destroy the blob
         Destroy(ketchup);
     }
 }
