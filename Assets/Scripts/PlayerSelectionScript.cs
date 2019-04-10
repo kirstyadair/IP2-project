@@ -76,7 +76,6 @@ public class PlayerSelectionScript : MonoBehaviour
                 if (plr.input.GUID == currentInput.GUID) alreadyActive = true;
             }
 
-            Debug.Log(alreadyActive);
             // Don't add any more than 4 players
             if (players.Count >= 4) alreadyActive = true;
 
@@ -94,8 +93,10 @@ public class PlayerSelectionScript : MonoBehaviour
                 cursorColour.a = 1;
                 playerCursor.GetComponent<Image>().color = cursorColour;
                 playerCursor.GetComponent<CursorScript>().controller = currentInput;
+                playerCursor.GetComponent<CursorScript>().controller = currentInput;
                 playerCursor.GetComponent<CursorScript>().Yeet();
                 playerCursor.GetComponent<CursorScript>().playerNumber = playerCount;
+                playerCursor.transform.SetParent(transform); // pull the cursor out of the playerindicator gameobject 
                 players.Add(newPlr);
                 playerCount++;
             }

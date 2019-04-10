@@ -92,27 +92,34 @@ public class CursorScript : MonoBehaviour
             {
                 MoveCursor();
 
+                Vector3 position = transform.localPosition;
 
+                float canvasWidth = canvas.GetComponent<RectTransform>().rect.width;// * canvas.scaleFactor;
+                float canvasHeight = canvas.GetComponent<RectTransform>().rect.height;// * canvas.scaleFactor;
+
+                //Debug.Log("Position: " + position + "/ width: " + canvasWidth + " / height: " + canvasHeight);
                 // constrain within 
-                if (transform.position.x < 0)
+                if (position.x < -canvasWidth/2)
                 {
-                    transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                    position = new Vector3(-canvasWidth/2, position.y, position.z);
                 }
 
-                if (transform.position.x > canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor)
+                if (position.x > canvasWidth/2)
                 {
-                    transform.position = new Vector3(canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor, transform.position.y, transform.position.z);
+                    position = new Vector3(canvasWidth/2, position.y, position.z);
                 }
 
-                if (transform.position.y < 0)
+                if (position.y < -canvasHeight/2)
                 {
-                    transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+                    position = new Vector3(position.x, -canvasHeight/2, position.z);
                 }
 
-                if (transform.position.y > canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor)
+                if (position.y > canvasHeight/2)
                 {
-                    transform.position = new Vector3(transform.position.x, canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor, transform.position.z);
+                    position = new Vector3(position.x, canvasHeight/2, position.z);
                 }
+
+                transform.localPosition = position;
             }
 
             if (controller.Action1.WasPressed && !isSelected && !isYeeting && currentlyHoveredSelector != null)

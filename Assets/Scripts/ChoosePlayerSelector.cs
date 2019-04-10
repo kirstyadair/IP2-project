@@ -49,14 +49,27 @@ public class ChoosePlayerSelector : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Hover();
-        cursorsHovering.Add(collision.GetComponent<CursorScript>());
+        CursorScript cursor = collision.GetComponent<CursorScript>();
+
+        cursorsHovering.Add(cursor);
+
+        // if the cursor is still touching another selector, unhover from that one
+        if (cursor.currentlyHoveredSelector != null)
+        {
+            cursor.currentlyHoveredSelector.cursorsHovering.Remove(cursor);
+            if (cursor.currentlyHoveredSelector.cursorsHovering.Count == 0) cursor.currentlyHoveredSelector.Unhover();
+        }
+
         collision.GetComponent<CursorScript>().currentlyHoveredSelector = this;
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        cursorsHovering.Remove(collision.GetComponent<CursorScript>());
-        collision.GetComponent<CursorScript>().currentlyHoveredSelector = null;
+        CursorScript cursor = collision.GetComponent<CursorScript>();
+        cursorsHovering.Remove(cursor);
+
+        // If the cursor has left this selector and not entered another at the same time, set it to null
+        if (cursor.currentlyHoveredSelector == this) cursor.currentlyHoveredSelector = null;
 
         // only unhover if there are no cursors sitting on this boi
         if (cursorsHovering.Count == 0) Unhover();
