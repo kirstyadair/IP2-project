@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class CursorScript : MonoBehaviour
 {
-    public InputDevice controller;
+    public PlayerSelection player;
+
     Canvas canvas;
     Rigidbody2D rb;
     ParticleSystem ps;
     Image image;
     Animator animator;
+
     public int playerNumber;
 
     Vector3 startPosition;
@@ -72,7 +74,7 @@ public class CursorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller == null) return;
+        if (player == null) return;
         transform.position += (new Vector3(yeetingVelocity.x, yeetingVelocity.y, 0) * Time.deltaTime);
         yeetingVelocity *= yeetingDrag;
         if (yeetingVelocity.magnitude < 0.001f) yeetingVelocity = Vector2.zero;
@@ -122,19 +124,22 @@ public class CursorScript : MonoBehaviour
                 transform.localPosition = position;
             }
 
-            if (controller.Action1.WasPressed && !isSelected && !isYeeting && currentlyHoveredSelector != null)
+            if (player.input.Action1.WasPressed && !isSelected && !isYeeting && currentlyHoveredSelector != null)
             {
-                if (!currentlyHoveredSelector.isSelected)
+                if (!currentlyHoveredSelector.isSelected && currentlyHoveredSelector.isActivated)
                 {
+                    player.playerType = currentlyHoveredSelector.playerType;
                     isSelected = true;
                     currentlyHoveredSelector.Select(playerNumber);
+
 
                     Hide();
                 }
             }
 
-            if (controller.Action2.WasPressed && isSelected)
+            if (player.input.Action2.WasPressed && isSelected)
             {
+                player.playerType = PlayerType.UNDECIDED;
                 isSelected = false;
 
                 currentlyHoveredSelector.Unselect();
@@ -146,7 +151,7 @@ public class CursorScript : MonoBehaviour
 
     public void MoveCursor()
     {
-        if (controller == null) return; // :(((((
-        GetComponent<RectTransform>().position += new Vector3(controller.LeftStick.Vector.x, controller.LeftStick.Vector.y, 0) * 10;
+        if (player == null) return; // :(((((
+        GetComponent<RectTransform>().position += new Vector3(player.input.LeftStick.Vector.x, player.input.LeftStick.Vector.y, 0) * 10;
     }
 }

@@ -7,6 +7,7 @@ public class ChoosePlayerSelector : MonoBehaviour
 {
     public bool isHovered = false;
     public bool isSelected = false;
+    public bool isActivated = true;
     public int selectedPlayer = -1;
 
     public Animator animator;
@@ -19,6 +20,9 @@ public class ChoosePlayerSelector : MonoBehaviour
 
     public PlayerType playerType;
 
+    public delegate void ChoosePlayerSelectorEvent(ChoosePlayerSelector selector);
+    public static event ChoosePlayerSelectorEvent OnSelectionChanged;
+
     public void Start()
     {
         playerSelectionData = GameObject.Find("PlayerSelectionData").GetComponent<PlayerSelectionData>();
@@ -26,7 +30,7 @@ public class ChoosePlayerSelector : MonoBehaviour
 
     public void Hover()
     {
-        if (isSelected) return;
+        if (isSelected || !isActivated) return;
 
         if (!isHovered)
         {
@@ -34,6 +38,30 @@ public class ChoosePlayerSelector : MonoBehaviour
             animator.Play("hover");
         }
     }
+
+
+
+    public void Deactivate()
+    {
+        if (!isActivated) return;
+        if (isSelected) return;
+        if (isHovered) Unhover();
+
+        isActivated = false;
+        animator.Play("deactivate");
+    }
+
+    public void Activate()
+    {
+        if (isActivated) return;
+        isActivated = true;
+        Debug.Log("activate");
+
+        if (cursorsHovering.Count > 0) Hover();
+
+        animator.Play("activate");
+    }
+
 
     public void Unhover()
     {
@@ -81,20 +109,29 @@ public class ChoosePlayerSelector : MonoBehaviour
         {
             isSelected = false;
             animator.Play("unselect");
+
+            OnSelectionChanged(this);
+
+            if (cursorsHovering.Count > 0) Hover();
         }
     }
 
     public void Select(int playerNumber)
     {
-        selectedPlayer = playerNumber;
+        if (!isActivated) return;
+
+
 
         if (!isSelected)
         {
+            selectedPlayer = playerNumber;
             isHovered = false;
             isSelected = true;
             highlighter.color = playerSelectionData.playerColors[selectedPlayer];
             playerText.text = "P" + (selectedPlayer + 1);
             animator.Play("select");
+
+            OnSelectionChanged(this);
         } 
     }
 }

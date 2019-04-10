@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class PlayerSelectionScript : MonoBehaviour
 {
     public Text playerList;
+    public Text someoneHasToPickHorde;
+    public GameObject pressOptionsToStart;
     public int playerCount = 0;
     public GameObject pressStartToBegin;
     public List<PlayerSelection> players = new List<PlayerSelection>();
@@ -20,7 +22,12 @@ public class PlayerSelectionScript : MonoBehaviour
     PlayerSelectionData playerSelectionObject;
     bool starting = false;
 
-    public bool playersAllActive = false;
+    public ChoosePlayerSelector fatChef;
+    public ChoosePlayerSelector thinChef;
+    public ChoosePlayerSelector crazyChef;
+    public ChoosePlayerSelector horde;
+
+    public bool readyToStart = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +35,8 @@ public class PlayerSelectionScript : MonoBehaviour
         playerSelectionObject = GameObject.Find("PlayerSelectionData").GetComponent<PlayerSelectionData>();
         raycaster = GetComponent<GraphicRaycaster>();
         eventSystem = GetComponent<EventSystem>();
+
+        ChoosePlayerSelector.OnSelectionChanged += OnPlayerSelectionChanged;
     }
 
 
@@ -40,8 +49,42 @@ public class PlayerSelectionScript : MonoBehaviour
 
         return false;
     }
+    
+    public void OnPlayerSelectionChanged(ChoosePlayerSelector selector)
+    {
+        RefreshPlayerAvailabilities();
+    }
 
-    public int PlayersThatHaveNotSelected()
+    // Force a player to pick the horde
+    public void RefreshPlayerAvailabilities()
+    {
+        // If the horde hasn't been selected yet AND there is one player still left to pick, force them to pick the horde by deactivating the chefs
+        if (players.Count > 1 && !horde.isSelected && PlayersThatHaveSelected() == players.Count - 1)
+        {
+            fatChef.Deactivate();
+            thinChef.Deactivate();
+            crazyChef.Deactivate();
+            someoneHasToPickHorde.gameObject.SetActive(true);
+        } else
+        {
+            fatChef.Activate();
+            thinChef.Activate();
+            crazyChef.Activate();
+            someoneHasToPickHorde.gameObject.SetActive(false);
+        }
+
+        if (PlayersThatHaveSelected() == players.Count && players.Count > 1)
+        {
+            pressOptionsToStart.SetActive(true);
+            readyToStart = true;
+        } else
+        {
+            pressOptionsToStart.SetActive(false);
+            readyToStart = false;
+        }
+    }
+
+    public int PlayersThatHaveSelected()
     {
         int results = 0;
         foreach (PlayerSelection selection in players) if (selection.playerType != PlayerType.UNDECIDED) results++;
@@ -91,54 +134,35 @@ public class PlayerSelectionScript : MonoBehaviour
                 GameObject playerCursor = GameObject.Find((playerCount + 1).ToString());
                 Color cursorColour = playerCursor.GetComponent<Image>().color;
                 cursorColour.a = 1;
+
+                CursorScript cursorScript = playerCursor.GetComponent<CursorScript>();
                 playerCursor.GetComponent<Image>().color = cursorColour;
-                playerCursor.GetComponent<CursorScript>().controller = currentInput;
-                playerCursor.GetComponent<CursorScript>().controller = currentInput;
-                playerCursor.GetComponent<CursorScript>().Yeet();
-                playerCursor.GetComponent<CursorScript>().playerNumber = playerCount;
+
+                cursorScript.player = newPlr;
+                cursorScript.Yeet();
+                cursorScript.playerNumber = playerCount;
+
                 playerCursor.transform.SetParent(transform); // pull the cursor out of the playerindicator gameobject 
                 players.Add(newPlr);
                 playerCount++;
+
+                RefreshPlayerAvailabilities();
             }
             
         }
 
-        if (playerCount > 1 && alreadyActive)
+
+        if (readyToStart)
         {
-            if (currentInput.Action1.WasPressed)
-            {
-                // choose characters
-                playersAllActive = true;
-
-            }
-        }
-
-        // If there is more than one player, give option to start game
-        //if (players.Count > 1) dhsjkafhdsjakhfdjsklahfjkdslahfjkdsal
-
-        if (playersAllActive)
-        {
-            pressStartToBegin.SetActive(true);
-            ChoosePlayerType();
-
-            // If start button was pressed, assign the player types and start the game
+            // If start button was pressed, start the game
             if (currentInput.Command.WasPressed && !starting)
             {
                 starting = true;
                 
                 PreparePlayerSelectionObject();
-                StartCoroutine(ChangeScene());
+                SceneManager.LoadScene("GameScene");
             }
         } 
-    }
-
-    void ChoosePlayerType()
-    {
-        PlayerType[] availableTypes = { PlayerType.THIN, PlayerType.FAT, PlayerType.CRAZY, PlayerType.HORDE };
-
-
-        // allow playerCount-1 people to choose a chef
-
     }
 
     // Pass the player selection details to the PlayerSelectionObject to be persisted into the GameScene
@@ -146,6 +170,7 @@ public class PlayerSelectionScript : MonoBehaviour
     {
         playerSelectionObject.playerSelections = players;
     }
+
 
     IEnumerator ChangeScene()
     {
