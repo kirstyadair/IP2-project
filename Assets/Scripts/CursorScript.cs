@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorScript : MonoBehaviour
 {
@@ -9,15 +10,21 @@ public class CursorScript : MonoBehaviour
     Canvas canvas;
     Rigidbody2D rb;
     ParticleSystem ps;
+    Image image;
     Animator animator;
+    public int playerNumber;
 
     Vector3 startPosition;
 
     bool isYeeting = false;
+    bool isSelected = false;
     Vector2 yeetingVelocity;
 
     public float yeetingSpeed;
     public float yeetingDrag;
+
+    public ChoosePlayerSelector currentlyHoveredSelector = null;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +33,9 @@ public class CursorScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ps = GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
+        image = GetComponent<Image>();
         startPosition = transform.position;
-        //canvas.GetComponent<RectTransform>().rect.
+        //canvas.GetComponent<RectTransform>().rect
 
        // Yeet();
     }
@@ -41,25 +49,34 @@ public class CursorScript : MonoBehaviour
         yeetingVelocity = new Vector2(0, yeetingSpeed);
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     public void FlashForAvailability()
     {
         ps.Emit(20);
         animator.Play("cursor jump");
     }
 
+    void Hide()
+    {
+        Color clr = image.color;
+        clr.a = 0f;
+        image.color = clr;
+    }
+
+    void Show()
+    {
+        Color clr = image.color;
+        clr.a = 1f;
+        image.color = clr;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (controller == null) return;
         transform.position += (new Vector3(yeetingVelocity.x, yeetingVelocity.y, 0) * Time.deltaTime);
         yeetingVelocity *= yeetingDrag;
         if (yeetingVelocity.magnitude < 0.001f) yeetingVelocity = Vector2.zero;
 
-        if (controller.Action1.WasPressed) Yeet();
         if (isYeeting)
         {
 
@@ -71,27 +88,51 @@ public class CursorScript : MonoBehaviour
         }
         else
         {
-            if (isYeeting) return;
-
-            MoveCursor();
-            if (transform.position.x < 0)
+            if (!isSelected)
             {
-                transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                MoveCursor();
+
+
+                // constrain within 
+                if (transform.position.x < 0)
+                {
+                    transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.x > canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor)
+                {
+                    transform.position = new Vector3(canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor, transform.position.y, transform.position.z);
+                }
+
+                if (transform.position.y < 0)
+                {
+                    transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+                }
+
+                if (transform.position.y > canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor)
+                {
+                    transform.position = new Vector3(transform.position.x, canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor, transform.position.z);
+                }
             }
 
-            if (transform.position.x > canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor)
+            if (controller.Action1.WasPressed && !isSelected && !isYeeting && currentlyHoveredSelector != null)
             {
-                transform.position = new Vector3(canvas.GetComponent<RectTransform>().rect.width * canvas.scaleFactor, transform.position.y, transform.position.z);
+                if (!currentlyHoveredSelector.isSelected)
+                {
+                    isSelected = true;
+                    currentlyHoveredSelector.Select(playerNumber);
+
+                    Hide();
+                }
             }
 
-            if (transform.position.y < 0)
+            if (controller.Action2.WasPressed && isSelected)
             {
-                transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-            }
+                isSelected = false;
 
-            if (transform.position.y > canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor)
-            {
-                transform.position = new Vector3(transform.position.x, canvas.GetComponent<RectTransform>().rect.height * canvas.scaleFactor, transform.position.z);
+                currentlyHoveredSelector.Unselect();
+                currentlyHoveredSelector.selectedPlayer = -1;
+                Show();
             }
         }
     }

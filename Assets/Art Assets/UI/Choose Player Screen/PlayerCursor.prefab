@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1761959245989036811}
   - component: {fileID: 212777687143542020}
   - component: {fileID: 8763628659176525232}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: PlayerCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f835a4777786f24d8cac5dcf15ab9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 0
   yeetingSpeed: 2000
   yeetingDrag: 0.9
+  currentlyHoveredSelector: {fileID: 0}
 --- !u!50 &3168370241806321345
 Rigidbody2D:
   serializedVersion: 4
@@ -277,8 +279,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 138.5
-      minScalar: 62.89
+      scalar: 209.7
+      minScalar: 150.22
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -774,7 +776,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
     donutRadius: 0.2
-    m_Position: {x: 2.3, y: 0, z: -1}
+    m_Position: {x: 11.64, y: 0, z: -1}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 0}
     placementMode: 0
@@ -855,7 +857,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 8.12
+      value: 54.29
       mode: 0
       spread: 0
       speed:
@@ -974,7 +976,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4840,7 +4842,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -763782693
-  m_SortingLayer: -1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 2
   m_SortMode: 0

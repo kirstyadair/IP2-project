@@ -6,7 +6,7 @@ public class ExtinguisherTrapScript : MonoBehaviour
 {
     // Variables
     float timeToDeactivate = 10.0f;
-    float timeToActivate = 5.0;
+    float timeToActivate = 5.0f;
     bool activated = false;
     //bool playerHurt = false;
     bool canReactivate = true;

@@ -30,27 +30,28 @@ public class PlayerSelectionScript : MonoBehaviour
         eventSystem = GetComponent<EventSystem>();
     }
 
+
+    public bool IsHordeSelected()
+    {
+        foreach (PlayerSelection selection in players)
+        {
+            if (selection.playerType == PlayerType.HORDE) return true;
+        }
+
+        return false;
+    }
+
+    public int PlayersThatHaveNotSelected()
+    {
+        int results = 0;
+        foreach (PlayerSelection selection in players) if (selection.playerType != PlayerType.UNDECIDED) results++;
+
+        return results;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        /*if (input)
-        {
-            pointerEventData = new PointerEventData(eventSystem);
-            pointerEventData.position = Input.mousePosition;
-
-            List<RaycastResult> results = new List<RaycastResult>();
-
-            raycaster.Raycast(pointerEventData, results);
-
-            foreach (RaycastResult result in results)
-            {
-                if (result.gameObject.tag == whateverTag)
-                {
-                    
-                }
-            }
-        }*/
-
         if (Input.GetKey(KeyCode.E))
         {
             Destroy(GameObject.Find("PlayerSelectionData"));
@@ -94,10 +95,9 @@ public class PlayerSelectionScript : MonoBehaviour
                 playerCursor.GetComponent<Image>().color = cursorColour;
                 playerCursor.GetComponent<CursorScript>().controller = currentInput;
                 playerCursor.GetComponent<CursorScript>().Yeet();
+                playerCursor.GetComponent<CursorScript>().playerNumber = playerCount;
                 players.Add(newPlr);
                 playerCount++;
-
-
             }
             
         }
@@ -112,18 +112,9 @@ public class PlayerSelectionScript : MonoBehaviour
             }
         }
 
-        playerList.text = "";
-
-        // Draw the player list
-        int i = 0;
-        foreach (PlayerSelection plr in players)
-        {
-            i++;
-            playerList.text += "Player " + i + " - " + plr.playerType + "\n";
-        }
-
         // If there is more than one player, give option to start game
-        //if (players.Count > 1)
+        //if (players.Count > 1) dhsjkafhdsjakhfdjsklahfjkdslahfjkdsal
+
         if (playersAllActive)
         {
             pressStartToBegin.SetActive(true);
@@ -143,7 +134,6 @@ public class PlayerSelectionScript : MonoBehaviour
     void ChoosePlayerType()
     {
         PlayerType[] availableTypes = { PlayerType.THIN, PlayerType.FAT, PlayerType.CRAZY, PlayerType.HORDE };
-        PlayerType currentPlayerType;
 
 
         // allow playerCount-1 people to choose a chef
