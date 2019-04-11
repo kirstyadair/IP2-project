@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2405784594230632683, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.677
+      objectReference: {fileID: 0}
     - target: {fileID: 6091985603233705599, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
         type: 3}
       propertyPath: m_Name
@@ -117,16 +122,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5659494695212205939, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
-        type: 3}
-      propertyPath: filler
-      value: 
-      objectReference: {fileID: 5861954053995209663}
-    - target: {fileID: 5659494695212205939, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1666327040613948414}
     - target: {fileID: 4317182366697301798, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -153,6 +148,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 09177a5a10800a7488cf5cdd6f3472a4,
         type: 3}
+    - target: {fileID: 5659494695212205939, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: filler
+      value: 
+      objectReference: {fileID: 5861954053995209663}
+    - target: {fileID: 5659494695212205939, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1666327040613948414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff3f8c5bd361f749a315a102c1e85a6, type: 3}
 --- !u!95 &1666327040613948414 stripped

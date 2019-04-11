@@ -11,7 +11,7 @@ public class GameData : MonoBehaviour
 {
     public MapSettings currentMap;
 
-    // Triggered when the state is changed suprisingly
+    // Triggered when the state is changed
     public delegate void StateChanged(GameState oldState, GameState newState);
     public event StateChanged OnStateChange;
 

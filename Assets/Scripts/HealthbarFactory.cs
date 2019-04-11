@@ -11,28 +11,31 @@ public class HealthbarFactory : MonoBehaviour
     float currentY = 0;
     public float distanceBetweenBars;
 
+    // called in order of player creation
     public void CreateHealthbar(PlayerScript player)
     {
-        Debug.Log("current y: " + currentY);
-        GameObject prefab;
+        GameObject healthbarPrefab;
 
+        // pick the appropriate prefab variant for the health bar
         switch (player.chefType)
         {
             case PlayerType.CRAZY:
-                prefab = crazyHealthPrefab;
+                healthbarPrefab = crazyHealthPrefab;
                 break;
             case PlayerType.FAT:
-                prefab = fatHealthPrefab;
+                healthbarPrefab = fatHealthPrefab;
                 break;
             case PlayerType.THIN:
-                prefab = thinHealthPrefab;
+                healthbarPrefab = thinHealthPrefab;
                 break;
             default:
-                prefab = crazyHealthPrefab;
+                healthbarPrefab = crazyHealthPrefab;
                 break;
         }
 
-        GameObject healthbar = Instantiate(prefab, this.transform);
+
+        // place & initialize each health bar in position
+        GameObject healthbar = Instantiate(healthbarPrefab, this.transform);
         healthbar.transform.localPosition = new Vector3(0, currentY, 0);
         currentY -= distanceBetweenBars;
 

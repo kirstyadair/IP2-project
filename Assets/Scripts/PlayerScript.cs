@@ -206,8 +206,6 @@ public class PlayerScript : MonoBehaviour
 
         if (animator != null)
         {
-            //animator.enabled = true;
-
             if (!firing)
             {
                 if (right || left)
@@ -219,10 +217,9 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (up) animator.Play("walk up");
                     if (down) animator.Play("walk down");
-                }
-                else
+                } else
                 {
-                    //animator.enabled = false;
+                    animator.Play("idle");
                 }
             } else
             {
@@ -235,10 +232,6 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (firingUp) animator.Play("fire up");
                     if (firingDown) animator.Play("fire down");
-                }
-                else
-                {
-                   // animator.enabled = false;
                 }
             }
         }

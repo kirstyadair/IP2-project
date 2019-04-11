@@ -78,6 +78,7 @@ public class HordeScript : MonoBehaviour
     {
         Transform spawnA = gameData.currentMap.hordeSpawnA;
         Transform spawnB = gameData.currentMap.hordeSpawnB;
+
         if (newState == GameState.PREP)
         {
             // Kill off all old zombies
@@ -86,8 +87,7 @@ public class HordeScript : MonoBehaviour
             if (crosshairA.showing) crosshairA.Hide();
             if (crosshairB.showing) crosshairB.Hide();
 
-            // Start spawning
-
+            // Reset crosshair positions
             crosshairA.transform.position = new Vector3(spawnA.position.x, crosshairA.transform.position.y, spawnA.position.z);
             crosshairB.transform.position = new Vector3(spawnB.position.x, crosshairB.transform.position.y, spawnB.position.z);
         }
@@ -97,16 +97,18 @@ public class HordeScript : MonoBehaviour
             zombiesAttachedToCrosshairA.Clear();
             zombiesAttachedToCrosshairB.Clear();
 
+            // Show the crosshairs
             crosshairA.Show();
             crosshairB.Show();
 
-            // Find out how many zombies for this wave for this map
+            // Grab the relevant data for this map and wave
             SushiType sushiType = gameData.currentMap.waves[gameData.wave].sushiType;
             int count = gameData.currentMap.waves[gameData.wave].sushiCount;
             int hitpoints = gameData.currentMap.waves[gameData.wave].hitpoints;
             float timeBetweenSpawns = gameData.currentMap.waves[gameData.wave].timeBetweenSpawns;
             zombiesTotal = count;
 
+            // Start spawning
             StartCoroutine(Spawn(sushiType, count, hitpoints, timeBetweenSpawns, spawnA, spawnB));
         }
     }
