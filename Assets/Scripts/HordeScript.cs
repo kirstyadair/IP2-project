@@ -159,7 +159,6 @@ public class HordeScript : MonoBehaviour
 
             Vector3 force = new Vector3(UnityEngine.Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
             zombie.GetComponent<Rigidbody>().AddForce(force);
-            //zombie.GetComponent<AudioSource>().PlayOneShot(spawnSound);
             zombie.GetComponent<ZombieScript>().maxHealth = hitpoints;
             zombie.GetComponent<ZombieScript>().health = hitpoints;
 
@@ -228,15 +227,20 @@ public class HordeScript : MonoBehaviour
 
     private void CalcOffensiveDefensive()
     {
+        // If the state is not offensive
         if (state != HordeState.OFFENSIVE)
         {
+            // If there are less than 5 seconds left (i.e. the timer is not maxed out)
             if (offenseModeTimer < 5)
             {
+                // Increase the amount of time left, but at half speed
+                // This way, using the mode for 1 seconds takes 2 seconds to regenerate
                 offenseModeTimer += Time.deltaTime / 2;
             }
 
         }
 
+        // Do the same for the defensive mode
         if (state != HordeState.DEFENSIVE)
         {
             if (defenseModeTimer < 5)
