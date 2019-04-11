@@ -824,6 +824,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: toilet closed (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2144
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1167
+      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.297
@@ -879,14 +887,6 @@ PrefabInstance:
     - target: {fileID: 400008, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
       propertyPath: m_LocalScale.z
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.2144
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1167
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
@@ -4963,9 +4963,9 @@ RectTransform:
   m_Father: {fileID: 1993285896}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -86, y: 559}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -86, y: -84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &178040943
@@ -11051,7 +11051,7 @@ Transform:
   m_LocalScale: {x: 33.86991, y: 1.8333013, z: 27.122658}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 164
+  m_RootOrder: 149
   m_LocalEulerAnglesHint: {x: 0, y: -82.892006, z: 0}
 --- !u!1 &371017800 stripped
 GameObject:
@@ -27919,6 +27919,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: toilet closed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2115
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1163
+      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.763
@@ -27974,14 +27982,6 @@ PrefabInstance:
     - target: {fileID: 400008, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
       propertyPath: m_LocalScale.z
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.2115
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1163
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c8f834846fb9847bbdebae3e60ca7c, type: 3}
@@ -32574,7 +32574,7 @@ Transform:
   m_LocalScale: {x: 65.4248, y: 65.4248, z: 65.4248}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 103
+  m_RootOrder: 104
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1137246451
 BoxCollider:
@@ -39719,7 +39719,7 @@ Transform:
   m_LocalScale: {x: 11.237159, y: 6.9758153, z: 11.237159}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 105
+  m_RootOrder: 103
   m_LocalEulerAnglesHint: {x: 0, y: -36.418003, z: 0}
 --- !u!1001 &1393320160
 PrefabInstance:
@@ -40617,7 +40617,7 @@ Transform:
   - {fileID: 885279212}
   - {fileID: 758285193}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 155
+  m_RootOrder: 127
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &1435410957 stripped
 Transform:
@@ -44023,7 +44023,7 @@ Transform:
   m_LocalScale: {x: 10.371704, y: 1.9062699, z: 10.371704}
   m_Children: []
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 104
+  m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 215.954, z: 0}
 --- !u!23 &1571836864
 MeshRenderer:
@@ -44394,9 +44394,9 @@ Transform:
   - {fileID: 662064846}
   - {fileID: 1467928342}
   - {fileID: 1593762575}
+  - {fileID: 1392664998}
   - {fileID: 1137246450}
   - {fileID: 1571836863}
-  - {fileID: 1392664998}
   - {fileID: 73975636}
   - {fileID: 298025718}
   - {fileID: 848364640}
@@ -44418,12 +44418,14 @@ Transform:
   - {fileID: 1559404455}
   - {fileID: 1351800219}
   - {fileID: 4650494899597975905}
+  - {fileID: 1431228921}
   - {fileID: 1229137190}
   - {fileID: 298719939}
   - {fileID: 293892473}
   - {fileID: 966288054}
   - {fileID: 381928570}
   - {fileID: 712250505}
+  - {fileID: 1653789903}
   - {fileID: 237681063}
   - {fileID: 1187186881}
   - {fileID: 1526175355}
@@ -44438,6 +44440,7 @@ Transform:
   - {fileID: 607176944}
   - {fileID: 177681130}
   - {fileID: 2086704847}
+  - {fileID: 367389511}
   - {fileID: 1868458828}
   - {fileID: 1935522230}
   - {fileID: 1199535117}
@@ -44446,16 +44449,13 @@ Transform:
   - {fileID: 1282615407}
   - {fileID: 347061754}
   - {fileID: 2369904378254224481}
-  - {fileID: 1431228921}
   - {fileID: 1485915647}
   - {fileID: 5549778}
   - {fileID: 1435747143}
-  - {fileID: 1653789903}
   - {fileID: 1908176055}
   - {fileID: 1889357824}
   - {fileID: 1876032490}
   - {fileID: 1299680882}
-  - {fileID: 367389511}
   - {fileID: 977457577}
   - {fileID: 1880953323}
   - {fileID: 1811434005}
@@ -46172,7 +46172,7 @@ Transform:
   - {fileID: 1911919567}
   - {fileID: 2113815822}
   m_Father: {fileID: 1584755544}
-  m_RootOrder: 159
+  m_RootOrder: 134
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1655416353
 PrefabInstance:
