@@ -31,7 +31,13 @@ public class EndSceneScript : MonoBehaviour
 
         if (gameData.winner == GameWinner.HORDE)
         {
+            Debug.Log("Sushi won");
             background.GetComponent<Image>().sprite = hordeWinBG;
+        }
+        else
+        {
+            Debug.Log("Chefs won");
+            background.GetComponent<Image>().sprite = chefsWinBG;
         }
     }
 

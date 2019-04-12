@@ -76,6 +76,7 @@ public class GameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         GameObject mapSelectionData = GameObject.Find("MapSelectionObject");
         if (mapSelectionData != null) this.hardModeEnabled = mapSelectionData.GetComponent<MapSelectionObject>().hardmodeEnabled;
 
@@ -145,6 +146,7 @@ public class GameData : MonoBehaviour
                     
                     gameover = true;
                     OnGameOver(GameWinner.PLAYERS);
+                    winner = GameWinner.PLAYERS;
                 }
                 else
                 {
@@ -173,6 +175,7 @@ public class GameData : MonoBehaviour
         if (playersAlive == 0)
         {
             gameover = true;
+            winner = GameWinner.HORDE;
             OnGameOver(GameWinner.HORDE);
         }
     }
