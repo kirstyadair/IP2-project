@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum GameState { PREP, PLAY }
-public enum GameWinner { PLAYERS, HORDE }
+public enum GameWinner { PLAYERS, HORDE, NONE }
 
 public class GameData : MonoBehaviour
 {
@@ -25,6 +25,7 @@ public class GameData : MonoBehaviour
 
     // Current state
     public GameState state = GameState.PREP;
+    public GameWinner winner = GameWinner.NONE;
 
     public UIUpdater ui;
 

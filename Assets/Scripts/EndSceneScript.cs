@@ -8,12 +8,17 @@ using UnityEngine.UI;
 public class EndSceneScript : MonoBehaviour
 {
     StatsScript stats;
+    GameData gameData;
     public Text winningText;
     public Text playerStatsText;
+    public Sprite hordeWinBG;
+    public Sprite chefsWinBG;
+    public Image background;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameData = GameObject.Find("GameData").GetComponent<GameData>();
         stats = GameObject.Find("StatsObject").GetComponent<StatsScript>();
 
         string txt = "";
@@ -23,6 +28,11 @@ public class EndSceneScript : MonoBehaviour
         }
 
         playerStatsText.text = txt;
+
+        if (gameData.winner == GameWinner.HORDE)
+        {
+            background.GetComponent<Image>().sprite = hordeWinBG;
+        }
     }
 
     // Update is called once per frame
