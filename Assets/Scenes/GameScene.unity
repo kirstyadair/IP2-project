@@ -13628,6 +13628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMap: {fileID: 1011659218}
+  map1: {fileID: 1011659216}
+  map2: {fileID: 1085049466}
+  hardModeEnabled: 0
   state: 0
   ui: {fileID: 1993285898}
   wave: 0
@@ -30460,8 +30463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677385abbf6c7714c9b98b6ef1c66c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hordeSpawnA: {fileID: 0}
-  hordeSpawnB: {fileID: 0}
+  hordeSpawnA: {fileID: 2100100443}
+  hordeSpawnB: {fileID: 1141923350}
   waves:
   - sushiType: 2
     sushiCount: 100

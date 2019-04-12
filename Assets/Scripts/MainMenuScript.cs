@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public MapSelectionObject mapSelection;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+ 
     }
 
     // Update is called once per frame
@@ -19,6 +21,13 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        mapSelection.hardmodeEnabled = false;
+        StartCoroutine(DelayStartGame());
+    }
+
+    public void StartGameMap2()
+    {
+        mapSelection.hardmodeEnabled = true;
         StartCoroutine(DelayStartGame());
     }
 
@@ -30,14 +39,14 @@ public class MainMenuScript : MonoBehaviour
     IEnumerator DelayStartGame()
     {
         GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("ChoosePlayerScene");
     }
 
     IEnumerator DelayQuitGame()
     {
         GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+        yield return new WaitForSeconds(1);
         Application.Quit();
     }
 }

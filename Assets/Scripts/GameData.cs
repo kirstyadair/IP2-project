@@ -11,6 +11,11 @@ public class GameData : MonoBehaviour
 {
     public MapSettings currentMap;
 
+    public GameObject map1;
+    public GameObject map2;
+
+    public bool hardModeEnabled = false;
+
     // Triggered when the state is changed
     public delegate void StateChanged(GameState oldState, GameState newState);
     public event StateChanged OnStateChange;
@@ -70,6 +75,21 @@ public class GameData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject mapSelectionData = GameObject.Find("MapSelectionObject");
+        if (mapSelectionData != null) this.hardModeEnabled = mapSelectionData.GetComponent<MapSelectionObject>().hardmodeEnabled;
+
+        if (!hardModeEnabled)
+        {
+            currentMap = map1.GetComponent<MapSettings>();
+            map1.SetActive(true);
+            map2.SetActive(false);
+        } else
+        {
+            currentMap = map2.GetComponent<MapSettings>();
+            map1.SetActive(false);
+            map2.SetActive(true);
+        }
+
         GameObject selData = GameObject.Find("PlayerSelectionData");
         if (selData != null) playerColors = selData.GetComponent<PlayerSelectionData>().playerColors;
         ChangeState(GameState.PREP);
