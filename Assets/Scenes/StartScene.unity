@@ -657,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0aaa7c77972b14ab4af9444d476e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapSelection: {fileID: 259743472}
 --- !u!4 &763184166
 Transform:
   m_ObjectHideFlags: 0
