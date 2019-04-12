@@ -395,7 +395,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.41
+      scalar: 9.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1472,7 +1472,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4132,8 +4132,8 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 1
+          time: 0.029270172
+          value: 0.7297306
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4142,7 +4142,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: 0.39189148
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -4808,7 +4808,7 @@ ParticleSystem:
 --- !u!199 &212777687143542020
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4844,7 +4844,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: -763782693
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_RenderMode: 2
+  m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5

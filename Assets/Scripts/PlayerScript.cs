@@ -208,6 +208,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (!firing)
             {
+                // prefer right and left movements over up/down movements as the map is wider than taller
                 if (right || left)
                 {
                     if (right) animator.Play("walk right");
