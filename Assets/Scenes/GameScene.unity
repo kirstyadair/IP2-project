@@ -2723,7 +2723,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a4cfcf46c4034ab4a83b5838d67cca30, type: 2}
+  - {fileID: 2100000, guid: 8829ecc0bb038894eb9f10109f90e86a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2758,13 +2758,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83251122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6, y: 0, z: 2}
-  m_LocalScale: {x: 8.116657, y: 8.116657, z: 8.116657}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 2}
+  m_LocalScale: {x: 5.62193, y: 5.62193, z: 5.62193}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &83251127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13632,6 +13632,7 @@ MonoBehaviour:
   map2: {fileID: 1085049466}
   hardModeEnabled: 0
   state: 0
+  winner: 2
   ui: {fileID: 1993285898}
   wave: 0
   horde: {fileID: 736823583}
