@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FatChef
       objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216452, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
       propertyPath: reticle
