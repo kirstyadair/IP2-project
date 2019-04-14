@@ -8,8 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerSelectionScript : MonoBehaviour
 {
-    public Text playerList;
-    public Text someoneHasToPickHorde;
+    public GameObject someoneHasToPickHorde;
     public GameObject pressOptionsToStart;
     public int playerCount = 0;
     public GameObject pressStartToBegin;
@@ -64,13 +63,13 @@ public class PlayerSelectionScript : MonoBehaviour
             fatChef.Deactivate();
             thinChef.Deactivate();
             crazyChef.Deactivate();
-            someoneHasToPickHorde.gameObject.SetActive(true);
+            someoneHasToPickHorde.SetActive(true);
         } else
         {
             fatChef.Activate();
             thinChef.Activate();
             crazyChef.Activate();
-            someoneHasToPickHorde.gameObject.SetActive(false);
+            someoneHasToPickHorde.SetActive(false);
         }
 
         if (PlayersThatHaveSelected() == players.Count && players.Count > 1)

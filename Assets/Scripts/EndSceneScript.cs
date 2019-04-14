@@ -50,9 +50,10 @@ public class EndSceneScript : MonoBehaviour
             if (selData != null) Destroy(selData);
 
             Destroy(GameObject.Find("StatsObject"));
+            Destroy(GameObject.Find("MapSelectionObject"));
+     
 
-
-            SceneManager.LoadScene("ChoosePlayerScene");
+            SceneManager.LoadScene("StartScene");
         }
     }
 }

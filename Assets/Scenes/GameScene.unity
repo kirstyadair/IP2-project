@@ -23470,10 +23470,10 @@ Transform:
   m_GameObject: {fileID: 836627806}
   m_LocalRotation: {x: -0, y: 0.9794608, z: -0.2016349, w: 0}
   m_LocalPosition: {x: -1.8, y: -13.3, z: 13}
-  m_LocalScale: {x: 155.53249, y: 0.2472994, z: 73.74211}
+  m_LocalScale: {x: 155.53261, y: 0.24729945, z: 73.74216}
   m_Children: []
-  m_Father: {fileID: 1011659217}
-  m_RootOrder: 7
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 23.265001, y: 180.00002, z: 0}
 --- !u!65 &836627808
 BoxCollider:
@@ -29201,7 +29201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1011659217
 Transform:
   m_ObjectHideFlags: 0
@@ -29220,7 +29220,6 @@ Transform:
   - {fileID: 839931765}
   - {fileID: 1307389711}
   - {fileID: 645126332}
-  - {fileID: 836627807}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31336,7 +31335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1085049467
 MonoBehaviour:
   m_ObjectHideFlags: 0
