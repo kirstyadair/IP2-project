@@ -34,7 +34,9 @@ public class HordeScript : MonoBehaviour
     [Header("Horde settings")]
     public float wiggleMultiplier;
     public float forceMultiplier;
-    public float crosshairBounds;
+
+    public float crosshairReturnToBoundsTightness;
+    public Vector2 crosshairBounds;
     public float crosshairSpeed;
 
     [Header("Sushi sprites")]
@@ -374,6 +376,18 @@ public class HordeScript : MonoBehaviour
 
     private void KeepCrosshairWithinLimits(HordeCrosshairScript crosshair, Vector3 centerOfScreen)
     {
-        if (Vector3.Distance(crosshairA.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 100;
+        // Debug.Log(crosshair.transform.position.x - centerOfScreen.x);
+        if (crosshair.transform.position.x - centerOfScreen.x < -(crosshairBounds.x / 2) || crosshair.transform.position.x - centerOfScreen.x > crosshairBounds.x / 2)
+        {
+            Vector3 newPosition = new Vector3(Mathf.Lerp(crosshair.transform.position.x, centerOfScreen.x, crosshairReturnToBoundsTightness), crosshair.transform.position.y, crosshair.transform.position.z);
+            crosshair.transform.position = newPosition;
+        }
+
+        if (crosshair.transform.position.z - centerOfScreen.z < -(crosshairBounds.y / 2) || crosshair.transform.position.z - centerOfScreen.z > crosshairBounds.y / 2)
+        {
+            Vector3 newPosition = new Vector3(crosshair.transform.position.x, crosshair.transform.position.y, Mathf.Lerp(crosshair.transform.position.z, centerOfScreen.z, crosshairReturnToBoundsTightness));
+            crosshair.transform.position = newPosition;
+        }
+        //if (Vector3.Distance(crosshairA.transform.position, centerOfScreen) > crosshairBounds) crosshair.transform.position -= (crosshair.transform.position - centerOfScreen) / 10;
     }
 }
