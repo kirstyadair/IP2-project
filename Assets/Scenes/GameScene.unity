@@ -29378,30 +29378,30 @@ MonoBehaviour:
   hordeSpawnB: {fileID: 746124518}
   waves:
   - sushiType: 0
-    sushiCount: 20
+    sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
     hitpoints: 10
   - sushiType: 1
-    sushiCount: 50
+    sushiCount: 30
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
     hitpoints: 10
   - sushiType: 3
-    sushiCount: 100
+    sushiCount: 60
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 10
   - sushiType: 0
-    sushiCount: 150
+    sushiCount: 100
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 10
   - sushiType: 2
-    sushiCount: 250
+    sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 20
+    hitpoints: 15
 --- !u!1 &1011748860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 29541d1f4f428dd42886aae7ab269a3b,
@@ -31491,30 +31491,30 @@ MonoBehaviour:
   hordeSpawnB: {fileID: 1141923350}
   waves:
   - sushiType: 2
-    sushiCount: 30
+    sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.2
-    hitpoints: 10
+    hitpoints: 30
   - sushiType: 1
-    sushiCount: 75
-    secondsBeforeSpawning: 1
+    sushiCount: 40
+    secondsBeforeSpawning: 50
     timeBetweenSpawns: 1
-    hitpoints: 20
+    hitpoints: 10
   - sushiType: 0
-    sushiCount: 150
+    sushiCount: 80
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
-    hitpoints: 20
+    hitpoints: 10
   - sushiType: 3
+    sushiCount: 130
+    secondsBeforeSpawning: 1
+    timeBetweenSpawns: 1
+    hitpoints: 10
+  - sushiType: 2
     sushiCount: 200
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
     hitpoints: 20
-  - sushiType: 2
-    sushiCount: 300
-    secondsBeforeSpawning: 1
-    timeBetweenSpawns: 1
-    hitpoints: 30
 --- !u!4 &1085049468
 Transform:
   m_ObjectHideFlags: 0
