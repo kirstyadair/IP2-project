@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum SushiType
 {
-    EYES, TEETH, SQUID, TENTACLES
+    EYES, TEETH, SQUID, TENTACLES, BOSS
 }
 
 [System.Serializable]

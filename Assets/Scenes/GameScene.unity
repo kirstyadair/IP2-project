@@ -15803,7 +15803,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_Name
-      value: floor (1)
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18209,7 +18209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_Name
-      value: floor (2)
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21179,6 +21179,7 @@ MonoBehaviour:
   teethSushi: {fileID: 21300004, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   tentaclesSushi: {fileID: 21300000, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
   squidSushi: {fileID: 21300006, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
+  bossSushi: {fileID: 21300000, guid: 8320568d4a6842b44a80a59b747bda11, type: 3}
   regenerationSpeed: 0
   zombiesAlive: 0
   zombiesTotal: 0
@@ -31490,7 +31491,7 @@ MonoBehaviour:
   hordeSpawnA: {fileID: 2100100443}
   hordeSpawnB: {fileID: 1141923350}
   waves:
-  - sushiType: 2
+  - sushiType: 0
     sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
@@ -50218,7 +50219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_Name
-      value: floor
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52223,7 +52224,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_Name
-      value: floor (3)
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 180b9e256486baa42b81cc542e0877b8, type: 3}
       propertyPath: m_LocalPosition.x

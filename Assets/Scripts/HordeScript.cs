@@ -42,6 +42,7 @@ public class HordeScript : MonoBehaviour
     public Sprite teethSushi;
     public Sprite tentaclesSushi;
     public Sprite squidSushi;
+    public Sprite bossSushi;
     public float regenerationSpeed;
 
     public int zombiesAlive;
@@ -153,6 +154,9 @@ public class HordeScript : MonoBehaviour
                     break;
                 case SushiType.TENTACLES:
                     sushiSprite = tentaclesSushi;
+                    break;
+                case SushiType.BOSS:
+                    sushiSprite = bossSushi;
                     break;
                 default: break;
             }
