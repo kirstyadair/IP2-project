@@ -28,7 +28,12 @@ public class CameraController : MonoBehaviour
 
         PlayerScript.OnPlayerDeath += OnPlayerDeath;
     }
-    
+
+    public void OnDestroy()
+    {
+        PlayerScript.OnPlayerDeath -= OnPlayerDeath;
+    }
+
     void OnPlayerDeath(PlayerScript player)
     {
         StartCoroutine(DelayedPlayerDeath());

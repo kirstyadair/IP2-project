@@ -31496,26 +31496,6 @@ MonoBehaviour:
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
     hitpoints: 30
-  - sushiType: 1
-    sushiCount: 40
-    secondsBeforeSpawning: 50
-    timeBetweenSpawns: 0.1
-    hitpoints: 10
-  - sushiType: 0
-    sushiCount: 80
-    secondsBeforeSpawning: 1
-    timeBetweenSpawns: 0.05
-    hitpoints: 10
-  - sushiType: 3
-    sushiCount: 130
-    secondsBeforeSpawning: 1
-    timeBetweenSpawns: 0.05
-    hitpoints: 10
-  - sushiType: 2
-    sushiCount: 200
-    secondsBeforeSpawning: 1
-    timeBetweenSpawns: 0.05
-    hitpoints: 20
 --- !u!4 &1085049468
 Transform:
   m_ObjectHideFlags: 0

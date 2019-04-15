@@ -73,6 +73,11 @@ public class GameData : MonoBehaviour
         this.OnGameOver += OnGAMEOVER;
     }
 
+    public void OnDestroy()
+    {
+        PlayerScript.OnPlayerDeath -= OnPlayerDeath;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

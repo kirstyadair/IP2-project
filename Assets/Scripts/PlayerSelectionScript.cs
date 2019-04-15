@@ -38,6 +38,10 @@ public class PlayerSelectionScript : MonoBehaviour
         ChoosePlayerSelector.OnSelectionChanged += OnPlayerSelectionChanged;
     }
 
+    public void OnDestroy()
+    {
+        ChoosePlayerSelector.OnSelectionChanged -= OnPlayerSelectionChanged;
+    }
 
     public bool IsHordeSelected()
     {

@@ -51,7 +51,7 @@ public class EndSceneScript : MonoBehaviour
 
             Destroy(GameObject.Find("StatsObject"));
             Destroy(GameObject.Find("MapSelectionObject"));
-     
+            Destroy(GameObject.Find("GameData"));
 
             SceneManager.LoadScene("StartScene");
         }

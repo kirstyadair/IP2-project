@@ -12,7 +12,6 @@ public class ZombieScript : MonoBehaviour
     public SpriteRenderer defBubble;
     public SpriteRenderer offBubble;
     HordeScript hordeScript;
-    PlayerScript playerScript;
     GameData gameData;
     public PlayerStats stats;
     public bool isAttachedToKing = false;
@@ -23,8 +22,10 @@ public class ZombieScript : MonoBehaviour
         this.GetComponent<Animator>().speed = UnityEngine.Random.Range(0.5f, 1.5f);
         hordeScript = GameObject.Find("Horde").GetComponent<HordeScript>();
         gameData = GameObject.Find("GameData").GetComponent<GameData>();
-        playerScript = GameObject.Find("FAT player").GetComponent<PlayerScript>();
-        stats = playerScript.stats;
+
+        // store the playerstats for the fat chef if it's in the game
+        GameObject fatChef = GameObject.Find("FAT player");
+        if (fatChef != null) stats = fatChef.GetComponent<PlayerScript>().stats;
     }
 
     // Update is called once per frame
