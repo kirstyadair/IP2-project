@@ -117,6 +117,16 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 713a81bc206c5c04b834a39004880ffc, type: 3}
+    - target: {fileID: 7855460677670862494, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.08683443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855460677670862494, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff3f8c5bd361f749a315a102c1e85a6, type: 3}
 --- !u!95 &3816581470009685864 stripped

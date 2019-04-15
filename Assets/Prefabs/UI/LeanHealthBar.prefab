@@ -107,12 +107,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -30.4
       objectReference: {fileID: 0}
-    - target: {fileID: 5135121866436426360, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c5e62619db6f5214ab5bbfa6e98f3e52,
-        type: 3}
     - target: {fileID: 5659494695212205939, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
         type: 3}
       propertyPath: filler
@@ -123,6 +117,22 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 6868496941938087450}
+    - target: {fileID: 7855460677670862494, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.090844676
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855460677670862494, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5135121866436426360, guid: 0ff3f8c5bd361f749a315a102c1e85a6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5e62619db6f5214ab5bbfa6e98f3e52,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff3f8c5bd361f749a315a102c1e85a6, type: 3}
 --- !u!95 &6868496941938087450 stripped
