@@ -21172,7 +21172,7 @@ MonoBehaviour:
   crosshairB: {fileID: 591236968}
   spawnSound: {fileID: 8300000, guid: 9c7ab306f11f55b4586381f7ac1e999c, type: 3}
   wiggleMultiplier: 15
-  forceMultiplier: 15
+  forceMultiplier: 10
   crosshairBounds: 10
   crosshairSpeed: 13
   eyesSushi: {fileID: 21300002, guid: 27493c9f04922544cb0b2d1fefdc7f34, type: 3}
@@ -29386,22 +29386,22 @@ MonoBehaviour:
     sushiCount: 50
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.1
-    hitpoints: 20
+    hitpoints: 10
   - sushiType: 3
     sushiCount: 100
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 30
+    hitpoints: 10
   - sushiType: 0
     sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 40
+    hitpoints: 10
   - sushiType: 2
     sushiCount: 250
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
-    hitpoints: 50
+    hitpoints: 20
 --- !u!1 &1011748860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 29541d1f4f428dd42886aae7ab269a3b,
@@ -31504,17 +31504,17 @@ MonoBehaviour:
     sushiCount: 150
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
-    hitpoints: 30
+    hitpoints: 20
   - sushiType: 3
     sushiCount: 200
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
-    hitpoints: 40
+    hitpoints: 20
   - sushiType: 2
     sushiCount: 300
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 1
-    hitpoints: 50
+    hitpoints: 30
 --- !u!4 &1085049468
 Transform:
   m_ObjectHideFlags: 0
