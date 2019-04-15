@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ketchupPrefab: {fileID: 3409766765662946152, guid: a839d6fb1847a744e8e94c12c9b62a3a,
     type: 3}
-  ketchupSpread: {x: 0.7, y: 0, z: 0.3}
+  ketchupSpread: {x: 1, y: 0, z: 1}
   playerScript: {fileID: 2400729507838504379}
 --- !u!82 &4941125992014521254
 AudioSource:
