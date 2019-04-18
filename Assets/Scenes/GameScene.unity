@@ -14046,7 +14046,7 @@ MonoBehaviour:
   currentMap: {fileID: 1011659218}
   map1: {fileID: 1011659216}
   map2: {fileID: 1085049466}
-  hardModeEnabled: 0
+  hardModeEnabled: 1
   state: 0
   winner: 2
   ui: {fileID: 1993285898}
@@ -17330,8 +17330,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606783588}
   m_LocalRotation: {x: -0.000000034266108, y: 0.95626765, z: -0.29249313, w: 0.0000002787828}
-  m_LocalPosition: {x: -4.96, y: -0.67, z: 6.67}
-  m_LocalScale: {x: 82.2318, y: 0.2473, z: 40.435825}
+  m_LocalPosition: {x: -0.35, y: -4.66, z: 4.4}
+  m_LocalScale: {x: 63.748554, y: 0.2473, z: 40.435825}
   m_Children: []
   m_Father: {fileID: 1085049468}
   m_RootOrder: 8
