@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ketchupPrefab: {fileID: 3409766765662946152, guid: a839d6fb1847a744e8e94c12c9b62a3a,
     type: 3}
-  ketchupSpread: {x: 0.5, y: 0, z: 0.2}
+  ketchupSpread: {x: 0.2, y: 0, z: 0.1}
   playerScript: {fileID: 2400729507838504379}
 --- !u!82 &4941125992014521254
 AudioSource:
@@ -171,10 +171,100 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
-      propertyPath: m_Name
-      value: FatChef
+      propertyPath: m_LocalPosition.x
+      value: -1.204
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: reticle
+      value: 
+      objectReference: {fileID: 2400729509559249425}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: chefType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: halo
+      value: 
+      objectReference: {fileID: 6275210387961483154}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 7005830405248659347}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: playerIndicator
+      value: 
+      objectReference: {fileID: 6875490791022451047}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: dead
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+        type: 3}
+      propertyPath: isAIControlled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5811462123601975483, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
@@ -236,100 +326,10 @@ PrefabInstance:
       propertyPath: killedNumber
       value: 
       objectReference: {fileID: 342771825281687476}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
+    - target: {fileID: 5725655216475216478, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
-      propertyPath: reticle
-      value: 
-      objectReference: {fileID: 2400729509559249425}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: chefType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: halo
-      value: 
-      objectReference: {fileID: 6275210387961483154}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 7005830405248659347}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: playerIndicator
-      value: 
-      objectReference: {fileID: 6875490791022451047}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: dead
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216449, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: isAIControlled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.204
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725655216475216451, guid: dd07273a72bbf754f85f3fb2bdec8353,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      propertyPath: m_Name
+      value: FatChef
       objectReference: {fileID: 0}
     - target: {fileID: 8602829618615880605, guid: dd07273a72bbf754f85f3fb2bdec8353,
         type: 3}
