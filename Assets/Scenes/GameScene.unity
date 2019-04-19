@@ -31483,7 +31483,7 @@ MonoBehaviour:
   hordeSpawnA: {fileID: 2100100443}
   hordeSpawnB: {fileID: 1141923350}
   waves:
-  - sushiType: 0
+  - sushiType: 2
     sushiCount: 10
     secondsBeforeSpawning: 5
     timeBetweenSpawns: 0.1
@@ -31493,12 +31493,12 @@ MonoBehaviour:
     secondsBeforeSpawning: 50
     timeBetweenSpawns: 0.1
     hitpoints: 10
-  - sushiType: 0
+  - sushiType: 3
     sushiCount: 80
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
     hitpoints: 10
-  - sushiType: 3
+  - sushiType: 0
     sushiCount: 130
     secondsBeforeSpawning: 1
     timeBetweenSpawns: 0.05
