@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using InControl;
 
 public enum GameState { PREP, PLAY }
 public enum GameWinner { PLAYERS, HORDE, NONE }
@@ -13,6 +15,7 @@ public class GameData : MonoBehaviour
 
     public GameObject map1;
     public GameObject map2;
+    public Image tutorialImage;
 
     public bool hardModeEnabled = false;
 
@@ -100,6 +103,7 @@ public class GameData : MonoBehaviour
         GameObject selData = GameObject.Find("PlayerSelectionData");
         if (selData != null) playerColors = selData.GetComponent<PlayerSelectionData>().playerColors;
         ChangeState(GameState.PREP);
+        tutorialImage.enabled = true;
     }
 
     // Change the state
@@ -108,14 +112,18 @@ public class GameData : MonoBehaviour
         if (newState == GameState.PREP)
         {
             playersAlive = 0;
-            int seconds = currentMap.waves[0].secondsBeforeSpawning;
 
-            // Initiate the countdown to start spawning
-            timer.StartCountdown(seconds, StartSpawning);
+            if (!tutorialImage.enabled)
+            { 
+                int seconds = currentMap.waves[0].secondsBeforeSpawning;
 
-            if (wave > 0)
-            {
-                waveIndicator.SwapText("PREPARING...", preparingIndicatorBGColor, preparingIndicatorFGColor);
+                // Initiate the countdown to start spawning
+                timer.StartCountdown(seconds, StartSpawning);
+
+                if (wave > 0)
+                {
+                    waveIndicator.SwapText("PREPARING...", preparingIndicatorBGColor, preparingIndicatorFGColor);
+                }
             }
         }
 
@@ -131,6 +139,13 @@ public class GameData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (state == GameState.PREP && Input.GetKeyDown(KeyCode.P) || InputManager.ActiveDevice.Action1.IsPressed)
+        {
+            tutorialImage.enabled = false;
+            ChangeState(GameState.PREP);
+        }
+
         if (state == GameState.PLAY && !gameover)
         {
             if (horde.isSpawning) waveIndicator.ChangeText("SPAWNING " + horde.zombiesAlive + "/" + horde.zombiesTotal);
