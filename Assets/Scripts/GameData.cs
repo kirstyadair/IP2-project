@@ -102,8 +102,9 @@ public class GameData : MonoBehaviour
 
         GameObject selData = GameObject.Find("PlayerSelectionData");
         if (selData != null) playerColors = selData.GetComponent<PlayerSelectionData>().playerColors;
-        ChangeState(GameState.PREP);
         tutorialImage.enabled = true;
+        ChangeState(GameState.PREP);
+
     }
 
     // Change the state
@@ -139,8 +140,7 @@ public class GameData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (state == GameState.PREP && Input.GetKeyDown(KeyCode.P) || InputManager.ActiveDevice.Action1.IsPressed)
+        if ((tutorialImage.enabled && state == GameState.PREP) && (Input.GetKeyDown(KeyCode.P) || InputManager.ActiveDevice.Action1.WasPressed))
         {
             tutorialImage.enabled = false;
             ChangeState(GameState.PREP);
