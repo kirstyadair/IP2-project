@@ -1391,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &48123588
 Transform:
   m_ObjectHideFlags: 0
@@ -14121,7 +14121,7 @@ MonoBehaviour:
   map1: {fileID: 1011659216}
   map2: {fileID: 1085049466}
   tutorialImage: {fileID: 59527774}
-  hardModeEnabled: 1
+  hardModeEnabled: 0
   state: 0
   winner: 2
   ui: {fileID: 1993285898}
