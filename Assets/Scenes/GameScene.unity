@@ -14139,7 +14139,7 @@ MonoBehaviour:
   ketchupDamage: 1
   spatulaDamage: 10
   throwingKnifeDamage: 5
-  fireExtinguisherDamage: 0
+  fireExtinguisherDamage: 1
   cookerDamage: 75
   playerColors:
   - {r: 0.2988608, g: 0.8679245, b: 0.38461128, a: 1}
