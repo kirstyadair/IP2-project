@@ -38,6 +38,7 @@ public class PlayerSpawnerScript : MonoBehaviour
         int i = 0;
         foreach (PlayerSelection playerSelection in playerSelectionData.playerSelections)
         {
+            if (playerSelection.playerType == PlayerType.HORDE) continue;
             SpawnPlayerAt(playerSpawnPoints[i], playerSelection.playerType, playerSelection.input, i + 1, gameData.playerColors[i]);
             i++;
         }
